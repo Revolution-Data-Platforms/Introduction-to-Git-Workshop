@@ -1,51 +1,40 @@
-# Hard-coded basic calculator without functions
-# Example calculations with two sets of numbers
+class BasicCalculator:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-# First set of calculations
-x = 10
-y = 3
+    def add(self):
+        return self.x + self.y
 
-print("=== Basic Calculator Demo ===")
-print(f"Numbers: x = {x}, y = {y}")
-print(f"Addition: {x} + {y} = {x + y}")
-print(f"Subtraction: {x} - {y} = {x - y}")
-print(f"Multiplication: {x} * {y} = {x * y}")
-print(f"Division: {x} / {y} = {x / y}")
+    def subtract(self):
+        return self.x - self.y
 
-# Second set of calculations with division by zero handling
-x2 = 10
-y2 = 0
+    def multiply(self):
+        return self.x * self.y
 
-print("\n=== Division by Zero Demo ===")
-print(f"Numbers: x = {x2}, y = {y2}")
-print(f"Addition: {x2} + {y2} = {x2 + y2}")
-print(f"Subtraction: {x2} - {y2} = {x2 - y2}")
-print(f"Multiplication: {x2} * {y2} = {x2 * y2}")
+    def divide(self):
+        if self.y == 0:
+            return "Cannot divide by zero"
+        return self.x / self.y
 
-# Handle division by zero
-if y2 == 0:
-    print("Division: Cannot divide by zero")
-else:
-    print(f"Division: {x2} / {y2} = {x2 / y2}")
+    def print_results(self, title):
+        print(f"\n=== {title} ===")
+        print(f"Numbers: x = {self.x}, y = {self.y}")
+        print(f"Addition: {self.x} + {self.y} = {self.add()}")
+        print(f"Subtraction: {self.x} - {self.y} = {self.subtract()}")
+        print(f"Multiplication: {self.x} * {self.y} = {self.multiply()}")
+        print(f"Division: {self.x} / {self.y} = {self.divide()}")
 
-# Additional examples with different numbers
-x3 = 15
-y3 = 4
 
-print("\n=== Additional Examples ===")
-print(f"Numbers: x = {x3}, y = {y3}")
-print(f"Addition: {x3} + {y3} = {x3 + y3}")
-print(f"Subtraction: {x3} - {y3} = {x3 - y3}")
-print(f"Multiplication: {x3} * {y3} = {x3 * y3}")
-print(f"Division: {x3} / {y3} = {x3 / y3}")
+# Demo usage
+calc1 = BasicCalculator(10, 3)
+calc1.print_results("Basic Calculator Demo")
 
-# Decimal examples
-x4 = 7.5
-y4 = 2.5
+calc2 = BasicCalculator(10, 0)
+calc2.print_results("Division by Zero Demo")
 
-print("\n=== Decimal Examples ===")
-print(f"Numbers: x = {x4}, y = {y4}")
-print(f"Addition: {x4} + {y4} = {x4 + y4}")
-print(f"Subtraction: {x4} - {y4} = {x4 - y4}")
-print(f"Multiplication: {x4} * {y4} = {x4 * y4}")
-print(f"Division: {x4} / {y4} = {x4 / y4}")
+calc3 = BasicCalculator(15, 4)
+calc3.print_results("Additional Examples")
+
+calc4 = BasicCalculator(7.5, 2.5)
+calc4.print_results("Decimal Examples")
