@@ -21,7 +21,7 @@ By the end of this workshop, you will be able to:
 - Python 3. Check with `python --version`. On macOS and Linux you may need `python3 --version`. On Windows you may need `py --version`.
 - Basic comfort with a command line
 
-Windows users: run every command in this tutorial in **Git Bash**, which is installed with Git for Windows. Commands are written for Git Bash, macOS and Linux. A PowerShell equivalent is shown only where a command differs.
+Windows users can run every command in this tutorial in **PowerShell** or in **Git Bash**, which is installed with Git for Windows. Commands that differ between shells show both versions.
 
 If you use `python3` or `py` on your computer, substitute it wherever the tutorial says `python`.
 
@@ -395,15 +395,12 @@ git diff
 
 # Stage and commit
 git add main.py
-git commit -m "Refactor calculator into functions" \
-  -m "- Extract addition into add()" \
-  -m "- Read numbers from user input" \
-  -m "- Show an error for invalid input"
+git commit -m "Refactor calculator into functions" -m "Extract add(), read numbers from user input and show an error for invalid input."
 
 git log --oneline
 ```
 
-Each `-m` adds a paragraph to the message. The first is the summary line. In PowerShell, put the whole command on one line instead of using `\` at line ends.
+Each `-m` adds a paragraph: the first is the subject line and the second holds the details.
 
 On Windows, `git add` may print "warning: in the working copy of 'main.py', LF will be replaced by CRLF the next time Git touches it". This is harmless.
 
@@ -472,9 +469,7 @@ This refactoring makes the code more maintainable, reusable, and user-friendly.
 ### Alternative: GitHub CLI
 
 ```bash
-gh pr create --base main --head feature/refactor-calculator \
-  --title "Refactor calculator with input validation" \
-  --body "Refactors main.py into functions with input validation. Tested: 5 and 3 give 8, 2.5 and 1.5 give 4.0, abc shows an error."
+gh pr create --base main --head feature/refactor-calculator --title "Refactor calculator with input validation" --body "Refactors main.py into functions with input validation. Tested: 5 and 3 give 8, 2.5 and 1.5 give 4.0, abc shows an error."
 ```
 
 ## Section 11: Review and Merge the Pull Request (11 of 12)
@@ -567,7 +562,7 @@ git branch -a
 | `Updates were rejected` or `failed to push some refs` on the first push | The GitHub repository was created with a README, so it has a commit you do not have. | Run `git pull --rebase origin main`, then `git push -u origin main`. |
 | Password authentication rejected, or `Authentication failed` | GitHub does not accept account passwords for Git. | Sign in through Git Credential Manager, or paste a personal access token as the password, or use SSH. |
 | `Permission denied (publickey)` | Your SSH key is not added to GitHub or not loaded in the agent. | Add the public key in GitHub settings, run `ssh-add`, and test with `ssh -T git@github.com`. |
-| `ls -la` in PowerShell: "A parameter cannot be found that matches parameter name 'la'" | `ls` in PowerShell is an alias for `Get-ChildItem`. | Use `Get-ChildItem -Force`, or use Git Bash. |
+| `ls -la` in PowerShell: "A parameter cannot be found that matches parameter name 'la'" | `ls` in PowerShell is an alias for `Get-ChildItem`. | Use `Get-ChildItem -Force`, or run the command in Git Bash. |
 | `error: the branch '<branch>' is not fully merged` | Squash or Rebase merge created new commits on `main`, so Git cannot see that the branch was merged. | Confirm the PR shows as merged on GitHub, then use `git branch -D <branch>`. |
 | `error: unable to delete 'branch': remote ref does not exist` | The remote branch is already deleted. | Run `git fetch --prune`. |
 | Your branch is called `master` | Git is older than 2.28 or `init.defaultBranch` is not set. | Run `git branch -M main`. Update Git and set `init.defaultBranch`. |

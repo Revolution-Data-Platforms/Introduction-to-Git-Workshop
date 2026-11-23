@@ -24,7 +24,7 @@ A hands-on introduction to Git and GitHub for beginners. You build a small repos
 - A [GitHub](https://github.com) account
 - A text editor
 - Python 3. Check with `python --version`. macOS and Linux may need `python3`. Windows may use `py`.
-- Windows users run the commands in Git Bash
+- On Windows, use PowerShell or Git Bash.
 
 ## Workshop Sections
 

@@ -31,7 +31,7 @@ Ask attendees beforehand:
 - [ ] Install Git from git-scm.com and confirm `git --version` shows 2.28 or newer.
 - [ ] Install Python 3 and confirm `python --version`.
 - [ ] Create a GitHub account.
-- [ ] Windows attendees use Git Bash, which is installed with Git for Windows. Commands are written for Git Bash, macOS and Linux.
+- [ ] Windows attendees can use PowerShell or Git Bash. Both work with Git for Windows.
 - [ ] Attendees can pair up for the Section 11 review step.
 
 ## 3. Format A: 45-minute timing
@@ -112,13 +112,10 @@ python main.py
 git status
 git diff
 git add main.py
-git commit -m "Refactor calculator into functions" \
-  -m "- Extract addition into add()" \
-  -m "- Read numbers from user input" \
-  -m "- Show an error for invalid input"
+git commit -m "Refactor calculator into functions"
 git log --oneline
 ```
-Point out: run the program and enter 5 and 3, then 2.5 and 1.5, then abc to show the error message. Use `py main.py` or `python3 main.py` if `python` is not found. `git diff` shows the change before it is staged. In PowerShell put the whole commit command on one line instead of using `\` at line ends.
+Point out: run the program and enter 5 and 3, then 2.5 and 1.5, then abc to show the error message. Use `py main.py` or `python3 main.py` if `python` is not found. `git diff` shows the change before it is staged. The tutorial adds a second `-m` with details.
 ### Block G. Push the branch and open the pull request (2 minutes)
 
 ```bash
@@ -164,7 +161,7 @@ Facilitation tips:
 
 - Signing in is the slow part. Walk the room during Part 2. Watch for browsers showing a password prompt. GitHub stopped accepting account passwords for Git operations on 13 August 2021.
 - `master` versus `main`. Some attendees see `master` because Git is older than 2.28 or `init.defaultBranch` is not set. The fix is `git branch -M main`.
-- PowerShell versus Git Bash. `ls -la` fails in PowerShell because `ls` is an alias for `Get-ChildItem`. Use `Get-ChildItem -Force`, or use Git Bash for the whole tutorial.
+- PowerShell versus Git Bash. `ls -la` fails in PowerShell because `ls` is an alias for `Get-ChildItem`. Use `Get-ChildItem -Force`, or run the command in Git Bash. Everything else in the tutorial works in either shell.
 - Pushing to the wrong remote. Check `git remote -v`. If `origin` already exists, change the URL with `git remote set-url origin <url>`.
 - Rejected push because the repository was created with a README. GitHub then has a commit the attendee does not have. Run `git pull --rebase origin main`, then `git push -u origin main`.
 
