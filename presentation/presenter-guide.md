@@ -1,12 +1,14 @@
 # Presenter Guide: Introduction to Git Workshop
 
-This guide supports the full workshop format for Revolution Data Platforms (RDP), a hands-on session of 2 to 3 hours. Every command below matches `docs/tutorial.md`, so attendees who follow the tutorial see the same commands in the same order.
+This guide supports the full workshop format for Revolution Data Platforms (RDP), a hands-on session of about 3 hours, run remotely on Microsoft Teams. Every command below matches `docs/tutorial.md`, so attendees who follow the tutorial see the same commands in the same order.
+
+The deck includes spaced retrieval checkpoints: 13 quick-fire "Rewind" questions and 3 "Draw it" pair exercises. The question pack is in [quiz-questions.md](quiz-questions.md).
 
 ## 1. Format at a glance
 
 | Format | Length | Deck | Attendee activity | Presenter activity |
 | --- | --- | --- | --- | --- |
-| Full workshop: hands-on | 2 to 3 hours | `presentation/introduction-to-git-workshop.pptx` and `presentation/introduction-to-git-workshop.pdf` (31 slides) | Follow `docs/tutorial.md` on their own machine. | Walk the room, troubleshoot, run the check-in assessment. |
+| Full workshop: hands-on, remote | About 3 hours | `presentation/introduction-to-git-workshop.pptx` and `presentation/introduction-to-git-workshop.pdf` (51 slides) | Follow `docs/tutorial.md` on their own machine, answer the Rewind questions and draw in pairs. | Walk the rooms, troubleshoot, run the checkpoints. |
 
 Deck file paths are relative to the repository root. The deck ships as a PowerPoint file and a PDF.
 
@@ -17,7 +19,7 @@ Presenter setup:
 - [ ] Latest Git installed. Run `git --version`. It must be 2.28 or newer.
 - [ ] Signed in to GitHub in the browser, under the presenter account.
 - [ ] An empty GitHub repository named `git-workshop-demo` under the presenter account, for your own demonstration. No README, no `.gitignore`, no licence. An empty repository means the first push has nothing to clash with.
-- [ ] Terminal font size large, light theme. Attendees must read the screen from the back of the room.
+- [ ] Terminal font size large, light theme. Attendees must read the shared screen.
 - [ ] Python 3 installed. Run `python --version`. On macOS or Linux use `python3 --version`. On Windows use `py --version`.
 - [ ] The deck open and ready to present.
 - [ ] Tutorial link ready to share. See guide Section 7 (Links).
@@ -26,56 +28,91 @@ Presenter setup:
 - [ ] Run `git config --global --list` and note your real name and email first, so you can restore them after your demonstration.
 - [ ] To show the sign-in during your demonstration, delete the `git:https://github.com` entry in Windows Credential Manager beforehand. If you have signed in on this machine before, nothing appears.
 
+Checkpoint setup:
+
+- [ ] **Mentimeter account.** Create a free account at mentimeter.com. The free plan allows 50 participants per month across all presentations, so check its current limits before the session.
+- [ ] **Build the quiz.** Create one Mentimeter presentation with 13 Quiz competition questions, in launch order, from [quiz-questions.md](quiz-questions.md). One presentation gives one leaderboard for the whole day.
+- [ ] **Rehearse alone.** Run through the quiz yourself on one device. Every participant counts toward the monthly 50, so do not rehearse with colleagues.
+- [ ] **Join code.** In PowerPoint, replace `[join code]` on the 13 Rewind slides with the real code (Find and Replace). The PDF keeps the placeholder.
+- [ ] **Share the right tab.** Attendees answer at menti.com while you share the Mentimeter browser tab in Teams. Keep it open in its own tab or window.
+- [ ] **Teams Polls backup.** In the Teams meeting, create the same 13 questions under Polls using the Multiple Choice Quiz type. This type has no scoring, so say the answer aloud.
+- [ ] **Breakout rooms.** About 30 people means about 15 pairs. Set up the rooms in the Teams meeting, and ask a co-organizer to help visit rooms if one is available.
+- [ ] **Whiteboard.** The drawings use the Microsoft Whiteboard that comes with the Teams enterprise licence. In each room, one person selects Share, then Whiteboard, then starts a new whiteboard. Test this in a breakout room with a second person before the session. If Whiteboard does not appear for attendees, they draw on paper and show it to the camera.
+
 Ask attendees beforehand:
 
 - [ ] Install Git from git-scm.com and confirm `git --version` shows 2.28 or newer.
 - [ ] Install Python 3 and confirm `python --version`.
 - [ ] Create a GitHub account.
 - [ ] Windows attendees can use PowerShell or Git Bash. Both work with Git for Windows.
-- [ ] Attendees can pair up for the Section 11 review step.
+- [ ] Have a phone or second device ready for the quiz, because the screen is full of terminal and tutorial windows.
+- [ ] Attendees can pair up for the Section 11 review step. Pairs for the drawings are assigned by the breakout rooms.
 
 ## 3. Full workshop timing by part
 
+The times below assume every checkpoint runs, and total about 3 hours 10 minutes. A Rewind takes about 1 minute. A drawing takes 6 to 8 minutes: 3 or 4 minutes of drawing, then one or two pairs share their screen, then the model answer.
+
 | Part | Time | Slides | Focus |
 | --- | --- | --- | --- |
-| 1 | 0:00 to 0:45 | 3 to 13 | Before you start, then the workshop repository and how to use the materials, then Git on your computer: identity, repository, staging, first commit and Conventional Commits. Slides 4 and 5 take about three minutes together. The optional point-out for slide 13 is that the examples panel shows real messages from this repository. |
-| 2 | 0:45 to 1:20 | 14 to 17 | Connect to GitHub: empty repository, signing in, link and push. |
-| Break | 1:20 to 1:30 | none | Ten minute break. |
-| 3 | 1:30 to 2:30 | 18 to 26 | Branches and pull requests: branch, change, commit, push, open, review, merge, clean up. |
-| Wrap | 2:30 to 2:45 | 27 to 31 | Troubleshooting, undo commands, fork route, check-in assessment, questions. |
+| 1 | 0:00 to 0:50 | 3 to 17 | Before you start, the workshop repository and the materials, then Git on your computer: identity, repository, staging, first commit and Conventional Commits. Rewinds 1 to 4 run at the start of Sections 2, 3 and 4 and before Conventional Commits. Slides 4 and 5 take about three minutes together. |
+| 2 | 0:50 to 1:35 | 18 to 25 | Draw it: Part 1 (slides 19 and 20), Rewind 5 (slide 21), then the empty repository, signing in, Rewind 6 (slide 24) and link and push. |
+| Break | 1:35 to 1:45 | none | Ten minute break. Show the Mentimeter leaderboard. |
+| 3 | 1:45 to 3:00 | 26 to 42 | Draw it: Part 2 (slides 27 and 28), then branches and pull requests with Rewinds 7 to 12 in between. |
+| Wrap | 3:00 to 3:10 | 43 to 51 | Rewind 13, Draw it: Part 3 (slides 44 to 46), a quick skim of troubleshooting, then the recap and questions. Undo commands and the fork route (slides 48 and 49) are optional. |
 
-The full deck runs to 31 slides in this order:
+To finish in 3 hours, use these in order until it fits:
+
+1. Skip the optional slides 48 and 49.
+2. Run the odd-numbered Rewinds only (1, 3, 5, 7, 9, 11 and 13). This saves about 6 minutes. Skip the even-numbered Rewind slides.
+3. Shorten the break to 5 minutes.
+
+Keep all three drawings. There is no separate recap discussion, because the Rewinds and drawings already provide the retrieval practice.
+
+The full deck runs to 51 slides in this order:
 
 | Slide | Title | Slide | Title |
 | --- | --- | --- | --- |
-| 1 | Cover | 17 | Section 6: Linking and pushing |
-| 2 | Session plan | 18 | Part 3 divider |
-| 3 | Before you start | 19 | Branches and merging |
-| 4 | The workshop repository | 20 | Section 7: Creating a branch |
-| 5 | How to use the materials | 21 | Section 8: Changing and committing |
-| 6 | Part 1 divider | 22 | Section 9: Pushing the branch |
-| 7 | What Git does | 23 | The pull request flow |
-| 8 | The three areas | 24 | Section 10: Opening a pull request |
-| 9 | Section 1: Your Git identity | 25 | Section 11: Reviewing and merging |
-| 10 | Section 2: Creating a repository | 26 | Section 12: Cleaning up |
-| 11 | Section 3: Staging files | 27 | Troubleshooting |
-| 12 | Section 4: Your first commit | 28 | Undo commands |
-| 13 | Conventional Commits | 29 | Optional: contributing through a fork |
-| 14 | Part 2 divider | 30 | Recap and check-in |
-| 15 | Section 5: An empty GitHub repository | 31 | Questions |
-| 16 | Signing in to GitHub | | |
+| 1 | Cover | 27 | Draw it: Part 2 |
+| 2 | Session plan | 28 | Model answer: Part 2 |
+| 3 | Before you start | 29 | Rewind 7 (Section 6) |
+| 4 | The workshop repository | 30 | Branches and merging |
+| 5 | How to use the materials | 31 | Section 7: Creating a branch |
+| 6 | Part 1 divider | 32 | Rewind 8 (Section 7) |
+| 7 | What Git does | 33 | Section 8: Changing and committing |
+| 8 | The three areas | 34 | Rewind 9 (Section 8) |
+| 9 | Section 1: Your Git identity | 35 | Section 9: Pushing the branch |
+| 10 | Rewind 1 (Section 1) | 36 | Rewind 10 (Section 9) |
+| 11 | Section 2: Creating a repository | 37 | The pull request flow |
+| 12 | Rewind 2 (Section 2) | 38 | Section 10: Opening a pull request |
+| 13 | Section 3: Staging files | 39 | Rewind 11 (Section 10) |
+| 14 | Rewind 3 (Section 3) | 40 | Section 11: Reviewing and merging |
+| 15 | Section 4: Your first commit | 41 | Rewind 12 (Section 11) |
+| 16 | Rewind 4 (Section 4) | 42 | Section 12: Cleaning up |
+| 17 | Conventional Commits | 43 | Rewind 13 (Section 12) |
+| 18 | Part 2 divider | 44 | Draw it: Part 3 |
+| 19 | Draw it: Part 1 | 45 | Model answer: fast-forward and merge commit |
+| 20 | Model answer: Part 1 | 46 | Model answer: squash merge |
+| 21 | Rewind 5 (Conventional Commits) | 47 | Troubleshooting |
+| 22 | Section 5: An empty GitHub repository | 48 | Optional: Undo commands |
+| 23 | Signing in to GitHub | 49 | Optional: contributing through a fork |
+| 24 | Rewind 6 (Section 5) | 50 | Recap and check-in |
+| 25 | Section 6: Linking and pushing | 51 | Questions |
+| 26 | Part 3 divider |  |  |
 
+Checkpoint facilitation:
+
+- **Rewind.** Each Rewind asks about the section before the current one, so it is delayed retrieval practice and never a check on what you just taught. Open the matching Mentimeter question, allow 45 to 60 seconds, show the result and say the answer in one sentence. The answer and the misconception it targets are in the speaker notes and in [quiz-questions.md](quiz-questions.md). The slide shows no answer.
+- **Draw it.** Send pairs to breakout rooms for the time box on the slide. Bring everyone back, ask one or two pairs to share their screen and explain, then show the model answer on the next slide. Draw it: Part 3 follows Rewind 13, which already asks why `git branch -d` warns after a squash merge. Pairs should be able to explain it. Use the drawing to show why, with C and D left outside main's history.
+- **Leaderboard.** Show the Mentimeter leaderboard at the break and at the end.
 Facilitation tips:
 
 - Slides 4 and 5, "The workshop repository" and "How to use the materials", take about three minutes together at the start of Part 1. Say that the workshop repository holds the learning materials, and that attendees read them on GitHub or download them. Ask everyone to open the tutorial in the browser now, next to their terminal, and to confirm that they will work in a new folder of their own called `git-workshop-demo`, created in Section 2, plus an empty GitHub repository of their own, created in Section 5. Say clearly that the main-route exercises do not run inside a clone of the workshop repository. The only time attendees clone the workshop repository is for the optional fork appendix, which uses `main.py` and `examples/main_updated.py`.
-- Conventional Commits. Slide 13 shows the pattern `type(scope): description`, where the type says what kind of change it is, the optional scope says which part of the code it touches and the description says what the change does. The scope is optional, so `feat: add basic calculator` is a complete and valid message. The description is required. Say that the tutorial has a full table of types and that teams can agree on their own set. Add the length guideline: aim for 50 characters or fewer in the first line, and never more than 72, because GitHub cuts off longer first lines. The examples panel on that slide shows real messages from this repository, such as `docs(workshop): support PowerShell as well as Git Bash`, and attendees can see the whole history with `git log --oneline` after cloning the workshop repository.
+- Conventional Commits. Slide 17 shows the pattern `type(scope): description`, where the type says what kind of change it is, the optional scope says which part of the code it touches and the description says what the change does. The scope is optional, so `feat: add basic calculator` is a complete and valid message. The description is required. Say that the tutorial has a full table of types and that teams can agree on their own set. Add the length guideline: aim for 50 characters or fewer in the first line, and never more than 72, because GitHub cuts off longer first lines. The examples panel on that slide shows real messages from this repository, such as `docs(workshop): support PowerShell as well as Git Bash`, and attendees can see the whole history with `git log --oneline` after cloning the workshop repository.
 - Signing in is the slow part. Walk the room during Part 2. Watch for browsers showing a password prompt. GitHub stopped accepting account passwords for Git operations on 13 August 2021.
 - `master` versus `main`. Some attendees see `master` because Git is older than 2.28 or `init.defaultBranch` is not set. The fix is `git branch -M main`.
 - PowerShell versus Git Bash. `ls -la` fails in PowerShell because `ls` is an alias for `Get-ChildItem`. Use `Get-ChildItem -Force`, or run the command in Git Bash. The tutorial shows a **Git Bash, macOS or Linux** block and a **Windows PowerShell** block wherever the commands differ, and everything else works in either shell.
 - Pushing to the wrong remote. Check `git remote -v`. If `origin` already exists, change the URL with `git remote set-url origin <url>`.
 - Rejected push because the repository was created with a README. GitHub then has a commit the attendee does not have. Run `git pull --rebase origin main`, then `git push -u origin main`.
-
-Shortening to 2 hours: skip the undo commands slide and the fork route slide. Run the check-in assessment as a discussion rather than a whiteboard exercise. Keep the ten minute break.
 
 ## 4. Your demonstration during the workshop
 
