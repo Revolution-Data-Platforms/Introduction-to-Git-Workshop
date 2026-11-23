@@ -2,13 +2,13 @@
 
 This guide supports the full workshop format for Revolution Data Platforms (RDP), a hands-on session of about 3 hours, run remotely on Microsoft Teams. Every command below matches `docs/tutorial.md`, so attendees who follow the tutorial see the same commands in the same order.
 
-The deck includes spaced retrieval checkpoints: 13 quick-fire "Rewind" questions and 3 "Draw it" pair exercises. The question pack is in [quiz-questions.md](quiz-questions.md).
+The deck includes spaced retrieval checkpoints: 13 quick-fire "Rewind" questions and 3 "Draw it" group drawings on a shared whiteboard, for a small group of about 10 people. The question pack is in [quiz-questions.md](quiz-questions.md).
 
 ## 1. Format at a glance
 
 | Format | Length | Deck | Attendee activity | Presenter activity |
 | --- | --- | --- | --- | --- |
-| Full workshop: hands-on, remote | About 3 hours | `presentation/introduction-to-git-workshop.pptx` and `presentation/introduction-to-git-workshop.pdf` (51 slides) | Follow `docs/tutorial.md` on their own machine, answer the Rewind questions and draw in pairs. | Walk the rooms, troubleshoot, run the checkpoints. |
+| Full workshop: hands-on, remote | About 3 hours | `presentation/introduction-to-git-workshop.pptx` and `presentation/introduction-to-git-workshop.pdf` (51 slides) | Follow `docs/tutorial.md` on their own machine, answer the Rewind questions and draw on a shared whiteboard. | Troubleshoot and run the checkpoints. |
 
 Deck file paths are relative to the repository root. The deck ships as a PowerPoint file and a PDF.
 
@@ -36,8 +36,7 @@ Checkpoint setup:
 - [ ] **Join code.** In PowerPoint, replace `[join code]` on the 13 Rewind slides with the real code (Find and Replace). The PDF keeps the placeholder.
 - [ ] **Share the right tab.** Attendees answer at menti.com while you share the Mentimeter browser tab in Teams. Keep it open in its own tab or window.
 - [ ] **Teams Polls backup.** In the Teams meeting, create the same 13 questions under Polls using the Multiple Choice Quiz type. This type has no scoring, so say the answer aloud.
-- [ ] **Breakout rooms.** About 30 people means about 15 pairs. Set up the rooms in the Teams meeting, and ask a co-organizer to help visit rooms if one is available.
-- [ ] **Whiteboard.** The drawings use the Microsoft Whiteboard that comes with the Teams enterprise licence. In each room, one person selects Share, then Whiteboard, then starts a new whiteboard. Test this in a breakout room with a second person before the session. If Whiteboard does not appear for attendees, they draw on paper and show it to the camera.
+- [ ] **Whiteboard.** The drawings use the Microsoft Whiteboard that comes with the Teams enterprise licence. Start it in the meeting (Share, then Whiteboard) at the start of Part 2, and label three areas Part 1, Part 2 and Part 3 so each drawing has its own space. Test beforehand with a second person that attendees can edit the board, not just view it. If they cannot edit, ask them what to draw and draw it yourself.
 
 Ask attendees beforehand:
 
@@ -46,11 +45,11 @@ Ask attendees beforehand:
 - [ ] Create a GitHub account.
 - [ ] Windows attendees can use PowerShell or Git Bash. Both work with Git for Windows.
 - [ ] Have a phone or second device ready for the quiz, because the screen is full of terminal and tutorial windows.
-- [ ] Attendees can pair up for the Section 11 review step. Pairs for the drawings are assigned by the breakout rooms.
+- [ ] Attendees can pair up for the Section 11 review step.
 
 ## 3. Full workshop timing by part
 
-The times below assume every checkpoint runs, and total about 3 hours 10 minutes. A Rewind takes about 1 minute. A drawing takes 6 to 8 minutes: 3 or 4 minutes of drawing, then one or two pairs share their screen, then the model answer.
+The times below assume every checkpoint runs, and total about 3 hours 10 minutes. A Rewind takes about 1 minute. A drawing takes 6 to 8 minutes: 3 or 4 minutes of everyone drawing on the shared board, a short walkthrough where each person explains their piece, then the model answer.
 
 | Part | Time | Slides | Focus |
 | --- | --- | --- | --- |
@@ -102,10 +101,8 @@ The full deck runs to 51 slides in this order:
 Checkpoint facilitation:
 
 - **Rewind.** Each Rewind appears after the first slide of the next section, so attendees are already working on something new when it asks about the section before. It is delayed retrieval practice and never a check on what you just taught. Open the matching Mentimeter question, allow 45 to 60 seconds, show the result and say the answer in one sentence. The answer and the misconception it targets are in the speaker notes and in [quiz-questions.md](quiz-questions.md). The slide shows no answer.
-- **Draw it.** Send pairs to breakout rooms for the time box on the slide. Bring everyone back, ask one or two pairs to share their screen and explain, then show the model answer on the next slide. Rewind 13 comes after the Part 3 drawing and the troubleshooting slide, and asks again why `git branch -d` warns after a squash merge. Treat it as a quick confirmation.
+- **Draw it.** Share the Teams whiteboard and give everyone the time box on the slide to add to one drawing. Suggest each person takes one piece, such as one area or one step. Then ask each person to explain their piece, fix anything wrong together, and show the model answer on the next slide. If the group prefers, each person can draw their own version in a separate part of the board and explain it instead. Rewind 13 comes after the Part 3 drawing and the troubleshooting slide, and asks again why `git branch -d` warns after a squash merge. Treat it as a quick confirmation.
 - **Leaderboard.** Show the Mentimeter leaderboard at the break and at the end.
-- **Platform notes.** The Mentimeter free plan and Teams Polls are the only quiz tools. Whiteboard and paper are the only drawing tools.
-
 Facilitation tips:
 
 - Slides 4 and 5, "The workshop repository" and "How to use the materials", take about three minutes together at the start of Part 1. Say that the workshop repository holds the learning materials, and that attendees read them on GitHub or download them. Ask everyone to open the tutorial in the browser now, next to their terminal, and to confirm that they will work in a new folder of their own called `git-workshop-demo`, created in Section 2, plus an empty GitHub repository of their own, created in Section 5. Say clearly that the main-route exercises do not run inside a clone of the workshop repository. The only time attendees clone the workshop repository is for the optional fork appendix, which uses `main.py` and `examples/main_updated.py`.
