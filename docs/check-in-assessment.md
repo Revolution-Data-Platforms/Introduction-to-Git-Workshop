@@ -32,9 +32,9 @@ This whiteboard assessment checks your understanding of Git concepts and mental 
 
 **Whiteboard Prompt:** Draw and explain the lifecycle of a file in Git:
 - Untracked
-- Staged
-- Committed
+- Unmodified
 - Modified
+- Staged
 
 **Scenario:** You create a new file in your project. Walk through what Git "knows" about this file at each stage and what transitions move it between states.
 
@@ -100,7 +100,7 @@ You stage only `calculator.py` and then commit with the message "Fix division bu
 **Whiteboard Prompt:** Explain the pull request process as a conversation:
 
 **Scenario:** You've built a new feature on a branch. Walk through:
-1. Why you can't just merge it directly
+1. Why teams usually don't merge directly into main
 2. What a pull request represents
 3. Who's involved in the process
 4. What happens during code review
@@ -115,7 +115,7 @@ You stage only `calculator.py` and then commit with the message "Fix division bu
 **Whiteboard Prompt:** After a feature is successfully merged into main, explain:
 
 **Concepts to cover:**
-- What happened to the feature branch's commits?
+- What happened to the feature branch's commits? (The answer depends on the merge option. A squash merge creates a new commit on main.)
 - Why is it safe to delete the feature branch?
 - How do you get those changes into your local copy?
 - What's the difference between local and remote branches?
@@ -129,7 +129,7 @@ You stage only `calculator.py` and then commit with the message "Fix division bu
 **Whiteboard Prompt:** Compare these commit messages and explain what makes a good commit message:
 - "stuff"
 - "changes"
-- "Add user input validation to prevent calculator crashes"
+- "Add input validation to prevent crashes"
 
 **Discussion:**
 - Who reads commit messages?

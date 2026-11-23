@@ -1,101 +1,97 @@
-# Introduction to Git Workshop
+# Introduction to Git Workshop: Tutorial
 
-Welcome to the Introduction to Git Workshop! In this comprehensive tutorial, you'll learn the fundamentals of Git version control system through hands-on command line exercises.
+This tutorial teaches the basics of Git through hands-on command line exercises. You will build your own repository from scratch, push it to GitHub, and open a pull request in your own repository.
 
 ## What You'll Learn
 
-By the end of this workshop, you'll be able to:
-- Configure Git on your local machine
-- Create and initialize Git repositories
-- Make commits and track changes
-- Work with remote repositories
-- Use branching and merging workflows
-- Create and manage pull requests
-- Collaborate effectively using Git
+By the end of this workshop, you will be able to:
+
+- Configure Git on your computer
+- Create a repository, stage files and make commits
+- Sign in to GitHub and push your work
+- Create a branch and make changes on it
+- Open, review and merge a pull request
+- Clean up branches afterwards
 
 ## Prerequisites
 
-- Basic command line knowledge
-- Git installed on your machine
-- A text editor of your choice
+- Git 2.28 or newer. Check with `git --version`. Install the latest version from [git-scm.com](https://git-scm.com).
+- A [GitHub](https://github.com) account
+- A text editor (VS Code, Notepad++, nano, vim or similar)
+- Python 3. Check with `python --version`. On macOS and Linux you may need `python3 --version`. On Windows you may need `py --version`.
+- Basic comfort with a command line
 
-Let's get started!
+Windows users: run every command in this tutorial in **Git Bash**, which is installed with Git for Windows. Commands are written for Git Bash, macOS and Linux. A PowerShell equivalent is shown only where a command differs.
+
+If you use `python3` or `py` on your computer, substitute it wherever the tutorial says `python`.
 
 ## Section 1: Set Up Git Configuration (1 of 12)
 
-Before using Git, you need to configure your identity. This information will be associated with your commits.
+Git attaches a name and email address to every commit. Set them once per computer.
 
-### Commands to Run:
+### Commands to Run
 
 ```bash
-# Configure your name (replace with your actual name)
+# Your name and email (replace with your own)
 git config --global user.name "Your Name"
-
-# Configure your email (replace with your actual email)
 git config --global user.email "your.email@example.com"
 
-# Verify your configuration
-git config --global user.name
-git config --global user.email
+# Make new repositories start on a branch called main
+git config --global init.defaultBranch main
 
-# View all configuration
-git config --list
+# Verify
+git config --global --list
 ```
 
-### Expected Output:
-- Your name and email should be displayed when you run the verification commands
-- The `git config --list` command shows all your Git configuration settings
+The `init.defaultBranch` setting needs Git 2.28 or newer. Without it, many installs, including Git for Windows, still create a branch called `master`.
 
-### Key Concepts:
-- Git configuration is stored globally on your machine
-- This identity information appears in every commit you make
-- You only need to do this setup once per machine
+Optional: if you do not want your personal email in public commits, use your GitHub noreply address. You can find it in GitHub under Settings > Emails.
+
+### Expected Output
+
+`git config --global --list` shows `user.name`, `user.email` and `init.defaultBranch=main`. It may show other settings too.
+
+### Key Concepts
+
+- Global settings are stored on your computer and apply to all your repositories.
+- Your name and email appear in every commit you make.
+- You only need to do this once per computer.
 
 ## Section 2: Initialize a New Git Repository (2 of 12)
 
-Let's create a new Git repository from scratch. This involves creating a directory and initializing it with Git.
+You will create a new folder and turn it into a Git repository.
 
-### Commands to Run:
+### Commands to Run
 
 ```bash
-# Create a new directory for your project
 mkdir git-workshop-demo
-
-# Navigate into the directory
 cd git-workshop-demo
-
-# Initialize a Git repository
 git init
 
-# Check that .git directory was created
+# Show hidden files, including .git
 ls -la
-# On Windows: dir /a
 ```
 
-### Expected Output:
-- A new `.git` directory is created (this is where Git stores all version control information)
-- Your directory is now a Git repository
+In PowerShell, use `Get-ChildItem -Force` instead of `ls -la`.
 
-### Key Concepts:
-- The `.git` directory contains subdirectories like `objects`, `refs`, `hooks`, etc.
-- This hidden directory is what makes your folder a Git repository
-- Without the `.git` directory, it's just a regular folder
+### Expected Output
+
+Git reports that it initialized an empty repository. The folder listing includes a `.git` folder.
+
+### Key Concepts
+
+- The hidden `.git` folder holds the whole history and settings of the repository.
+- Delete `.git` and the folder is an ordinary folder again, with its history gone.
 
 ## Section 3: Create and Stage Files (3 of 12)
 
-Now let's create our first Python file and learn how to stage files for commit.
+Git tracks files through three areas: the working directory, the staging area and the repository.
 
-### Commands to Run:
+![Diagram of Git's three areas: working directory, staging area and repository, with the commands that move changes between them](../presentation/diagrams/three-areas.drawio.svg)
 
-```bash
-# Create a simple main.py file
-# Use your favorite text editor (nano, vim, code, notepad, etc.)
-nano main.py
-# Or: code main.py
-# Or: vim main.py
-```
+### Create the File
 
-### Content to Add to main.py:
+Create `main.py` in the `git-workshop-demo` folder with your editor (for example `code main.py` or `nano main.py`) and add exactly this:
 
 ```python
 # Simple Calculator
@@ -105,343 +101,236 @@ y = 2
 print(f"The sum of x and y is: {x + y}")
 ```
 
-### Git Commands:
+### Commands to Run
 
 ```bash
-# Check Git status (see untracked files)
+# main.py is new, so Git lists it as untracked
 git status
 
-# Stage the file for commit
+# Stage the file
 git add main.py
 
-# Check Git status again (see staged files)
+# main.py is now staged
 git status
-
-# Alternative: Stage all files
-# git add .
 ```
 
-### Expected Output:
-- First `git status`: Shows `main.py` as an untracked file in red
-- After `git add`: Shows `main.py` as staged for commit in green
+### Expected Output
 
-### Key Concepts:
-- The staging area is a middle step between your working directory and commits
-- You can choose which files to include in each commit
-- Staged files are ready to be committed
+- First `git status`: `main.py` appears under "Untracked files".
+- Second `git status`: `main.py` appears under "Changes to be committed" as a new file. Your terminal may use colours to mark these, and the colours depend on your settings.
+- On Windows, `git add` may print "warning: in the working copy of 'main.py', LF will be replaced by CRLF the next time Git touches it". This is harmless.
+
+A file moves through four states: untracked, unmodified, modified and staged.
+
+![Diagram of the file lifecycle: untracked, unmodified, modified and staged, with the commands that move a file between states](../presentation/diagrams/file-lifecycle.drawio.svg)
+
+### Key Concepts
+
+- The staging area lets you choose exactly what goes into the next commit.
+- `git add .` stages every change in the current folder. Check `git status` first so you know what that includes.
 
 ## Section 4: Make Your First Commit (4 of 12)
 
-A commit is a snapshot of your repository at a specific point in time. Let's create our first commit!
+A commit is a snapshot of your staged changes, with a message, an author and a date.
 
-### Commands to Run:
+### Commands to Run
 
 ```bash
-# Create your first commit
-git commit -m "Initial commit: Add basic calculator"
+git commit -m "Add basic calculator"
 
-# View commit history (one line format)
+# One line per commit
 git log --oneline
 
-# View detailed commit information
+# Full details
 git log
 
-# Check current status
 git status
 ```
 
-### Expected Output:
-- Commit message confirms 1 file changed
-- `git log` shows your commit with author, date, and message
-- `git status` shows "nothing to commit, working tree clean"
+### Expected Output
 
-### Key Concepts:
-- Commits create permanent snapshots of your staged changes
-- Each commit has a unique ID (hash) and metadata
-- Good commit messages help track project history
+- The commit output says one file changed.
+- `git log` shows your commit with its author, date and message.
+- `git status` says "nothing to commit, working tree clean".
 
-#### Good Commit Message Practices:
-- Use present tense ("Add feature" not "Added feature")
-- Be descriptive but concise
-- First line should be 50 characters or less
-- Use imperative mood ("Fix bug" not "Fixes bug")
+![Diagram of commit history as a chain of commits, each pointing to its parent, with main pointing at the latest commit](../presentation/diagrams/commit-history.drawio.svg)
 
-## Section 5: Choose Your Remote Repository Setup (5 of 12)
+### Key Concepts
 
-Remote repositories allow you to collaborate with others and backup your code. Before connecting to a remote, you need to choose your approach and set up authentication.
+- Every commit has a 40-character ID (a hash). `git log --oneline` shows a shortened version.
+- Each commit points to the commit before it, which forms the history.
 
-### Setup (Choose One):
+### Writing Commit Messages
 
-**Option A: Create a new repository on GitHub:**
-1. Go to github.com
-2. Click "New repository"
-3. Name it "git-workshop-demo"
-4. Don't initialize with README (we already have content)
-5. Copy the repository URL
-6. **Next step**: You'll link your local repository to this remote in Section 6
+Write the first line in the imperative mood, as if finishing the sentence "This commit will ...". Write "Add feature", not "Added feature" or "Adds feature". Keep the first line to 50 characters or fewer. If you need more detail, leave a blank line and then add the details.
 
-**Option B: Use this workshop's repository:**
-1. Go to github.com/Revolution-Data-Platforms/Introduction-to-Git-Workshop
-2. Click "Fork" button (top right of the repository page)
-3. This creates your own copy of the repository under your GitHub account
-4. Use your forked repository URL for the exercises
-5. **Important**: Don't clone the original repository directly - always fork first so you have write permissions
-6. **Next step**: You'll clone your forked repository in Section 6
+## Section 5: Create a GitHub Repository and Sign In (5 of 12)
 
-### Authenticating Git with GitHub
+### Create an Empty Repository on GitHub
 
-Before you can push to or pull from GitHub, you need to authenticate your Git client. GitHub no longer accepts passwords for Git operations as of August 2021. Here are the recommended authentication methods:
+1. Sign in to github.com and select **New repository**.
+2. Name it `git-workshop-demo`.
+3. Do not add a README, `.gitignore` or licence. An empty repository means your first push has nothing to clash with.
+4. Select **Create repository**.
+5. Copy the repository URL. The HTTPS form is `https://github.com/you/git-workshop-demo.git`.
 
-#### Option 1: Personal Access Token (HTTPS)
+You will link your local repository to it in Section 6. Before that, choose one way to sign in.
 
-**Step 1: Create a Personal Access Token**
-1. Go to GitHub.com and log in
-2. Click your profile picture → Settings
-3. Scroll down to "Developer settings" in the left sidebar
-4. Click "Personal access tokens" → "Tokens (classic)"
-5. Click "Generate new token" → "Generate new token (classic)"
-6. Give it a descriptive name like "Git Workshop Token"
-7. Set expiration (30 days recommended for learning)
-8. Select scopes: at minimum check "repo" for repository access
-9. Click "Generate token"
-10. **Important**: Copy the token immediately (you won't see it again!)
+### Recommended: HTTPS with Git Credential Manager
 
-**Step 2: Configure Git to use the token**
+Git for Windows includes Git Credential Manager and configures it for you (`credential.helper=manager`). On your first push, a browser window asks you to sign in to GitHub. You do not need a token.
+
+On macOS and Linux, do one of these:
+
+- Install [Git Credential Manager](https://github.com/git-ecosystem/git-credential-manager)
+- Sign in with GitHub CLI: `gh auth login`
+- Use a personal access token (next section)
+
+### Fallback: Personal Access Token
+
+GitHub stopped accepting account passwords for Git operations on 13 August 2021. If you are asked for a password, paste a token instead.
+
+When you push, Git asks for a username and a password. Enter your GitHub username, then paste the token as the password. Nothing appears on screen as you paste.
+
+Create a fine-grained token limited to your workshop repository:
+
+1. In GitHub, open **Settings > Developer settings > Personal access tokens > Fine-grained tokens**.
+2. Select **Generate new token**.
+3. Enter a name and an expiration date. A short expiry is fine for a workshop.
+4. Under **Repository access**, select **Only select repositories** and choose `git-workshop-demo`.
+5. Under **Repository permissions**, set **Contents** to **Read and write**.
+6. Select **Generate token** and copy it straight away. GitHub does not show it again.
+
+Classic tokens with the `repo` scope also still work, but they cover all your repositories, so prefer a fine-grained token.
+
+### Alternative: SSH Key
+
 ```bash
-# When prompted for password during git operations, use your token instead
-# Or configure Git to store credentials (cache for 15 minutes)
-git config --global credential.helper cache
-
-# For longer caching (cache for 1 hour)
-git config --global credential.helper 'cache --timeout=3600'
-
-# On Windows, you can use the credential manager
-git config --global credential.helper manager-core
-```
-
-#### Personal Access Token vs SSH Key: Quick Comparison
-
-| Aspect               | Personal Access Token (HTTPS)      | SSH Key                               |
-| -------------------- | ---------------------------------- | ------------------------------------- |
-| **Setup Complexity** | Simple - just create token         | Moderate - generate key pair          |
-| **Security**         | Good - token can be scoped         | Excellent - public key cryptography   |
-| **Convenience**      | Need to enter token periodically   | Seamless after setup (with ssh-agent) |
-| **Firewall/Proxy**   | Works through corporate firewalls  | May be blocked (port 22)              |
-| **Expiration**       | Tokens expire (security feature)   | Keys don't expire automatically       |
-| **Portability**      | Easy to use on multiple machines   | Need to copy private key securely     |
-| **Best for**         | Temporary access, CI/CD, beginners | Daily development, experienced users  |
-
-**Quick Recommendation:**
-- **New to Git?** Start with Personal Access Token (easier setup)
-- **Regular developer?** Use SSH keys (better long-term experience)
-- **Corporate environment?** Check with IT - some block SSH, prefer HTTPS
-
-#### Option 2: SSH Key (Recommended for regular use)
-
-**Step 1: Generate SSH Key**
-```bash
-# Generate a new SSH key (replace with your GitHub email)
+# Generate a key (press Enter to accept the default location)
 ssh-keygen -t ed25519 -C "your.email@example.com"
 
-# When prompted for file location, press Enter for default
-# When prompted for passphrase, you can enter one or leave blank
-
-# Start the ssh-agent
+# Git Bash: start the agent and add the key
 eval "$(ssh-agent -s)"
-# On Windows Git Bash: eval `ssh-agent -s`
-
-# Add your SSH private key to the ssh-agent
 ssh-add ~/.ssh/id_ed25519
-```
 
-**Step 2: Add SSH Key to GitHub**
-```bash
-# Copy your public key to clipboard
+# Copy the public key
 cat ~/.ssh/id_ed25519.pub
-# On Windows: type %USERPROFILE%\.ssh\id_ed25519.pub
-# On Mac: pbcopy < ~/.ssh/id_ed25519.pub
+# Git Bash: clip < ~/.ssh/id_ed25519.pub
+# macOS:    pbcopy < ~/.ssh/id_ed25519.pub
 ```
 
-1. Go to GitHub.com → Settings → SSH and GPG keys
-2. Click "New SSH key"
-3. Give it a title like "My Laptop - Git Workshop"
-4. Paste your public key into the "Key" field
-5. Click "Add SSH key"
+Windows PowerShell does not use `eval`. It uses the OpenSSH Authentication Agent service to hold keys.
 
-**Step 3: Test SSH Connection**
+```powershell
+# Start the agent. An administrator may need to set it to start automatically:
+# Get-Service ssh-agent | Set-Service -StartupType Automatic
+Start-Service ssh-agent
+ssh-add $env:USERPROFILE\.ssh\id_ed25519
+
+# Copy the public key to the clipboard
+Get-Content $env:USERPROFILE\.ssh\id_ed25519.pub | Set-Clipboard
+```
+
+Then in GitHub, open **Settings > SSH and GPG keys > New SSH key**, paste the public key and save. Test the connection:
+
 ```bash
-# Test your SSH connection
 ssh -T git@github.com
-
-# You should see: "Hi username! You've successfully authenticated..."
 ```
 
-**Step 4: Use SSH URLs for repositories**
+You should see a message that starts with "Hi your-username! You've successfully authenticated". If port 22 is blocked on your network, GitHub supports SSH over port 443 using `ssh.github.com`. See [Using SSH over the HTTPS port](https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port).
+
+If you use SSH, the repository URL is `git@github.com:you/git-workshop-demo.git`. You will use it in Section 6.
+
+### Quick Comparison
+
+| Aspect | Git Credential Manager (HTTPS) | Personal access token (HTTPS) | SSH key |
+| --- | --- | --- | --- |
+| Setup | Included with Git for Windows | Create a token in GitHub | Generate a key and add it to GitHub |
+| Sign-in | Browser, first push only | Paste the token as the password | None after setup |
+| Expiry | Managed for you | Tokens expire | Keys do not expire |
+| Networks | Works through most firewalls | Works through most firewalls | Port 22 may be blocked |
+| Best for | Windows beginners | macOS and Linux without Credential Manager | Daily use |
+
+Use one SSH key per computer. Do not copy private keys between machines. Add each machine's public key to GitHub instead.
+
+## Section 6: Link Your Repository to GitHub and Push (6 of 12)
+
+You already have a local repository with a commit. You will link it to the empty GitHub repository and push.
+
+### Commands to Run
+
 ```bash
-# Use SSH URLs instead of HTTPS (format: git@github.com:username/repo.git)
-git remote add origin git@github.com:your-username/git-workshop-demo.git
-```
+# Link (replace with your own URL: HTTPS or SSH)
+git remote add origin https://github.com/you/git-workshop-demo.git
 
-#### Authentication Troubleshooting
+# Make sure the branch is called main (safe if it already is)
+git branch -M main
 
-**Common Issues:**
-- **"Authentication failed"**: Check if your token/SSH key is correct
-- **"Permission denied"**: Verify you have write access to the repository
-- **"Host key verification failed"**: Run `ssh -T git@github.com` and accept the host key
-
-**Helpful Commands:**
-```bash
-# Check current remote URL
-git remote -v
-
-# Change from HTTPS to SSH
-git remote set-url origin git@github.com:username/repository.git
-
-# Change from SSH to HTTPS
-git remote set-url origin https://github.com/username/repository.git
-
-# Test Git credentials
-git ls-remote origin
-```
-
-## Section 6: Clone or Link to Your Remote Repository (6 of 12)
-
-Now it's time to connect your local work with the remote repository. Choose the approach that matches your setup from Section 5.
-
-### Cloning vs Linking: Quick Overview
-
-**Cloning** downloads a complete copy of a repository and automatically sets up the remote connection. It's simple and handles everything for you.
-
-**Linking** manually connects your existing local repository to a remote. This gives you more control and allows you to add multiple remotes - for example, you can link to both your fork (`origin`) and the original repository (`upstream`) that you forked from.
-
-**Why link to upstream?** When working with forks, you often want to pull in new changes from the original project to keep your fork up-to-date. By linking to the upstream repository, you can fetch the latest changes and merge them into your fork before creating pull requests. Additionally, in open source development, you typically create pull requests to the upstream repository (the original project) rather than your own fork.
-
-### If You Created a New Repository (Option A)
-
-**Recommended: Clone the empty repository**
-```bash
-# Navigate to a parent directory
-cd ..
-
-# Clone your new repository
-git clone https://github.com/your-username/git-workshop-demo.git
-
-# Navigate into the repository
-cd git-workshop-demo
-
-# Copy your work if needed (optional)
-# cp ../old-directory/main.py .
-```
-
-**Alternative: Link existing local work** (only if you have commits to preserve)
-```bash
-# Add remote origin (replace with your repository URL)
-git remote add origin https://github.com/your-username/git-workshop-demo.git
-
-# Push your code to the remote repository
+# Push and set main to track origin/main
 git push -u origin main
-```
 
-### If You Forked the Workshop Repository (Option B)
-
-```bash
-# Navigate to a parent directory
-cd ..
-
-# Clone your forked repository
-git clone https://github.com/your-username/Introduction-to-Git-Workshop.git workshop-clone
-
-# Navigate into the repository
-cd workshop-clone
-
-# Explore the repository
-ls -la
-git log --oneline
-```
-
-### Verify Your Setup
-
-After either approach, verify everything is working:
-```bash
-# Check remote configuration
+# Verify
 git remote -v
-
-# Check current status
-git status
-
-# View branches
-git branch -a
+git branch -vv
 ```
 
-**Note**: You may need to authenticate using the Personal Access Token or SSH key from Section 5.
+### Expected Output
 
----
+- The push prints progress and ends with a line such as `branch 'main' set up to track 'origin/main'`.
+- If you use a personal access token, Git asks for a username and a password. Enter your GitHub username, then paste the token as the password. Nothing appears on screen as you paste.
+- `git remote -v` lists `origin` for fetch and push.
+- `git branch -vv` shows `main` tracking `origin/main`.
+- Refresh your GitHub repository page. `main.py` and your commit are there.
 
-### 🚨 Important: Your Path Forward
+### Clone vs Link
 
-**If you chose Option A (created new repository):**
-- In Section 6, follow the "If You Created a New Repository" instructions
-- You'll work with your own `main.py` file created in earlier sections
-- In Section 8, you'll refactor the calculator code yourself
+Cloning (`git clone`) downloads a copy of an existing remote repository into a new folder and sets up `origin` for you. Linking (`git remote add`) connects a repository you already have to a remote. You are linking here because your folder and commit already exist. Cloning is used in the optional fork appendix.
 
-**If you chose Option B (forked workshop repository):**
-- In Section 6, follow the "If You Forked the Workshop Repository" instructions
-- You'll work with the existing workshop files
-- In Section 8, you can reference the provided `main_updated.py` as a guide
+### Key Concepts
 
-**All other sections (7, 9-12)** work the same regardless of your choice.
+- `origin` is the default name for your main remote.
+- `-u` links your local branch to the remote branch so that later `git push` and `git pull` need no arguments.
 
 ## Section 7: Create and Switch to a New Branch (7 of 12)
 
-> **Path Note**: This section works the same regardless of whether you chose Option A or B in Section 5.
+A branch is a separate line of work. Changes on a branch do not affect `main` until you merge them.
 
-Branching allows you to work on features without affecting the main codebase. This is essential for safe collaborative development.
+![Diagram of a feature branch splitting from main and later merging back](../presentation/diagrams/branch-and-merge.drawio.svg)
 
-### Commands to Run:
+### Commands to Run
 
 ```bash
-# Check current branch
 git branch
 
-# Create and switch to a new branch in one command
-git checkout -b feature/refactor-calculator
+# Create a branch and switch to it (Git 2.23 or newer)
+git switch -c feature/refactor-calculator
 
-# Alternative modern syntax (Git 2.23+):
-# git switch -c feature/refactor-calculator
+# Older equivalent
+# git checkout -b feature/refactor-calculator
 
-# Verify you're on the new branch
 git branch
-
-# See all branches (including remote)
-git branch -a
 ```
 
-### Expected Output:
-- `git branch` shows your current branch with an asterisk (*)
-- After creating the branch, you'll be on `feature/refactor-calculator`
-- The new branch appears in the branch list
+### Expected Output
 
-### Key Concepts:
-- Branches let you work on features in isolation
-- You can switch between branches without losing work
-- The main/master branch remains untouched while you experiment
+`git branch` lists your branches and marks the current one with an asterisk (*). After the switch, the asterisk is next to `feature/refactor-calculator`.
 
-#### Branch Naming Conventions:
-- `feature/description` - for new features
-- `bugfix/description` - for bug fixes
-- `hotfix/description` - for urgent fixes
-- Use hyphens instead of spaces
-- Be descriptive but concise
+### Key Concepts
 
-## Section 8: Modify Files and Create Commits on Branch (8 of 12)
+- You can switch between branches without losing committed work.
+- `main` stays as it was while you work on the branch.
 
-> **Path Note**:
-> - **Option A users**: Update your `main.py` with the improved code below
-> - **Option B users**: You can reference the provided `main_updated.py` file for guidance
+### Branch Naming Conventions
 
-Now let's refactor our main.py file to use the improved code structure, demonstrating how to work on features in separate branches.
+- `feature/description` for new features
+- `bugfix/description` for bug fixes
+- `hotfix/description` for urgent fixes
+- Use lowercase and hyphens, not spaces
+- Keep names short but descriptive
 
-### Update main.py with this content:
+## Section 8: Modify Files and Commit on the Branch (8 of 12)
+
+Replace the contents of `main.py` with this refactored version:
 
 ```python
 def add(x, y):
@@ -494,98 +383,76 @@ if __name__ == "__main__":
     main()
 ```
 
-### Commands to Run:
+### Commands to Run
 
 ```bash
-# Edit the file with your preferred editor
-code main.py
-# Or: nano main.py, vim main.py, etc.
+# Run it. Try 5 and 3, then 2.5 and 1.5, then abc
+python main.py
 
-# After editing, check what changed
+# Review what changed
 git status
 git diff
 
-# Stage the changes
+# Stage and commit
 git add main.py
+git commit -m "Refactor calculator into functions" \
+  -m "- Extract addition into add()" \
+  -m "- Read numbers from user input" \
+  -m "- Show an error for invalid input"
 
-# Create a commit with a descriptive message
-git commit -m "Refactor: Add functions and input validation to calculator
-
-- Extract addition logic into reusable function
-- Add user input functionality with type conversion
-- Add proper error handling for invalid input
-- Improve code organization and documentation"
-
-# View the commit history
 git log --oneline
 ```
 
-### What Changed:
-- Hard-coded values replaced with user input
-- Logic extracted into reusable functions
-- Added proper documentation
-- Included error handling
-- Better code organization
+Each `-m` adds a paragraph to the message. The first is the summary line. In PowerShell, put the whole command on one line instead of using `\` at line ends.
 
-## Section 9: Push Branch to Remote Repository (9 of 12)
+On Windows, `git add` may print "warning: in the working copy of 'main.py', LF will be replaced by CRLF the next time Git touches it". This is harmless.
 
-Now let's push our feature branch to the remote repository so others can see our work.
+### What Changed
 
-### Commands to Run:
+- Hard-coded values are replaced by user input.
+- The addition logic is in a function.
+- Invalid input shows an error message instead of crashing.
+
+## Section 9: Push the Branch to GitHub (9 of 12)
+
+### Commands to Run
 
 ```bash
-# Push the feature branch to remote
-git push origin feature/refactor-calculator
-
-# Alternative: Set upstream and push
 git push -u origin feature/refactor-calculator
 
-# Check remote branches
 git branch -r
-
-# Check all branches (local and remote)
-git branch -a
+git branch -vv
 ```
 
-### Expected Output:
-- Git uploads your branch to the remote repository
-- You'll see the branch listed in remote branches
-- The branch will be visible on GitHub/GitLab in the web interface
+### Expected Output
 
-### Key Concepts:
-- Pushing branches backs up your work in the cloud
-- Remote branches allow team collaboration
-- The `-u` flag sets up tracking between local and remote branches
+- Git uploads the branch and prints a line saying the branch is set up to track `origin/feature/refactor-calculator`.
+- `git branch -r` lists `origin/main` and `origin/feature/refactor-calculator`.
+- GitHub shows a banner on your repository page offering to open a pull request for the new branch.
 
-#### Benefits of Pushing Branches:
-- Backup your work in the cloud
-- Allow team members to review your code
-- Enable collaboration on the feature
-- Create pull requests for code review
+### Key Concepts
+
+- Pushing a branch backs up your work and makes it visible to others.
+- A pull request needs the branch to exist on GitHub.
 
 ## Section 10: Create a Pull Request (10 of 12)
 
-> **Path Note**:
-> - **Option A users**: Create PR to your own repository's main branch
-> - **Option B users**: Create PR to your fork's main branch (not the original workshop repo)
+A pull request (PR) proposes merging one branch into another, and gives people a place to review and discuss the change.
 
-Pull requests (or merge requests in GitLab) are how you propose changes to be merged into the main branch. This enables code review and discussion.
+![Diagram of the pull request flow: push a branch, open a pull request, review, merge](../presentation/diagrams/pull-request-flow.drawio.svg)
 
-### Steps to Create a Pull Request:
+### Steps (GitHub Web Interface)
 
-**Using GitHub Web Interface:**
-1. Go to your repository on github.com
-2. You'll see a prompt "Compare & pull request" for your recent branch
-3. Click "Compare & pull request" or go to "Pull requests" → "New pull request"
-4. Select your feature branch as the source and main as the target
-5. Add a descriptive title and description
-6. Click "Create pull request"
+1. Open your `git-workshop-demo` repository on github.com.
+2. Select **Compare & pull request** on the banner. Otherwise go to **Pull requests > New pull request**.
+3. Set **base** to `main` and **compare** to `feature/refactor-calculator`.
+4. Enter a title and description.
+5. Select **Create pull request**.
 
-### Pull Request Best Practices:
-
-**Title:** "Refactor calculator with functions and input validation"
+**Title:** Refactor calculator with input validation
 
 **Description:**
+
 ```
 ## Changes
 - Refactored main.py to use functions instead of inline code
@@ -602,165 +469,148 @@ Pull requests (or merge requests in GitLab) are how you propose changes to be me
 This refactoring makes the code more maintainable, reusable, and user-friendly.
 ```
 
-### Alternative: Using Git Commands
+### Alternative: GitHub CLI
 
 ```bash
-# Create pull request using GitHub CLI (if installed)
-gh pr create --title "Refactor calculator with functions and input validation" --body "See description above"
-
-# View pull requests
-gh pr list
+gh pr create --base main --head feature/refactor-calculator \
+  --title "Refactor calculator with input validation" \
+  --body "Refactors main.py into functions with input validation. Tested: 5 and 3 give 8, 2.5 and 1.5 give 4.0, abc shows an error."
 ```
 
 ## Section 11: Review and Merge the Pull Request (11 of 12)
 
-This section covers the review process and merging the pull request into the main branch.
+### Review on GitHub
 
-### Review Process (Web Interface):
+1. Open the **Files changed** tab and read the diff.
+2. Select the **+** next to a line to leave a comment on it.
+3. To finish a review, choose **Comment**, **Approve** or **Request changes**, then submit it.
 
-1. **Review the changes:**
-   - Click on "Files changed" tab
-   - Review line-by-line changes
-   - Add comments on specific lines if needed
+You are the author of this PR. As the author you can comment on it, but you cannot approve it or request changes on your own pull request.
 
-2. **Test the changes:**
-   - Checkout the branch locally to test
-   - Run the code to verify it works
+To practise approval, work in pairs:
 
-3. **Approve or request changes:**
-   - Click "Review changes"
-   - Choose "Approve", "Comment", or "Request changes"
+1. In your repository, go to **Settings > Collaborators** and add your partner.
+2. Your partner accepts the invitation.
+3. Request their review on your pull request. They review your pull request, and you review theirs.
 
-### Commands to Test Locally:
+### Test Locally
 
 ```bash
-# Switch to main branch
-git checkout main
-
-# Pull latest changes from remote
-git pull origin main
-
-# Switch to feature branch
-git checkout feature/refactor-calculator
-
-# Test the code
+git switch feature/refactor-calculator
 python main.py
 ```
 
-### Merge the Pull Request:
+### Merge on GitHub
 
-**Option 1: Web Interface (Recommended)**
-1. Click "Merge pull request" button
-2. Choose merge type:
-   - "Create a merge commit" - preserves branch history
-   - "Squash and merge" - combines all commits into one
-   - "Rebase and merge" - replays commits on main
-3. Click "Confirm merge"
+Select the merge button and choose one of the three options:
 
-**Option 2: Command Line**
+| Option | What happens to the branch commits |
+| --- | --- |
+| Create a merge commit | All commits are kept, and a new merge commit joins the branch to main. |
+| Squash and merge | All commits are combined into one new commit on main. |
+| Rebase and merge | Each commit is replayed onto main as a new commit, with no merge commit. |
+
+Then confirm the merge.
+
+### Alternative: Merge on the Command Line
+
 ```bash
-# Switch to main branch
-git checkout main
-
-# Pull latest changes
-git pull origin main
-
-# Merge the feature branch
+git switch main
+git pull
 git merge feature/refactor-calculator
-
-# Push the merged changes
 git push origin main
 ```
 
-## Section 12: Clean Up and Pull Latest Changes (12 of 12)
+Here `main` has not moved since you made the branch, so Git does a fast-forward. It moves `main` to the branch's latest commit and creates no merge commit. Add `--no-ff` to force a merge commit. When you push, GitHub marks the pull request as merged.
 
-After merging, it's good practice to clean up branches and ensure your local repository is up to date.
+### Key Concepts
 
-### Commands to Run:
+- Teams use pull requests so another person reads changes before they reach `main`.
+- The merge option decides how your commits appear in history.
+
+## Section 12: Clean Up and Pull the Latest Changes (12 of 12)
+
+### Commands to Run
 
 ```bash
-# Switch to main branch
-git checkout main
+git switch main
+git pull
+git log --oneline --graph
 
-# Pull the latest changes from remote (including our merged changes)
-git pull origin main
-
-# Verify our changes are in main
-git log --oneline
-
-# Delete the feature branch locally (it's been merged)
+# Delete the local branch
 git branch -d feature/refactor-calculator
 
-# Delete the feature branch from remote
+# Delete the remote branch (or use GitHub's "Delete branch" button on the PR)
 git push origin --delete feature/refactor-calculator
 
-# Clean up remote tracking branches
-git remote prune origin
+# Tidy up stale remote-tracking branches
+git fetch --prune
 
-# View remaining branches
 git branch -a
 ```
 
-### Final Verification:
+### Notes
 
-```bash
-# Test the updated main.py
-python main.py
+- After a Squash or Rebase merge, your commits are replaced by new ones on `main`. If you run `git branch -d` before `git fetch --prune` (the order above), Git deletes the branch and prints a warning such as "warning: deleting branch 'feature/refactor-calculator' that has been merged to 'refs/remotes/origin/feature/refactor-calculator', but not yet merged to HEAD". If the remote-tracking branch is already gone, Git refuses instead with "error: the branch 'feature/refactor-calculator' is not fully merged". Both are expected. Confirm the PR shows as merged on GitHub, and if Git refused, use `git branch -D feature/refactor-calculator`.
+- If `git push origin --delete` says the remote ref does not exist, the branch is already deleted. This happens when you used GitHub's button.
 
-# Check repository status
-git status
+### Expected Output
 
-# View final commit history
-git log --oneline --graph
-```
+`main` contains your refactored `main.py`. `git branch -a` no longer lists the feature branch locally or on `origin`.
 
-### What We Accomplished:
-- Configured Git with our identity
-- Created and initialized a Git repository
-- Made commits to track changes
-- Connected to a remote repository
-- Created and worked on a feature branch
-- Pushed changes to remote
-- Created and merged a pull request
-- Cleaned up branches and synced changes
+## Troubleshooting
 
-You now have a complete understanding of the Git workflow used in professional development teams!
+| Message or symptom | Cause | Fix |
+| --- | --- | --- |
+| `error: src refspec main does not match any` | No commit exists on a branch called main, or your branch has a different name (for example master). | Run `git status` and `git log --oneline`. Make a commit if there is none. Run `git branch -M main`, then push again. |
+| `error: remote origin already exists` | You already ran `git remote add origin`. | Run `git remote set-url origin <url>` to change the URL. |
+| `Updates were rejected` or `failed to push some refs` on the first push | The GitHub repository was created with a README, so it has a commit you do not have. | Run `git pull --rebase origin main`, then `git push -u origin main`. |
+| Password authentication rejected, or `Authentication failed` | GitHub does not accept account passwords for Git. | Sign in through Git Credential Manager, or paste a personal access token as the password, or use SSH. |
+| `Permission denied (publickey)` | Your SSH key is not added to GitHub or not loaded in the agent. | Add the public key in GitHub settings, run `ssh-add`, and test with `ssh -T git@github.com`. |
+| `ls -la` in PowerShell: "A parameter cannot be found that matches parameter name 'la'" | `ls` in PowerShell is an alias for `Get-ChildItem`. | Use `Get-ChildItem -Force`, or use Git Bash. |
+| `error: the branch '<branch>' is not fully merged` | Squash or Rebase merge created new commits on `main`, so Git cannot see that the branch was merged. | Confirm the PR shows as merged on GitHub, then use `git branch -D <branch>`. |
+| `error: unable to delete 'branch': remote ref does not exist` | The remote branch is already deleted. | Run `git fetch --prune`. |
+| Your branch is called `master` | Git is older than 2.28 or `init.defaultBranch` is not set. | Run `git branch -M main`. Update Git and set `init.defaultBranch`. |
+
+## What You Accomplished
+
+- Configured Git and built a repository from scratch
+- Staged files and made commits
+- Signed in to GitHub and pushed your work
+- Created a branch, made changes and pushed it
+- Opened, reviewed and merged a pull request
+- Cleaned up your branches
 
 ## Additional Git Commands Reference
 
-Here are some additional useful Git commands you might need:
+### Viewing Information
 
-### Viewing Information:
 ```bash
-# Show detailed status
 git status -v
-
-# Show commit history with graph
 git log --graph --oneline --all
-
-# Show differences between commits
+# Needs at least two commits
 git diff HEAD~1 HEAD
-
-# Show what files changed in a commit
 git show --name-only <commit-hash>
 ```
 
-### Undoing Changes:
+### Undoing Changes
+
 ```bash
-# Unstage a file
-git reset HEAD <file>
+# Unstage a file (keeps your edits)
+git restore --staged <file>
 
-# Discard changes in working directory
-git checkout -- <file>
+# Discard edits in a file. WARNING: this permanently discards your changes.
+git restore <file>
 
-# Undo last commit (keep changes)
+# Undo the last commit and keep its changes staged
 git reset --soft HEAD~1
 
-# Undo last commit (discard changes)
+# Undo the last commit and DELETE its changes. WARNING: this deletes work and is hard to recover.
 git reset --hard HEAD~1
 ```
 
-### Working with Remotes:
+### Working with Remotes
+
 ```bash
 # Fetch changes without merging
 git fetch origin
@@ -772,26 +622,64 @@ git pull --rebase origin main
 git push --all origin
 ```
 
-### Branch Management:
+### Branch Management
+
 ```bash
-# Rename current branch
+# Rename the current branch
 git branch -m new-name
 
-# Create branch from specific commit
-git checkout -b new-branch <commit-hash>
+# Create a branch from a specific commit
+git switch -c new-branch <commit-hash>
 
-# Force delete branch (even if not merged)
+# Force delete a branch (even if not merged)
 git branch -D branch-name
+```
+
+## Appendix: Optional: Contribute Through a Fork
+
+Use this route to practise contributing to a project you do not own. It uses the workshop repository, and it is not part of the main route.
+
+![Diagram of the fork workflow: fork, clone, branch, push to your fork, open a pull request, sync from upstream](../presentation/diagrams/fork-workflow.drawio.svg)
+
+1. On GitHub, open github.com/Revolution-Data-Platforms/Introduction-to-Git-Workshop and select **Fork**.
+2. Clone your fork and add the original as `upstream`:
+
+```bash
+git clone https://github.com/<you>/Introduction-to-Git-Workshop.git
+cd Introduction-to-Git-Workshop
+git remote add upstream https://github.com/Revolution-Data-Platforms/Introduction-to-Git-Workshop.git
+git switch -c feature/refactor-calculator
+```
+
+3. The fork's `main.py` is a longer, hard-coded calculator. `examples/main_updated.py` is the finished version and keeps all four operations. Copy it over `main.py`:
+
+```bash
+cp examples/main_updated.py main.py
+# PowerShell: Copy-Item examples/main_updated.py main.py
+```
+
+4. Commit and push:
+
+```bash
+git add main.py
+git commit -m "Refactor calculator into functions"
+git push -u origin feature/refactor-calculator
+```
+
+5. Open the pull request. GitHub defaults a fork's pull request to the original repository. Select **compare across forks** if needed, then change the **base repository** dropdown to your own fork so the PR stays in your repository.
+
+### Keep Your Fork Current
+
+```bash
+git fetch upstream
+git switch main
+git merge upstream/main
+git push origin main
 ```
 
 ## Next Steps
 
-Now that you've completed this workshop, consider:
-
-1. **Practice**: Create more repositories and practice the workflow
-2. **Learn advanced features**: Rebasing, cherry-picking, stashing
-3. **Explore Git GUIs**: GitHub Desktop, SourceTree, GitKraken
-4. **Team workflows**: GitFlow, GitHub Flow, feature branches
-5. **Integration**: CI/CD pipelines, automated testing
-
-Happy coding!
+1. Test your understanding with the [check-in assessment](check-in-assessment.md).
+2. Practise the same workflow on a small project of your own.
+3. Learn more about rebasing, stashing and resolving merge conflicts.
+4. Read the [Pro Git book](https://git-scm.com/book) and the [GitHub Docs](https://docs.github.com).
