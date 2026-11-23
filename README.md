@@ -2,12 +2,26 @@
 
 A hands-on introduction to Git and GitHub for beginners. You build a small repository from scratch, push it to GitHub and open a pull request in your own repository. The workshop is for RDP staff and client staff, and no earlier Git experience is needed.
 
-## Formats
+## Format
 
 | Format | Length | Slides | Materials |
 | --- | --- | --- | --- |
-| 45-minute overview: concepts and live demo | 45 minutes | 15 | [Deck (PDF)](presentation/introduction-to-git-45-min.pdf) |
-| Full workshop: hands-on | 2 to 3 hours | 29 | [Tutorial](docs/tutorial.md) and [deck (PDF)](presentation/introduction-to-git-workshop.pdf) |
+| Full workshop: hands-on | 2 to 3 hours | 31 | [Tutorial](docs/tutorial.md), [deck (PPTX)](presentation/introduction-to-git-workshop.pptx) and [deck (PDF)](presentation/introduction-to-git-workshop.pdf) |
+
+## How to use these materials
+
+This repository holds the learning materials for the workshop. Read them on GitHub, or download them if you would rather work offline.
+
+Work through the materials in this order:
+
+1. This `README.md`, for the format, the prerequisites and the links.
+2. [docs/tutorial.md](docs/tutorial.md), the 12 hands-on sections, in order. Keep it open in your browser next to your terminal. Copy each command, run it, then compare what you see with the Expected Output. Use the Troubleshooting table at the end when you get stuck.
+3. [docs/check-in-assessment.md](docs/check-in-assessment.md), to check your understanding once you finish the exercises.
+4. The [presentation](presentation/) folder, for the slides, the deck PDF and the diagrams to review. The [presenter guide](presentation/presenter-guide.md) is for whoever runs the session.
+
+![Map of the workshop repository and how to use it](presentation/diagrams/workshop-materials.drawio.svg)
+
+**Do the exercises in a folder of your own.** Section 2 has you create a new folder called `git-workshop-demo`, and Section 5 has you create an empty GitHub repository of your own. Do not run the main-route exercises inside a clone of this workshop repository. The only time you clone the workshop repository is for the optional fork appendix, which uses `main.py` and `examples/main_updated.py`.
 
 ## What You'll Learn
 
@@ -58,7 +72,6 @@ The tutorial has an appendix on contributing through a fork of this repository. 
 | `docs/check-in-assessment.md` | Whiteboard questions to check your understanding |
 | `examples/main_updated.py` | Finished calculator for the fork route |
 | `presentation/introduction-to-git-workshop.pptx` and `.pdf` | Slides for the full workshop |
-| `presentation/introduction-to-git-45-min.pptx` and `.pdf` | Slides for the 45-minute overview |
 | `presentation/presenter-guide.md` | Notes for the presenter |
 | `presentation/diagrams/` | Editable [draw.io](https://www.drawio.com) diagrams. The `.drawio.svg` files open in draw.io. |
 
