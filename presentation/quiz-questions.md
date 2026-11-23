@@ -1,8 +1,18 @@
 # Quiz Question Pack: Introduction to Git Workshop
 
-Thirteen quick-fire "Rewind" questions for the workshop deck. Each one asks about the section before the current one, never the current one, so it doubles as spaced practice. Questions are conceptual and do not depend on command syntax.
+Thirteen quick-fire "Rewind" questions for the workshop deck. Each one covers an earlier part than the one being taught, never the current one, so it doubles as spaced practice. Questions are conceptual and do not depend on command syntax.
 
 Build them as one Mentimeter quiz in the launch order below, so a single leaderboard builds up across the whole session. See the setup checklist in [presenter-guide.md](presenter-guide.md).
+
+## When to run them
+
+Run the questions in three batches, each about the part just finished:
+
+- Questions 1 to 5 at the start of Part 2, about Part 1.
+- Questions 6 and 7 at the start of Part 3, about Part 2.
+- Questions 8 to 13 in the wrap-up, about Part 3.
+
+Show the leaderboard after each batch and at the end.
 
 ## How to build the Mentimeter quiz
 
@@ -20,23 +30,23 @@ If Mentimeter fails, create each question in advance under **Polls** in the Team
 
 | Launch order | Slide | Covers | Correct |
 | --- | --- | --- | --- |
-| 1 | 11 | Section 1 | B |
-| 2 | 13 | Section 2 | C |
-| 3 | 15 | Section 3 | A |
-| 4 | 17 | Section 4 | D |
-| 5 | 22 | Conventional Commits | B |
-| 6 | 25 | Section 5 | D |
-| 7 | 31 | Section 6 | C |
-| 8 | 33 | Section 7 | A |
-| 9 | 35 | Section 8 | A |
-| 10 | 38 | Section 9 | C |
-| 11 | 40 | Section 10 | D |
-| 12 | 42 | Section 11 | B |
-| 13 | 47 | Section 12 | A |
+| 1 | 16 | Section 1 | B |
+| 2 | 17 | Section 2 | C |
+| 3 | 18 | Section 3 | A |
+| 4 | 19 | Section 4 | D |
+| 5 | 20 | Conventional Commits | B |
+| 6 | 28 | Section 5 | D |
+| 7 | 29 | Section 6 | C |
+| 8 | 41 | Section 7 | A |
+| 9 | 42 | Section 8 | A |
+| 10 | 43 | Section 9 | C |
+| 11 | 44 | Section 10 | D |
+| 12 | 45 | Section 11 | B |
+| 13 | 46 | Section 12 | A |
 
 ### Question 1: Section 1
 
-Deck slide 11. Shown after the first slide of the next section.
+Deck slide 16. Run at the start of Part 2.
 
 **Why does Git need your name and email?**
 
@@ -49,7 +59,7 @@ Why: Misconception (A): the name and email are not your GitHub login. Git writes
 
 ### Question 2: Section 2
 
-Deck slide 13. Shown after the first slide of the next section.
+Deck slide 17. Run at the start of Part 2.
 
 **You delete the hidden `.git` folder. What happens?**
 
@@ -62,7 +72,7 @@ Why: Git keeps the whole history inside .git, and your files live beside it. Opt
 
 ### Question 3: Section 3
 
-Deck slide 15. Shown after the first slide of the next section.
+Deck slide 18. Run at the start of Part 2.
 
 **You edit `main.py` after `git add main.py`. Is the new edit staged?**
 
@@ -75,7 +85,7 @@ Why: Misconception (B): staging does not track a file, it stores a snapshot of t
 
 ### Question 4: Section 4
 
-Deck slide 17. Shown after the first slide of the next section.
+Deck slide 19. Run at the start of Part 2.
 
 **You changed two files but staged only one. What goes in the commit?**
 
@@ -88,7 +98,7 @@ Why: A commit takes only what is staged. The other file's changes stay in the wo
 
 ### Question 5: Conventional Commits
 
-Deck slide 22. Shown after the first slide of the next section.
+Deck slide 20. Run at the start of Part 2.
 
 **Which Conventional Commits type fits a typo fix in the README?**
 
@@ -101,7 +111,7 @@ Why: Misconception (A): fix means a bug in the code, not any kind of mistake. A 
 
 ### Question 6: Section 5
 
-Deck slide 25. Shown after the first slide of the next section.
+Deck slide 28. Run at the start of Part 3.
 
 **Why create the GitHub repository empty?**
 
@@ -114,7 +124,7 @@ Why: Option A is the common worry. Nothing is overwritten. The push is rejected 
 
 ### Question 7: Section 6
 
-Deck slide 31. Shown after the first slide of the next section.
+Deck slide 29. Run at the start of Part 3.
 
 **After `git push`, what is on GitHub?**
 
@@ -127,7 +137,7 @@ Why: Misconception (A): working files do not sync. Only committed work is pushed
 
 ### Question 8: Section 7
 
-Deck slide 33. Shown after the first slide of the next section.
+Deck slide 41. Run at the wrap-up.
 
 **What is a branch?**
 
@@ -140,7 +150,7 @@ Why: Misconception (B): a branch is not a copy of the files. It is a movable lab
 
 ### Question 9: Section 8
 
-Deck slide 35. Shown after the first slide of the next section.
+Deck slide 42. Run at the wrap-up.
 
 **You commit on the feature branch. What happens to `main`?**
 
@@ -153,7 +163,7 @@ Why: Only the branch you are on moves. Option B is the common mistake.
 
 ### Question 10: Section 9
 
-Deck slide 38. Shown after the first slide of the next section.
+Deck slide 43. Run at the wrap-up.
 
 **You pushed your branch. Has `main` on GitHub changed?**
 
@@ -166,7 +176,7 @@ Why: main on GitHub changes only when someone merges the pull request. GitHub ne
 
 ### Question 11: Section 10
 
-Deck slide 40. Shown after the first slide of the next section.
+Deck slide 44. Run at the wrap-up.
 
 **What does opening a pull request do?**
 
@@ -179,7 +189,7 @@ Why: The push already uploaded the commits (B). A pull request asks for the merg
 
 ### Question 12: Section 11
 
-Deck slide 42. Shown after the first slide of the next section.
+Deck slide 45. Run at the wrap-up.
 
 **`main` has not moved since you branched, and you merge. What happens?**
 
@@ -192,7 +202,7 @@ Why: Misconception (A): a merge does not always create a merge commit. When main
 
 ### Question 13: Section 12
 
-Deck slide 47. Shown after the first slide of the next section.
+Deck slide 46. Run at the wrap-up.
 
 **Why does `git branch -d` warn after a squash merge?**
 
