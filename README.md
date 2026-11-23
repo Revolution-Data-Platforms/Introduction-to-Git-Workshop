@@ -4,15 +4,16 @@ A hands-on introduction to Git and GitHub for beginners. You build a small repos
 
 ## Formats
 
-| Format | Length | Materials |
-| --- | --- | --- |
-| 45-minute overview: concepts and live demo | 45 minutes | [Deck (PDF)](presentation/introduction-to-git-45-min.pdf) |
-| Full workshop: hands-on | 2 to 3 hours | [Tutorial](docs/tutorial.md) and [deck (PDF)](presentation/introduction-to-git-workshop.pdf) |
+| Format | Length | Slides | Materials |
+| --- | --- | --- | --- |
+| 45-minute overview: concepts and live demo | 45 minutes | 15 | [Deck (PDF)](presentation/introduction-to-git-45-min.pdf) |
+| Full workshop: hands-on | 2 to 3 hours | 29 | [Tutorial](docs/tutorial.md) and [deck (PDF)](presentation/introduction-to-git-workshop.pdf) |
 
 ## What You'll Learn
 
 - Configure Git on your computer
 - Create a repository, stage files and make commits
+- Write commit messages that follow the Conventional Commits standard
 - Sign in to GitHub and push your work
 - Create and push a branch
 - Open, review and merge a pull request

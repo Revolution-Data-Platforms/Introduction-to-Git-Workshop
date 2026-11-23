@@ -8,6 +8,7 @@ By the end of this workshop, you will be able to:
 
 - Configure Git on your computer
 - Create a repository, stage files and make commits
+- Write commit messages that follow the Conventional Commits standard
 - Sign in to GitHub and push your work
 - Create a branch and make changes on it
 - Open, review and merge a pull request
@@ -21,7 +22,7 @@ By the end of this workshop, you will be able to:
 - Python 3. Check with `python --version`. On macOS and Linux you may need `python3 --version`. On Windows you may need `py --version`.
 - Basic comfort with a command line
 
-Windows users can run every command in this tutorial in **PowerShell** or in **Git Bash**, which is installed with Git for Windows. Commands that differ between shells show both versions.
+Windows users can run every command in this tutorial in **PowerShell** or in **Git Bash**, which is installed with Git for Windows. Most commands are the same in both shells. Where a command differs, this tutorial shows a **Git Bash, macOS or Linux** block and a **Windows PowerShell** block.
 
 If you use `python3` or `py` on your computer, substitute it wherever the tutorial says `python`.
 
@@ -67,12 +68,21 @@ You will create a new folder and turn it into a Git repository.
 mkdir git-workshop-demo
 cd git-workshop-demo
 git init
+```
 
+**Git Bash, macOS or Linux**
+
+```bash
 # Show hidden files, including .git
 ls -la
 ```
 
-In PowerShell, use `Get-ChildItem -Force` instead of `ls -la`.
+**Windows PowerShell**
+
+```powershell
+# Show hidden files, including .git
+Get-ChildItem -Force
+```
 
 ### Expected Output
 
@@ -91,7 +101,16 @@ Git tracks files through three areas: the working directory, the staging area an
 
 ### Create the File
 
-Create `main.py` in the `git-workshop-demo` folder with your editor (for example `code main.py` or `nano main.py`) and add exactly this:
+Create `main.py` in the `git-workshop-demo` folder with your editor and add exactly this:
+
+```bash
+# Open the new file in an editor
+nano main.py
+# VS Code works too: code main.py
+# Notepad works too: notepad main.py
+```
+
+Then add exactly this content:
 
 ```python
 # Simple Calculator
@@ -136,7 +155,7 @@ A commit is a snapshot of your staged changes, with a message, an author and a d
 ### Commands to Run
 
 ```bash
-git commit -m "Add basic calculator"
+git commit -m "feat: add basic calculator"
 
 # One line per commit
 git log --oneline
@@ -160,9 +179,57 @@ git status
 - Every commit has a 40-character ID (a hash). `git log --oneline` shows a shortened version.
 - Each commit points to the commit before it, which forms the history.
 
-### Writing Commit Messages
+### Conventional Commits
 
-Write the first line in the imperative mood, as if finishing the sentence "This commit will ...". Write "Add feature", not "Added feature" or "Adds feature". Keep the first line to 50 characters or fewer. If you need more detail, leave a blank line and then add the details.
+Commit messages can follow a simple, shared format called [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/):
+
+```
+type(scope): description
+```
+
+The scope is optional and goes in brackets, for example `feat(calculator): accept user input`. After the first line you can leave a blank line and add a body with more detail, and then add optional footers.
+
+These are the common types:
+
+| Type | Meaning |
+| --- | --- |
+| `feat` | A new feature |
+| `fix` | A bug fix |
+| `docs` | Documentation only changes |
+| `refactor` | A code change that neither fixes a bug nor adds a feature |
+| `test` | Adding or correcting tests |
+| `chore` | Maintenance work that is not a feature, a fix or a documentation change |
+
+The specification itself defines `feat` and `fix`. The other types come from a widely used convention based on Angular and the commitlint `config-conventional` preset.
+
+Examples from the calculator exercise:
+
+- `feat: add basic calculator`
+- `feat(calculator): accept user input`
+- `fix(calculator): handle division by zero`
+- `docs: explain how to run the calculator`
+
+A breaking change is marked either with an exclamation mark before the colon, for example `feat(calculator)!: ...`, or with a footer that starts with `BREAKING CHANGE:`.
+
+Tools read the type to generate changelogs and to choose the next semantic version number, where `fix` means a patch release, `feat` means a minor release and a breaking change means a major release.
+
+Team guideline for this workshop: start the description with a lowercase verb in the imperative mood, such as `add` and not `added` or `adds`. Aim for 50 characters or fewer in the first line, and never more than 72. GitHub cuts off longer first lines.
+
+### Real Examples from This Repository
+
+This workshop's own repository uses Conventional Commits. These are real messages from it:
+
+- `docs(workshop): support PowerShell as well as Git Bash`
+- `feat(presentation): replace slide PDF with RDP-branded decks`
+- `docs(tutorial): update tutorial for current Git and GitHub`
+- `feat(diagrams): add editable draw.io workshop diagrams`
+- `refactor(repo): move workshop materials into docs and examples`
+
+All five run past 50 characters. That is acceptable because they stay under the 72-character limit.
+
+Older commits in the same repository were written before it adopted the standard. For example, "Add section numbering to workshop content for better navigation" and "Standardise sections". Which type would each get? Take a moment to decide: both are `docs`, because they only change the tutorial text.
+
+Clone the workshop repository and run `git log --oneline` to see the whole history for yourself.
 
 ## Section 5: Create a GitHub Repository and Sign In (5 of 12)
 
@@ -208,21 +275,25 @@ Classic tokens with the `repo` scope also still work, but they cover all your re
 ```bash
 # Generate a key (press Enter to accept the default location)
 ssh-keygen -t ed25519 -C "your.email@example.com"
+```
 
-# Git Bash: start the agent and add the key
+**Git Bash, macOS or Linux**
+
+```bash
+# Start the agent and add the key
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 
-# Copy the public key
+# Show the public key
 cat ~/.ssh/id_ed25519.pub
-# Git Bash: clip < ~/.ssh/id_ed25519.pub
-# macOS:    pbcopy < ~/.ssh/id_ed25519.pub
 ```
 
-Windows PowerShell does not use `eval`. It uses the OpenSSH Authentication Agent service to hold keys.
+On macOS, copy the key with `pbcopy < ~/.ssh/id_ed25519.pub`. In Git Bash, use `clip < ~/.ssh/id_ed25519.pub`.
+
+**Windows PowerShell**
 
 ```powershell
-# Start the agent. An administrator may need to set it to start automatically:
+# Start the agent. Run Set-Service and the first Start-Service in a PowerShell window opened with Run as administrator:
 # Get-Service ssh-agent | Set-Service -StartupType Automatic
 Start-Service ssh-agent
 ssh-add $env:USERPROFILE\.ssh\id_ed25519
@@ -388,19 +459,26 @@ if __name__ == "__main__":
 ```bash
 # Run it. Try 5 and 3, then 2.5 and 1.5, then abc
 python main.py
+# If python is not found, try python3 (macOS or Linux) or py (Windows)
+```
 
+Review and commit the change:
+
+```bash
 # Review what changed
 git status
 git diff
 
 # Stage and commit
 git add main.py
-git commit -m "Refactor calculator into functions" -m "Extract add(), read numbers from user input and show an error for invalid input."
+git commit -m "feat(calculator): accept user input" -m "Split the code into add(), get_number_input() and main(), and show an error for invalid input."
 
 git log --oneline
 ```
 
 Each `-m` adds a paragraph: the first is the subject line and the second holds the details.
+
+The change adds new behaviour, which is reading input, so its type is `feat` and not `refactor`, even though the branch is called `feature/refactor-calculator`. Branch names describe the work, commit types describe the effect.
 
 On Windows, `git add` may print "warning: in the working copy of 'main.py', LF will be replaced by CRLF the next time Git touches it". This is harmless.
 
@@ -446,7 +524,9 @@ A pull request (PR) proposes merging one branch into another, and gives people a
 4. Enter a title and description.
 5. Select **Create pull request**.
 
-**Title:** Refactor calculator with input validation
+**Title:** feat(calculator): accept user input
+
+GitHub often uses the pull request title as the squash commit title, so keep the title in the same format.
 
 **Description:**
 
@@ -469,7 +549,7 @@ This refactoring makes the code more maintainable, reusable, and user-friendly.
 ### Alternative: GitHub CLI
 
 ```bash
-gh pr create --base main --head feature/refactor-calculator --title "Refactor calculator with input validation" --body "Refactors main.py into functions with input validation. Tested: 5 and 3 give 8, 2.5 and 1.5 give 4.0, abc shows an error."
+gh pr create --base main --head feature/refactor-calculator --title "feat(calculator): accept user input" --body "Refactors main.py into functions with input validation. Tested: 5 and 3 give 8, 2.5 and 1.5 give 4.0, abc shows an error."
 ```
 
 ## Section 11: Review and Merge the Pull Request (11 of 12)
@@ -571,6 +651,7 @@ git branch -a
 
 - Configured Git and built a repository from scratch
 - Staged files and made commits
+- Wrote commit messages that follow the Conventional Commits standard
 - Signed in to GitHub and pushed your work
 - Created a branch, made changes and pushed it
 - Opened, reviewed and merged a pull request
@@ -650,14 +731,13 @@ git switch -c feature/refactor-calculator
 
 ```bash
 cp examples/main_updated.py main.py
-# PowerShell: Copy-Item examples/main_updated.py main.py
 ```
 
 4. Commit and push:
 
 ```bash
 git add main.py
-git commit -m "Refactor calculator into functions"
+git commit -m "feat(calculator): accept user input"
 git push -u origin feature/refactor-calculator
 ```
 

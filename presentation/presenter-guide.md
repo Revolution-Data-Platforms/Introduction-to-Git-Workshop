@@ -6,8 +6,8 @@ This guide supports both workshop formats for Revolution Data Platforms (RDP). E
 
 | Format | Length | Deck | Attendee activity | Presenter activity |
 | --- | --- | --- | --- | --- |
-| A. Overview | 45 minutes | `presentation/introduction-to-git-45-min.pptx` and `presentation/introduction-to-git-45-min.pdf` (14 slides) | Watch the demo. Do the full tutorial afterwards. | Explain concepts, then run the live demo. |
-| B. Full workshop | 2 to 3 hours | `presentation/introduction-to-git-workshop.pptx` and `presentation/introduction-to-git-workshop.pdf` (28 slides) | Follow `docs/tutorial.md` on their own machine. | Walk the room, troubleshoot, run the check-in assessment. |
+| A. Overview | 45 minutes | `presentation/introduction-to-git-45-min.pptx` and `presentation/introduction-to-git-45-min.pdf` (15 slides) | Watch the demo. Do the full tutorial afterwards. | Explain concepts, then run the live demo. |
+| B. Full workshop | 2 to 3 hours | `presentation/introduction-to-git-workshop.pptx` and `presentation/introduction-to-git-workshop.pdf` (29 slides) | Follow `docs/tutorial.md` on their own machine. | Walk the room, troubleshoot, run the check-in assessment. |
 
 Deck file paths are relative to the repository root. Both decks ship as a PowerPoint file and a PDF.
 
@@ -38,11 +38,24 @@ Ask attendees beforehand:
 
 | Time | Slides | What to say and do |
 | --- | --- | --- |
-| 0:00 to 0:15 | 1 to 6 | Slide 2 starts "How Git works" right at 0:00, so run through slides 1 to 6 together. The welcome takes about 3 minutes of this block: name, RDP context, show the session plan, and say attendees will watch the demo now and work through the tutorial later. Then cover what Git does, the three areas, commits and history, branch and merge, using the diagram slides. Talk about the ideas, not the syntax. |
-| 0:15 to 0:20 | 7 to 8 | GitHub remotes, signing in, pull request flow. Name the three sign-in options: Git Credential Manager, personal access token, SSH. |
-| 0:20 to 0:38 | 9 to 11 | Live demo. Follow Section 4 of this guide, command by command. |
-| 0:38 to 0:42 | 12 to 13 | Common problems, then how to do the full workshop. Send the tutorial link. |
-| 0:42 to 0:45 | 14 | Questions. Leave the demo repository visible so people can look at it. |
+| 0:00 to 0:15 | 1 to 7 | Slide 2 starts "How Git works" right at 0:00, so run through slides 1 to 7 together. The welcome takes about 3 minutes of this block: name, RDP context, show the session plan, and say attendees will watch the demo now and work through the tutorial later. Then cover what Git does, the three areas, commits and history, branch and merge, using the diagram slides. Slide 6, "Conventional Commits", gets about a minute, so name the type(scope): description pattern there and point out that the demo commits use it. The optional point-out for this slide is that the examples panel shows real messages from this repository. Talk about the ideas, not the syntax. |
+| 0:15 to 0:20 | 8 to 9 | GitHub remotes, signing in, pull request flow. Name the three sign-in options: Git Credential Manager, personal access token, SSH. |
+| 0:20 to 0:38 | 10 to 12 | Live demo. Follow Section 4 of this guide, command by command. |
+| 0:38 to 0:42 | 13 to 14 | Common problems, then how to do the full workshop. Send the tutorial link. |
+| 0:42 to 0:45 | 15 | Questions. Leave the demo repository visible so people can look at it. |
+
+The 45 minute deck runs to 15 slides in this order:
+
+| Slide | Title | Slide | Title |
+| --- | --- | --- | --- |
+| 1 | Cover | 9 | The pull request flow |
+| 2 | Session plan | 10 | Live demo (divider) |
+| 3 | What Git does | 11 | Demo steps |
+| 4 | The three areas | 12 | Merging and cleaning up |
+| 5 | Commits and history | 13 | Common problems |
+| 6 | Conventional Commits | 14 | Doing the full workshop |
+| 7 | Branches and merging | 15 | Questions |
+| 8 | GitHub remotes and signing in | | |
 
 ## 4. Live demo script
 
@@ -62,9 +75,21 @@ Point out: Git needs to know who you are before it will let you commit. Use the 
 mkdir git-workshop-demo
 cd git-workshop-demo
 git init
+```
+
+**Git Bash, macOS or Linux**
+
+```bash
 ls -la
 ```
-Point out: the hidden `.git` folder appeared. It holds the whole history and settings. Delete `.git` and the folder is ordinary again. In PowerShell use `Get-ChildItem -Force` instead of `ls -la`.
+
+**Windows PowerShell**
+
+```powershell
+Get-ChildItem -Force
+```
+
+Point out: the hidden `.git` folder appeared. It holds the whole history and settings. Delete `.git` and the folder is ordinary again. This demo runs in PowerShell, so the hidden-files command is `Get-ChildItem -Force`. In Git Bash the same job is done by `ls -la`. Every other command in the demo is identical in both shells.
 ### Block C. Create and stage the file (2 minutes)
 
 Create `main.py` in the folder with your editor. Paste the Simple Calculator content from Section 3 of the tutorial.
@@ -75,14 +100,18 @@ git add main.py
 git status
 ```
 Point out: the first status shows `main.py` as untracked. The second shows it under changes to be committed. The staging area lets you choose exactly what goes into the next commit.
-### Block D. First commit (1 minute)
+### Block D. First commit (1.5 minutes)
 
 ```bash
-git commit -m "Add basic calculator"
+git commit -m "feat: add basic calculator"
 git log --oneline
 git status
 ```
 Point out: a commit is a snapshot with a message, an author and a date. `git log --oneline` shows a shortened ID. Status says nothing to commit, working tree clean.
+
+Thirty second point-out on the message format. The message follows the Conventional Commits pattern `type(scope): description`, where the type says what kind of change it is, the optional scope says which part of the code it touches and the description says what the change does. Here the type is `feat` because the calculator is new. The scope is optional, so `feat: add basic calculator` is a complete and valid message. The description is required by the specification. Say that the tutorial has a full table of types and that teams can agree on their own set. Add the length guideline: aim for 50 characters or fewer in the first line, and never more than 72, because GitHub cuts off longer first lines.
+
+Optional point-out on the Conventional Commits slide (slide 6 of the 45 minute deck, slide 11 of the full deck): the examples panel shows real messages from this repository, such as `docs(workshop): support PowerShell as well as Git Bash`. Say that attendees can see the whole history with `git log --oneline` after cloning the workshop repository.
 ### Block E. Link to GitHub and push (3 minutes)
 
 ```bash
@@ -95,7 +124,7 @@ git branch -vv
 Point out: replace the URL with the presenter account URL. `git branch -M main` is safe if the branch is already called `main`. `-u` links the local branch to the remote branch, so later pushes need no arguments.
 
 Signing in: with Git Credential Manager a "Connect to GitHub" dialog appears in the terminal first. The browser opens after you choose **Sign in with your browser**. Switch to the browser tab so the room can see it, then come back to the terminal. If you have signed in on this machine before, nothing appears. To show the sign-in during the demo, delete the `git:https://github.com` entry in Windows Credential Manager beforehand.
-### Block F. Branch, change and commit (4 minutes)
+### Block F. Branch, change and commit (3.5 minutes)
 
 ```bash
 git branch
@@ -112,10 +141,10 @@ python main.py
 git status
 git diff
 git add main.py
-git commit -m "Refactor calculator into functions"
+git commit -m "feat(calculator): accept user input"
 git log --oneline
 ```
-Point out: run the program and enter 5 and 3, then 2.5 and 1.5, then abc to show the error message. Use `py main.py` or `python3 main.py` if `python` is not found. `git diff` shows the change before it is staged. The tutorial adds a second `-m` with details.
+Point out: run the program and enter 5 and 3, then 2.5 and 1.5, then abc to show the error message. Use `py main.py` or `python3 main.py` if `python` is not found. `git diff` shows the change before it is staged. The tutorial adds a second `-m` with details, so the demo message is shorter than the tutorial one. The type is `feat` and not `refactor`, because the change adds new behaviour, which is reading input. Branch names describe the work and commit types describe the effect, so the branch can stay called `feature/refactor-calculator`.
 ### Block G. Push the branch and open the pull request (2 minutes)
 
 ```bash
@@ -124,9 +153,9 @@ git branch -r
 ```
 Point out: a pull request needs the branch to exist on GitHub. GitHub shows a banner offering to open one.
 
-In the browser: open the repository, select **Compare & pull request**, set base to `main` and compare to `feature/refactor-calculator`, add the title and description from Section 10 of the tutorial (title: Refactor calculator with input validation), then select **Create pull request**.
+In the browser: open the repository, select **Compare & pull request**, set base to `main` and compare to `feature/refactor-calculator`, add the title and description from Section 10 of the tutorial (title: feat(calculator): accept user input), then select **Create pull request**.
 
-Point out: a pull request proposes merging one branch into another. It gives people a place to review and discuss the change.
+Point out: a pull request proposes merging one branch into another. It gives people a place to review and discuss the change. The title follows the same Conventional Commits format as a commit message. GitHub often uses the pull request title as the squash commit title, so keep the title in the same format.
 ### Block H. Review and merge (1 minute)
 
 In the browser: open the **Files changed** tab and read the diff. Use the merge button and confirm the merge.
@@ -151,24 +180,57 @@ Expect this: `git branch -d` prints a warning such as "warning: deleting branch 
 
 | Part | Time | Slides | Focus |
 | --- | --- | --- | --- |
-| 1 | 0:00 to 0:45 | 3 to 10 | Before you start, then Git on your computer: identity, repository, staging, first commit. |
-| 2 | 0:45 to 1:20 | 11 to 14 | Connect to GitHub: empty repository, signing in, link and push. |
+| 1 | 0:00 to 0:45 | 3 to 11 | Before you start, then Git on your computer: identity, repository, staging, first commit and Conventional Commits. The optional point-out for slide 11 is that the examples panel shows real messages from this repository. |
+| 2 | 0:45 to 1:20 | 12 to 15 | Connect to GitHub: empty repository, signing in, link and push. |
 | Break | 1:20 to 1:30 | none | Ten minute break. |
-| 3 | 1:30 to 2:30 | 15 to 23 | Branches and pull requests: branch, change, commit, push, open, review, merge, clean up. |
-| Wrap | 2:30 to 2:45 | 24 to 28 | Troubleshooting, undo commands, fork route, check-in assessment, questions. |
+| 3 | 1:30 to 2:30 | 16 to 24 | Branches and pull requests: branch, change, commit, push, open, review, merge, clean up. |
+| Wrap | 2:30 to 2:45 | 25 to 29 | Troubleshooting, undo commands, fork route, check-in assessment, questions. |
+
+The full deck runs to 29 slides in this order:
+
+| Slide | Title | Slide | Title |
+| --- | --- | --- | --- |
+| 1 | Cover | 16 | Part 3 divider |
+| 2 | Session plan | 17 | Branches and merging |
+| 3 | Before you start | 18 | Section 7: Creating a branch |
+| 4 | Part 1 divider | 19 | Section 8: Changing and committing |
+| 5 | What Git does | 20 | Section 9: Pushing the branch |
+| 6 | The three areas | 21 | The pull request flow |
+| 7 | Section 1: Your Git identity | 22 | Section 10: Opening a pull request |
+| 8 | Section 2: Creating a repository | 23 | Section 11: Reviewing and merging |
+| 9 | Section 3: Staging files | 24 | Section 12: Cleaning up |
+| 10 | Section 4: Your first commit | 25 | Troubleshooting |
+| 11 | Conventional Commits | 26 | Undo commands |
+| 12 | Part 2 divider | 27 | Optional fork |
+| 13 | Section 5: An empty GitHub repository | 28 | Recap and check-in |
+| 14 | Signing in to GitHub | 29 | Questions |
+| 15 | Section 6: Linking and pushing | | |
 
 Facilitation tips:
 
 - Signing in is the slow part. Walk the room during Part 2. Watch for browsers showing a password prompt. GitHub stopped accepting account passwords for Git operations on 13 August 2021.
 - `master` versus `main`. Some attendees see `master` because Git is older than 2.28 or `init.defaultBranch` is not set. The fix is `git branch -M main`.
-- PowerShell versus Git Bash. `ls -la` fails in PowerShell because `ls` is an alias for `Get-ChildItem`. Use `Get-ChildItem -Force`, or run the command in Git Bash. Everything else in the tutorial works in either shell.
+- PowerShell versus Git Bash. `ls -la` fails in PowerShell because `ls` is an alias for `Get-ChildItem`. Use `Get-ChildItem -Force`, or run the command in Git Bash. The tutorial shows a **Git Bash, macOS or Linux** block and a **Windows PowerShell** block wherever the commands differ, and everything else works in either shell.
 - Pushing to the wrong remote. Check `git remote -v`. If `origin` already exists, change the URL with `git remote set-url origin <url>`.
 - Rejected push because the repository was created with a README. GitHub then has a commit the attendee does not have. Run `git pull --rebase origin main`, then `git push -u origin main`.
 
 Shortening to 2 hours: skip the undo commands slide and the fork route slide. Run the check-in assessment as a discussion rather than a whiteboard exercise. Keep the ten minute break.
 ## 6. Resetting after the demo
 
-1. Delete the local folder. Run `rm -rf git-workshop-demo` in Git Bash, or `Remove-Item -Recurse -Force git-workshop-demo` in PowerShell.
+1. Delete the local folder.
+
+**Git Bash, macOS or Linux**
+
+```bash
+rm -rf git-workshop-demo
+```
+
+**Windows PowerShell**
+
+```powershell
+Remove-Item -Recurse -Force git-workshop-demo
+```
+
 2. On GitHub, delete the `git-workshop-demo` repository. Open **Settings**, scroll to **Danger Zone**, select **Delete this repository**, then confirm. Create it again with no README, no `.gitignore` and no licence. Use a new name such as `git-workshop-demo-2` if you prefer to skip the deletion.
 3. On a shared machine, undo the global config changes. The demo used the demo values `Demo Presenter` and `demo.presenter@example.com`, so put your own values back. Record the previous values first with `git config --global --list` before the demo starts. To remove a setting use `git config --global --unset user.name`, `git config --global --unset user.email` or `git config --global --unset init.defaultBranch`. Restore the original values with `git config --global user.name "Original Name"` and `git config --global user.email "original@example.com"` if you noted them.
 ## 7. Fallback when GitHub or the network fails
@@ -193,7 +255,19 @@ git branch -d feature/refactor-calculator
 git fetch --prune
 ```
 
-For the pull request, show the pull request flow diagram slide instead of the GitHub interface. Say that a pull request is the conversation and review step, and that the bare repository stands in for the remote while the network is down. Clean up with `rm -rf ../demo-remote.git` afterwards.
+For the pull request, show the pull request flow diagram slide instead of the GitHub interface. Say that a pull request is the conversation and review step, and that the bare repository stands in for the remote while the network is down. Clean up afterwards.
+
+**Git Bash, macOS or Linux**
+
+```bash
+rm -rf ../demo-remote.git
+```
+
+**Windows PowerShell**
+
+```powershell
+Remove-Item -Recurse -Force ../demo-remote.git
+```
 ## 8. Links
 
 Links are relative to this `presentation/` folder.

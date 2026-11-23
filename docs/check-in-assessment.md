@@ -46,7 +46,7 @@ This whiteboard assessment checks your understanding of Git concepts and mental 
 - `calculator.py` (you've made changes)
 - `README.md` (you've also made changes)
 
-You stage only `calculator.py` and then commit with the message "Fix division bug"
+You stage only `calculator.py` and then commit with the message `fix(calculator): handle division by zero`
 
 **Explain:**
 - What's included in this commit?
@@ -129,13 +129,18 @@ You stage only `calculator.py` and then commit with the message "Fix division bu
 **Whiteboard Prompt:** Compare these commit messages and explain what makes a good commit message:
 - "stuff"
 - "changes"
-- "Add input validation to prevent crashes"
+- "fix(calculator): validate input to prevent crashes"
 
 **Discussion:**
 - Who reads commit messages?
 - When would you read them?
 - What information is helpful?
 - Why does this matter for teamwork?
+- What does the type in a Conventional Commits message tell a reviewer about the change?
+- Which type fits a typo fix in README.md?
+- Which type fits a new subtract function in the calculator?
+
+**Guideline:** Aim for 50 characters or fewer in the first line, and never more than 72. GitHub cuts off longer first lines.
 
 ---
 
