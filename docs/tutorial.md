@@ -28,7 +28,7 @@ If you use `python3` or `py` on your computer, substitute it wherever the tutori
 
 ## How to Use This Tutorial
 
-Keep this page open in your browser next to your terminal. Copy each command, run it, then compare your output with the Expected Output under it. When you get stuck, the Troubleshooting table is at the end of this tutorial.
+Keep this page open in your browser next to your terminal. Type each command yourself, then compare your output with the Expected Output under it. Copy only fiddly items such as URLs and email addresses. When you get stuck, the Troubleshooting table is at the end of this tutorial.
 
 Work in a new folder of your own. Section 2 creates `git-workshop-demo` and Section 5 creates an empty GitHub repository under your own account. Do not work through the exercises inside a copy of the workshop repository. You only clone the workshop repository for the optional fork appendix at the end.
 

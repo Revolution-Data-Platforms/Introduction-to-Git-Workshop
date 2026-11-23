@@ -15,7 +15,7 @@ This repository holds the learning materials for the workshop. Read them on GitH
 Work through the materials in this order:
 
 1. This `README.md`, for the format, the prerequisites and the links.
-2. [docs/tutorial.md](docs/tutorial.md), the 12 hands-on sections, in order. Keep it open in your browser next to your terminal. Copy each command, run it, then compare what you see with the Expected Output. Use the Troubleshooting table at the end when you get stuck.
+2. [docs/tutorial.md](docs/tutorial.md), the 12 hands-on sections, in order. Keep it open in your browser next to your terminal. Type each command yourself, then compare what you see with the Expected Output. Copy only fiddly items such as URLs and email addresses. Use the Troubleshooting table at the end when you get stuck.
 3. [docs/check-in-assessment.md](docs/check-in-assessment.md), to check your understanding once you finish the exercises.
 4. The [presentation](presentation/) folder, for the slides, the deck PDF and the diagrams to review. The [presenter guide](presentation/presenter-guide.md) is for whoever runs the session.
 
