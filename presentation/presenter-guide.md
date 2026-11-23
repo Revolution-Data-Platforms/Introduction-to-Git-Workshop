@@ -74,7 +74,7 @@ If you run long, skip the optional slides 51 and 52, keep all three drawings, an
 Running a part:
 
 1. Show the demo slides for the part. Demo each section for about a minute and let attendees run it themselves.
-2. Show the "Your turn" slide, start a timer and tell attendees to work through the tutorial. Walk the Teams chat and answer questions.
+2. Show the "Your turn" slide, start a timer and tell attendees to work through the tutorial. Ask them to type each command themselves and copy only fiddly items such as URLs, email addresses and the Section 8 code. Walk the Teams chat and answer questions.
 3. At the start of the next part, run the Rewind questions about the part before, then the drawing, then the next demo.
 
 The full deck runs to 54 slides in this order:
