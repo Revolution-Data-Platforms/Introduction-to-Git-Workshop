@@ -1,169 +1,85 @@
 # Introduction to Git Workshop
 
-Welcome to the Introduction to Git Workshop! This comprehensive tutorial teaches the fundamentals of Git version control system through hands-on command line exercises.
+A hands-on introduction to Git and GitHub for beginners. You build a small repository from scratch, push it to GitHub and open a pull request in your own repository. The workshop is for RDP staff and client staff, and no earlier Git experience is needed.
 
-## Workshop Overview
+## Format
 
-This workshop provides a complete introduction to Git, covering everything from basic configuration to advanced collaborative workflows. Students will learn by doing, executing real Git commands and working through practical examples.
+| Format | Length | Slides | Materials |
+| --- | --- | --- | --- |
+| Full workshop: hands-on | 2 to 3 hours | 31 | [Tutorial](docs/tutorial.md), [deck (PPTX)](presentation/introduction-to-git-workshop.pptx) and [deck (PDF)](presentation/introduction-to-git-workshop.pdf) |
+
+## How to use these materials
+
+This repository holds the learning materials for the workshop. Read them on GitHub, or download them if you would rather work offline.
+
+Work through the materials in this order:
+
+1. This `README.md`, for the format, the prerequisites and the links.
+2. [docs/tutorial.md](docs/tutorial.md), the 12 hands-on sections, in order. Keep it open in your browser next to your terminal. Copy each command, run it, then compare what you see with the Expected Output. Use the Troubleshooting table at the end when you get stuck.
+3. [docs/check-in-assessment.md](docs/check-in-assessment.md), to check your understanding once you finish the exercises.
+4. The [presentation](presentation/) folder, for the slides, the deck PDF and the diagrams to review. The [presenter guide](presentation/presenter-guide.md) is for whoever runs the session.
+
+![Map of the workshop repository and how to use it](presentation/diagrams/workshop-materials.drawio.svg)
+
+**Do the exercises in a folder of your own.** Section 2 has you create a new folder called `git-workshop-demo`, and Section 5 has you create an empty GitHub repository of your own. Do not run the main-route exercises inside a clone of this workshop repository. The only time you clone the workshop repository is for the optional fork appendix, which uses `main.py` and `examples/main_updated.py`.
 
 ## What You'll Learn
 
-By completing this workshop, you will be able to:
-
-- Configure Git on your local machine
-- Set up authentication with GitHub (Personal Access Tokens and SSH keys)
-- Create and initialize Git repositories
-- Make commits and track changes over time
-- Work with remote repositories (GitHub/GitLab)
-- Use branching strategies for feature development
-- Create and manage pull requests
-- Collaborate effectively using Git workflows
-- Apply Git best practices in professional environments
-
-## Workshop Structure
-
-The workshop is organized into 12 progressive sections:
-
-1. **Set Up Git Configuration** - Configure your Git identity
-2. **Initialize a New Git Repository** - Create repositories from scratch
-3. **Create and Stage Files** - Learn the staging process
-4. **Make Your First Commit** - Create snapshots of your work
-5. **Connect to a Remote Repository** - Link local and remote repos, including GitHub authentication setup
-6. **Clone an Existing Repository** - Work with existing projects
-7. **Create and Switch to a New Branch** - Feature branch workflows
-8. **Modify Files and Create Commits on Branch** - Practical refactoring exercise
-9. **Push Branch to Remote Repository** - Share your work
-10. **Create a Pull Request** - Propose changes for review
-11. **Review and Merge the Pull Request** - Collaborative review process
-12. **Clean Up and Pull Latest Changes** - Maintain repository hygiene
+- Configure Git on your computer
+- Create a repository, stage files and make commits
+- Write commit messages that follow the Conventional Commits standard
+- Sign in to GitHub and push your work
+- Create and push a branch
+- Open, review and merge a pull request
+- Clean up branches afterwards
 
 ## Prerequisites
 
-Before starting this workshop, ensure you have:
+- Git 2.28 or newer (install the latest from [git-scm.com](https://git-scm.com))
+- A [GitHub](https://github.com) account
+- A text editor
+- Python 3. Check with `python --version`. macOS and Linux may need `python3`. Windows may use `py`.
+- On Windows, use PowerShell or Git Bash.
 
-- Basic command line knowledge
-- Git installed on your machine
-- A text editor of your choice (VS Code, nano, vim, etc.)
-- A GitHub account (for remote repository exercises)
-- Ability to create Personal Access Tokens or SSH keys for GitHub authentication
+## Workshop Sections
 
-## Files in This Repository
+1. Set Up Git Configuration
+2. Initialize a New Git Repository
+3. Create and Stage Files
+4. Make Your First Commit
+5. Create a GitHub Repository and Sign In
+6. Link Your Repository to GitHub and Push
+7. Create and Switch to a New Branch
+8. Modify Files and Commit on the Branch
+9. Push the Branch to GitHub
+10. Create a Pull Request
+11. Review and Merge the Pull Request
+12. Clean Up and Pull the Latest Changes
 
-- **`README.md`** - This file, providing workshop overview and instructions
-- **`main.py`** - Simple calculator script used as the starting point for exercises
-- **`lesson_materials/`** - Workshop materials and examples
-  - **`Introduction_to_Git.md`** - Complete step-by-step tutorial
-  - **`main_updated.py`** - Refactored calculator with functions (target for exercises)
+Start with the [tutorial](docs/tutorial.md). When you finish, try the [check-in assessment](docs/check-in-assessment.md).
 
-## Getting Started
+## Optional: Fork Route
 
-### Option 1: Follow the Tutorial
-Navigate to [`lesson_materials/Introduction_to_Git.md`](lesson_materials/Introduction_to_Git.md) for the complete step-by-step tutorial with commands and explanations.
+The tutorial has an appendix on contributing through a fork of this repository. It covers cloning a fork, adding an `upstream` remote and opening a pull request against your own fork. The main route does not need it.
 
-### Option 2: Fork and Practice
-1. Fork this repository to your GitHub account
-2. Clone your fork locally
-3. Follow the workshop exercises using your own repository
+## Repository Contents
 
-### Option 3: Create New Repository
-1. Create a new repository following Section 2 of the tutorial
-2. Use the provided `main.py` as your starting point
-3. Work through the refactoring exercises
+| Path | Description |
+| --- | --- |
+| `README.md` | This file |
+| `main.py` | Starting file for the optional fork route |
+| `docs/tutorial.md` | Step-by-step tutorial |
+| `docs/check-in-assessment.md` | Whiteboard questions to check your understanding |
+| `examples/main_updated.py` | Finished calculator for the fork route |
+| `presentation/introduction-to-git-workshop.pptx` and `.pdf` | Slides for the full workshop |
+| `presentation/presenter-guide.md` | Notes for the presenter |
+| `presentation/diagrams/` | Editable [draw.io](https://www.drawio.com) diagrams. The `.drawio.svg` files open in draw.io. |
 
-## Practical Exercise: Calculator Refactoring
+## Further Learning
 
-The workshop includes a hands-on refactoring exercise where you'll transform a simple calculator script from:
+- [Pro Git book](https://git-scm.com/book)
+- [GitHub Docs](https://docs.github.com)
 
-**Before (main.py):**
-```python
-# Simple Calculator
-x = 1
-y = 2
-print(f"The sum of x and y is: {x + y}")
-```
-
-**After (using concepts from main_updated.py):**
-```python
-def add(x, y):
-    """Add two numbers together."""
-    return x + y
-
-def get_number_input(prompt):
-    """Get numeric input with automatic type conversion."""
-    # Implementation details...
-
-def main():
-    """Main calculator function with user input."""
-    # Implementation details...
-```
-
-This exercise demonstrates real-world Git workflows including:
-- Feature branch creation
-- Code refactoring and commits
-- Push/pull operations
-- Pull request workflow
-- Code review and merging
-
-## Key Concepts Covered
-
-### Git Fundamentals
-- Repository initialization and structure
-- Staging area and commit process
-- Working directory vs. repository state
-- Git configuration and identity management
-
-### Branching and Merging
-- Feature branch workflows
-- Branch creation and switching
-- Merge strategies and conflict resolution
-- Branch cleanup and management
-
-### Remote Repositories
-- Origin and upstream concepts
-- Push and pull operations
-- GitHub authentication methods (Personal Access Tokens vs SSH keys)
-- Authentication setup and troubleshooting
-- Collaborative workflows
-
-### Best Practices
-- Commit message conventions
-- Branch naming strategies
-- Code review processes
-- Repository maintenance
-
-## Additional Resources
-
-After completing this workshop, consider exploring:
-
-- **Advanced Git features**: Rebasing, cherry-picking, stashing
-- **Git GUIs**: GitHub Desktop, SourceTree, GitKraken
-- **Team workflows**: GitFlow, GitHub Flow, feature branches
-- **Integration tools**: CI/CD pipelines, automated testing
-- **Git hosting platforms**: GitHub, GitLab, Bitbucket
-
-## Workshop Duration
-
-- **Estimated time**: 2-3 hours for complete tutorial
-- **Format**: Self-paced with hands-on exercises
-- **Skill level**: Beginner to intermediate
-
-## Getting Help
-
-If you encounter issues during the workshop:
-
-1. Check the troubleshooting sections in the tutorial
-2. Review Git documentation: `git --help` or `man git`
-3. Search Git documentation online
-4. Practice commands in a safe test repository
-
-## Contributing
-
-This workshop is designed to be a comprehensive learning resource. If you find areas for improvement or have suggestions, please feel free to contribute by opening issues or submitting pull requests.
-
-## License
+## Licence
 
 This workshop content is available for educational use. Feel free to adapt and share for learning purposes.
-
----
-
-**Happy learning!** This workshop will give you a solid foundation in Git that you can apply immediately in your development projects.
