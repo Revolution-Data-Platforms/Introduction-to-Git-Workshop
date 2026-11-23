@@ -54,11 +54,11 @@ The times below assume every checkpoint runs, and total about 3 hours 10 minutes
 
 | Part | Time | Slides | Focus |
 | --- | --- | --- | --- |
-| 1 | 0:00 to 0:50 | 3 to 17 | Before you start, the workshop repository and the materials, then Git on your computer: identity, repository, staging, first commit and Conventional Commits. Rewinds 1 to 4 run at the start of Sections 2, 3 and 4 and before Conventional Commits. Slides 4 and 5 take about three minutes together. |
-| 2 | 0:50 to 1:35 | 18 to 25 | Draw it: Part 1 (slides 19 and 20), Rewind 5 (slide 21), then the empty repository, signing in, Rewind 6 (slide 24) and link and push. |
+| 1 | 0:00 to 0:50 | 3 to 17 | Before you start, the workshop repository and the materials, then Git on your computer: identity, repository, staging, first commit and Conventional Commits. Rewinds 1 to 4 run after the Section 2, Section 3, Section 4 and Conventional Commits slides, so each question is about the section before. Slides 4 and 5 take about three minutes together. |
+| 2 | 0:50 to 1:35 | 18 to 25 | Draw it: Part 1 (slides 19 and 20), then the empty repository with Rewind 5 (slide 22), signing in, and link and push with Rewind 6 (slide 25). |
 | Break | 1:35 to 1:45 | none | Ten minute break. Show the Mentimeter leaderboard. |
-| 3 | 1:45 to 3:00 | 26 to 42 | Draw it: Part 2 (slides 27 and 28), then branches and pull requests with Rewinds 7 to 12 in between. |
-| Wrap | 3:00 to 3:10 | 43 to 51 | Rewind 13, Draw it: Part 3 (slides 44 to 46), a quick skim of troubleshooting, then the recap and questions. Undo commands and the fork route (slides 48 and 49) are optional. |
+| 3 | 1:45 to 3:00 | 26 to 42 | Draw it: Part 2 (slides 27 and 28), then branches and pull requests, with Rewinds 7 to 12 each after the first slide of the following section. |
+| Wrap | 3:00 to 3:10 | 43 to 51 | Draw it: Part 3 (slides 43 to 45), a quick skim of troubleshooting (slide 46), Rewind 13 (slide 47), then the recap and questions. Undo commands and the fork route (slides 48 and 49) are optional. |
 
 To finish in 3 hours, use these in order until it fits:
 
@@ -74,36 +74,38 @@ The full deck runs to 51 slides in this order:
 | --- | --- | --- | --- |
 | 1 | Cover | 27 | Draw it: Part 2 |
 | 2 | Session plan | 28 | Model answer: Part 2 |
-| 3 | Before you start | 29 | Rewind 7 (Section 6) |
-| 4 | The workshop repository | 30 | Branches and merging |
-| 5 | How to use the materials | 31 | Section 7: Creating a branch |
-| 6 | Part 1 divider | 32 | Rewind 8 (Section 7) |
-| 7 | What Git does | 33 | Section 8: Changing and committing |
-| 8 | The three areas | 34 | Rewind 9 (Section 8) |
-| 9 | Section 1: Your Git identity | 35 | Section 9: Pushing the branch |
-| 10 | Rewind 1 (Section 1) | 36 | Rewind 10 (Section 9) |
-| 11 | Section 2: Creating a repository | 37 | The pull request flow |
-| 12 | Rewind 2 (Section 2) | 38 | Section 10: Opening a pull request |
-| 13 | Section 3: Staging files | 39 | Rewind 11 (Section 10) |
-| 14 | Rewind 3 (Section 3) | 40 | Section 11: Reviewing and merging |
-| 15 | Section 4: Your first commit | 41 | Rewind 12 (Section 11) |
-| 16 | Rewind 4 (Section 4) | 42 | Section 12: Cleaning up |
-| 17 | Conventional Commits | 43 | Rewind 13 (Section 12) |
-| 18 | Part 2 divider | 44 | Draw it: Part 3 |
-| 19 | Draw it: Part 1 | 45 | Model answer: fast-forward and merge commit |
-| 20 | Model answer: Part 1 | 46 | Model answer: squash merge |
-| 21 | Rewind 5 (Conventional Commits) | 47 | Troubleshooting |
-| 22 | Section 5: An empty GitHub repository | 48 | Optional: Undo commands |
+| 3 | Before you start | 29 | Branches and merging |
+| 4 | The workshop repository | 30 | Section 7: Creating a branch |
+| 5 | How to use the materials | 31 | Rewind 7 (Section 6) |
+| 6 | Part 1 divider | 32 | Section 8: Changing and committing |
+| 7 | What Git does | 33 | Rewind 8 (Section 7) |
+| 8 | The three areas | 34 | Section 9: Pushing the branch |
+| 9 | Section 1: Your Git identity | 35 | Rewind 9 (Section 8) |
+| 10 | Section 2: Creating a repository | 36 | The pull request flow |
+| 11 | Rewind 1 (Section 1) | 37 | Section 10: Opening a pull request |
+| 12 | Section 3: Staging files | 38 | Rewind 10 (Section 9) |
+| 13 | Rewind 2 (Section 2) | 39 | Section 11: Reviewing and merging |
+| 14 | Section 4: Your first commit | 40 | Rewind 11 (Section 10) |
+| 15 | Rewind 3 (Section 3) | 41 | Section 12: Cleaning up |
+| 16 | Conventional Commits | 42 | Rewind 12 (Section 11) |
+| 17 | Rewind 4 (Section 4) | 43 | Draw it: Part 3 |
+| 18 | Part 2 divider | 44 | Model answer: fast-forward and merge commit |
+| 19 | Draw it: Part 1 | 45 | Model answer: squash merge |
+| 20 | Model answer: Part 1 | 46 | Troubleshooting |
+| 21 | Section 5: An empty GitHub repository | 47 | Rewind 13 (Section 12) |
+| 22 | Rewind 5 (Conventional Commits) | 48 | Optional: Undo commands |
 | 23 | Signing in to GitHub | 49 | Optional: contributing through a fork |
-| 24 | Rewind 6 (Section 5) | 50 | Recap and check-in |
-| 25 | Section 6: Linking and pushing | 51 | Questions |
+| 24 | Section 6: Linking and pushing | 50 | Recap and check-in |
+| 25 | Rewind 6 (Section 5) | 51 | Questions |
 | 26 | Part 3 divider |  |  |
 
 Checkpoint facilitation:
 
-- **Rewind.** Each Rewind asks about the section before the current one, so it is delayed retrieval practice and never a check on what you just taught. Open the matching Mentimeter question, allow 45 to 60 seconds, show the result and say the answer in one sentence. The answer and the misconception it targets are in the speaker notes and in [quiz-questions.md](quiz-questions.md). The slide shows no answer.
-- **Draw it.** Send pairs to breakout rooms for the time box on the slide. Bring everyone back, ask one or two pairs to share their screen and explain, then show the model answer on the next slide. Draw it: Part 3 follows Rewind 13, which already asks why `git branch -d` warns after a squash merge. Pairs should be able to explain it. Use the drawing to show why, with C and D left outside main's history.
+- **Rewind.** Each Rewind appears after the first slide of the next section, so attendees are already working on something new when it asks about the section before. It is delayed retrieval practice and never a check on what you just taught. Open the matching Mentimeter question, allow 45 to 60 seconds, show the result and say the answer in one sentence. The answer and the misconception it targets are in the speaker notes and in [quiz-questions.md](quiz-questions.md). The slide shows no answer.
+- **Draw it.** Send pairs to breakout rooms for the time box on the slide. Bring everyone back, ask one or two pairs to share their screen and explain, then show the model answer on the next slide. Rewind 13 comes after the Part 3 drawing and the troubleshooting slide, and asks again why `git branch -d` warns after a squash merge. Treat it as a quick confirmation.
 - **Leaderboard.** Show the Mentimeter leaderboard at the break and at the end.
+- **Platform notes.** The Mentimeter free plan and Teams Polls are the only quiz tools. Whiteboard and paper are the only drawing tools.
+
 Facilitation tips:
 
 - Slides 4 and 5, "The workshop repository" and "How to use the materials", take about three minutes together at the start of Part 1. Say that the workshop repository holds the learning materials, and that attendees read them on GitHub or download them. Ask everyone to open the tutorial in the browser now, next to their terminal, and to confirm that they will work in a new folder of their own called `git-workshop-demo`, created in Section 2, plus an empty GitHub repository of their own, created in Section 5. Say clearly that the main-route exercises do not run inside a clone of the workshop repository. The only time attendees clone the workshop repository is for the optional fork appendix, which uses `main.py` and `examples/main_updated.py`.
