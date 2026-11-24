@@ -49,7 +49,7 @@ Ask attendees beforehand:
 
 ## 3. Timing and structure
 
-The workshop is built for 2 to 2.5 hours, and the rest of the time is buffer. The time boxes below are a guide, not a strict schedule: extend a work block when most people are still going. Aim for about 33 minutes of presenting, 70 minutes of hands-on work, 31 minutes of checkpoints, 7 minutes for the self-assessment and 15 minutes of breaks.
+The workshop is built for 2 to 2.5 hours, and the rest of the time is buffer. The time boxes below are a guide, not a strict schedule: extend a work block when most people are still going. Aim for about 31 minutes of presenting, including the close, which is mostly questions, 70 minutes of hands-on work, 31 minutes of checkpoints, 7 minutes for the self-assessment and 15 minutes of breaks.
 
 Each part follows the same pattern: a short demo, then a work block where attendees work through the tutorial sections on their own while you watch the Teams chat. The quick-fire questions and the drawing run at the start of the next part and cover the part before it.
 
@@ -57,21 +57,21 @@ Each part follows the same pattern: a short demo, then a work block where attend
 | --- | --- | --- | --- | --- |
 | Opening | 0:00 | 5 min | 1 to 5 | Cover, session plan, before you start, the workshop repository and how to use the materials. |
 | Self-assessment and warm-up | 0:05 | 7 min | 6 to 7 | Slide 6 shows the Mentimeter join code and QR code. Run the self-assessment (Mentimeter slides 1 to 6), then slide 7, the warm-up question, which is the same as Mentimeter slide 4. |
-| Part 1 demo | 0:12 | 10 min | 8 to 15 | What Git does, the three areas, then a one-minute demo of Sections 1 to 4 and Conventional Commits. |
-| Part 1 work | 0:22 | 15 min | 16 | Attendees do Sections 1 to 4. |
-| Break | 0:37 | 5 min | 17 | Optional. Extend it, shorten it or skip it depending on the time. |
-| Part 2 checkpoints | 0:42 | 11 min | 18 to 25 | Rewinds 1 to 5 (about 5 min) and Draw it: Part 1 (about 6 min). |
-| Part 2 demo | 0:53 | 5 min | 26 to 28 | Section 5, signing in and Section 6. |
-| Part 2 work | 0:58 | 20 min | 29 | Attendees do Sections 5 and 6. |
-| Break | 1:18 | 5 min | 30 | Optional. Extend it to 10 minutes if the group is tired, or skip it if you are running late. |
-| Part 3 checkpoints | 1:23 | 8 min | 31 to 35 | Rewinds 6 and 7 (about 2 min) and Draw it: Part 2 (about 6 min). |
-| Part 3 demo | 1:31 | 8 min | 36 to 43 | Branches and merging, the pull request flow and a short demo of Sections 7 to 12. |
-| Part 3 work | 1:39 | 35 min | 44 | Attendees do Sections 7 to 12. |
-| Break | 2:14 | 5 min | 45 | Optional. The last break. Skip it if you are past about 2 hours 30 minutes. |
-| Wrap-up checkpoints | 2:19 | 12 min | 46 to 54 | Rewinds 8 to 13 (about 6 min) and Draw it: Part 3 (about 6 min). |
-| Close | 2:31 | 5 min | 55, 58, 59 | Troubleshooting, recap and questions. Undo commands and the fork route (slides 56 and 57) are optional. |
+| Part 1 demo | 0:12 | 8 min | 8 to 15 | What Git does, the three areas, then a one-minute demo of Sections 1 to 4 and Conventional Commits. |
+| Part 1 work | 0:20 | 15 min | 16 | Attendees do Sections 1 to 4. |
+| Break | 0:35 | 5 min | 17 | Optional. Extend it, shorten it or skip it depending on the time. |
+| Part 2 checkpoints | 0:40 | 11 min | 18 to 25 | Rewinds 1 to 5 (about 5 min) and Draw it: Part 1 (about 6 min). |
+| Part 2 demo | 0:51 | 5 min | 26 to 28 | Section 5, signing in and Section 6. |
+| Part 2 work | 0:56 | 20 min | 29 | Attendees do Sections 5 and 6. |
+| Break | 1:16 | 5 min | 30 | Optional. Extend it to 10 minutes if the group is tired, or skip it if you are running late. |
+| Part 3 checkpoints | 1:21 | 8 min | 31 to 35 | Rewinds 6 and 7 (about 2 min) and Draw it: Part 2 (about 6 min). |
+| Part 3 demo | 1:29 | 8 min | 36 to 43 | Branches and merging, the pull request flow and a short demo of Sections 7 to 12. |
+| Part 3 work | 1:37 | 35 min | 44 | Attendees do Sections 7 to 12. |
+| Break | 2:12 | 5 min | 45 | Optional. The last break. Skip it if you are past about 2 hours 30 minutes. |
+| Wrap-up checkpoints | 2:17 | 12 min | 46 to 54 | Rewinds 8 to 13 (about 6 min) and Draw it: Part 3 (about 6 min). |
+| Close | 2:29 | 5 min | 55, 58, 59 | Troubleshooting, recap and questions. Undo commands and the fork route (slides 56 and 57) are optional. |
 
-The plan ends at about 2:36. Start times assume every block uses its full time box.
+The plan ends at about 2:34. Start times assume every block uses its full time box.
 
 The blocks add up to about 2 hours 35 minutes, including three 5-minute breaks, which leaves about 25 minutes of the 3 hour booking as buffer. Without the breaks the plan is about 2 hours 20 minutes. The work blocks are 15, 20 and 35 minutes: Part 1 is a few short local commands, Part 2 depends mostly on signing in, and Part 3 has the most steps. The tutorial itself is estimated at 2 to 3 hours of hands-on time, and the work blocks give 70 minutes, so expect people to need more time, especially for signing in and Section 8. Use the buffer to extend a work block rather than cutting a checkpoint, and skip a break first if time is short. Anything unfinished can be completed afterwards with `docs/tutorial.md`.
 
