@@ -1,8 +1,8 @@
 # Quiz Question Pack: Introduction to Git Workshop
 
-Thirteen quick-fire "Rewind" questions for the workshop deck. Each one covers an earlier part than the one being taught, never the current one, so it doubles as spaced practice. Questions are conceptual and do not depend on command syntax.
+Thirteen "Rewind" questions for the workshop deck. Each one covers an earlier part than the one being taught, never the current one, so it doubles as spaced practice. Questions are conceptual and do not depend on command syntax.
 
-The quiz is built in the Git Skills Self-Assessment Mentimeter, on slides 7 to 25 after the six survey slides, in the launch order below, so a single leaderboard builds up across the whole session. See the setup checklist in [presenter-guide.md](presenter-guide.md).
+The quiz is built in the Git Skills Self-Assessment Mentimeter, on slides 7 to 25, after the five self-assessment slides and the warm-up question, in the launch order below, so a single leaderboard builds up across the whole session. See the setup checklist in [presenter-guide.md](presenter-guide.md).
 
 ## When to run them
 
@@ -12,7 +12,7 @@ Run the questions in three batches, each about the part just finished:
 - Questions 6 and 7 at the start of Part 3, about Part 2.
 - Questions 8 to 13 in the wrap-up, about Part 3.
 
-In the Git Skills Self-Assessment Mentimeter, the quiz follows the six survey slides. Run the survey slides first, then park on slide 7 until Part 2.
+In the Git Skills Self-Assessment Mentimeter, the self-assessment is on slides 1 to 5 and the warm-up question on slide 6. Run them, then park on slide 7 until Part 2.
 
 - Slide 7: "Back to the workshop" text slide. Park here until Part 2.
 - Slides 8 to 12: questions 1 to 5, then slide 13, a leaderboard.
@@ -21,23 +21,25 @@ In the Git Skills Self-Assessment Mentimeter, the quiz follows the six survey sl
 - Slide 18: text slide. Park here until the wrap-up.
 - Slides 19 to 24: questions 8 to 13, then slide 25, the final leaderboard.
 
-The text slides give you a safe place to stop between batches, so the next questions are not shown early. Each question also has Add leaderboard switched on, so a leaderboard may show after every question. Switch it off per slide under Edit, then Quiz settings, if it slows the pace.
+The text slides give you a safe place to stop between batches, so the next questions are not shown early. Each question has Add leaderboard switched off, so a leaderboard shows only on the leaderboard slides after each batch. Leave it off: a leaderboard after every question adds several minutes.
 
 ## Warm-up question
 
-The self-assessment includes a teaser, "What best describes a Git commit?" (Mentimeter slide 4). Deck slide 7 shows the same question with four options, A to D. The correct answer is A, a snapshot of the project at a point in time. Keep the Mentimeter version to the same four options.
+The self-assessment includes a teaser, "What best describes a Git commit?" (Mentimeter slide 6, straight after the self-assessment). Deck slide 7 shows the same question with four options, A to D. The correct answer is A, a snapshot of the project at a point in time. Keep the Mentimeter version to the same four options.
 
 ## Rebuilding the Mentimeter quiz
 
-The quiz is already built in the Git Skills Self-Assessment presentation. To rebuild it, create one presentation in a free Mentimeter account and add 13 **Quiz competition** (multiple choice) questions, in the order below.
-2. Paste the question and the four options exactly as written. Mark the correct option and set the timer to 45 seconds.
-3. Keep scoring on. Add a text slide before each batch and a leaderboard slide after it.
+The quiz is already built in the Git Skills Self-Assessment presentation. To rebuild it:
+
+1. Create one presentation in a free Mentimeter account and add 13 **Select Answer** slides from the **Quiz Competition** section (the scored multiple choice type), in the order below.
+2. Paste the question and the four options exactly as written. Mark the correct option, set the timer to 45 seconds and leave Add leaderboard off.
+3. Keep scoring on. Add a "Back to the workshop" text slide before each batch and a Leaderboard slide after it.
 4. The 13 Rewind slides show the join code 1509 1500. If you rebuild the presentation, copy its new join code into the slides with Find and Replace in PowerPoint.
 5. Rehearse alone, on one device. Every participant counts toward the free plan's monthly limit of 50, so avoid rehearsing with colleagues. Check Mentimeter's current free plan limits before the session.
 
 ## Backup: Teams meeting Polls
 
-If Mentimeter fails, create each question in advance under **Polls** in the Teams meeting, using the **Multiple Choice Quiz** type, and launch them from the same slide. This type has no scoring or leaderboard, so say the correct answer aloud after each poll closes.
+Create the same 13 questions in advance under **Polls** in the Teams meeting, using the **Multiple Choice Quiz** type, so they are ready if Mentimeter fails. Launch each one from the matching Rewind slide. This poll type marks correct answers but has no points or leaderboard, so say the correct answer aloud after each poll closes.
 
 ## Questions in launch order
 
@@ -63,12 +65,12 @@ Deck slide 19. Run at the start of Part 2.
 
 **Why does Git need your name and email?**
 
-- A. To log you in to GitHub
+- A. To sign you in to GitHub
 - B. To record who made each commit (correct)
 - C. To send notifications about your repository
 - D. To decide who may push
 
-Why: Misconception (A): the name and email are not your GitHub login. Git writes them into each commit. Signing in to GitHub comes later, in Section 5.
+Why: Misconception (A): the name and email are not your GitHub sign-in. Git writes them into each commit. Signing in to GitHub comes later, in Section 5.
 
 ### Question 2: Section 2
 
@@ -131,9 +133,9 @@ Deck slide 32. Run at the start of Part 3.
 - A. A README on GitHub would overwrite your local files
 - B. An empty repository uploads faster
 - C. GitHub only accepts one push to a new repository
-- D. A README made on GitHub is a commit you do not have, so your first push is rejected (correct)
+- D. A README on GitHub adds a commit you do not have (correct)
 
-Why: Option A is the common worry. Nothing is overwritten. The push is rejected because GitHub has a commit your computer does not have.
+Why: Option A is the common worry. Nothing is overwritten. The first push is rejected because GitHub has a commit your computer does not have.
 
 ### Question 7: Section 6
 
@@ -141,7 +143,7 @@ Deck slide 33. Run at the start of Part 3.
 
 **After `git push`, what is on GitHub?**
 
-- A. Your working folder, kept in sync as you edit
+- A. Your working directory, kept in sync as you edit
 - B. Your staged changes as well as your commits
 - C. Copies of your commits (correct)
 - D. Nothing until you open a pull request
@@ -196,22 +198,22 @@ Deck slide 49. Run at the wrap-up.
 - A. It merges your branch into main
 - B. It uploads your commits to GitHub
 - C. It deletes your branch after review
-- D. It proposes a merge for review, and nothing is merged yet (correct)
+- D. It proposes a merge for others to review (correct)
 
-Why: The push already uploaded the commits (B). A pull request asks for the merge and starts the review. Nothing merges until someone selects merge.
+Why: The push already uploaded the commits (B). A pull request asks for the merge and starts the review. Nothing is merged until someone selects merge.
 
 ### Question 12: Section 11
 
 Deck slide 50. Run at the wrap-up.
 
-**`main` has not moved since you branched, and you merge. What happens?**
+**`main` has not moved since you branched, and you run `git merge` on the command line. What happens?**
 
-- A. Git always creates a merge commit
-- B. Fast-forward: main moves to your last commit, with no new commit (correct)
+- A. Git adds a new merge commit
+- B. main fast-forwards to your last commit (correct)
 - C. Git refuses, because the branches differ
 - D. Git squashes your commits into one
 
-Why: Misconception (A): a merge does not always create a merge commit. When main has not moved, Git just moves the label forward.
+Why: Misconception (A): a merge does not always create a merge commit. When main has not moved, git merge on the command line just moves the label forward. GitHub's default merge button is different: it always creates a merge commit.
 
 ### Question 13: Section 12
 
@@ -219,9 +221,9 @@ Deck slide 51. Run at the wrap-up.
 
 **Why does `git branch -d` warn after a squash merge?**
 
-- A. Your commits were replaced by one new commit on main (correct)
+- A. One new commit on main replaced your commits (correct)
 - B. The branch is still checked out
-- C. GitHub already deleted the remote branch
+- C. The branch is already deleted on GitHub
 - D. Squash merges leave the branch unpushed
 
 Why: A squash merge adds one new commit to main and leaves your branch commits out of main's history, so Git thinks the branch is not merged. Check the pull request is merged, then use git branch -D.

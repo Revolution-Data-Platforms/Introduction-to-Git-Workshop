@@ -73,6 +73,7 @@ The tutorial has an appendix on contributing through a fork of this repository. 
 | `examples/main_updated.py` | Finished calculator for the fork route |
 | `presentation/introduction-to-git-workshop.pptx` and `.pdf` | Slides for the full workshop |
 | `presentation/presenter-guide.md` | Notes for the presenter |
+| `presentation/quiz-questions.md` | Rewind questions, answers and Mentimeter setup |
 | `presentation/diagrams/` | Editable [draw.io](https://www.drawio.com) diagrams. The `.drawio.svg` files open in draw.io. |
 
 ## Further Learning

@@ -1,14 +1,14 @@
 # Presenter Guide: Introduction to Git Workshop
 
-This guide supports the full workshop format for Revolution Data Platforms (RDP), a hands-on session of 2 to 2.5 hours plus buffer, run remotely on Microsoft Teams. Every command below matches `docs/tutorial.md`, so attendees who follow the tutorial see the same commands in the same order.
+This guide supports the full workshop format for Revolution Data Platforms (RDP), a hands-on session paced for about 2.5 hours, including three short breaks, in a 3 hour booking, run remotely on Microsoft Teams. Every command below matches `docs/tutorial.md`, so attendees who follow the tutorial see the same commands in the same order.
 
-The deck includes spaced retrieval checkpoints: 13 quick-fire "Rewind" questions and 3 "Draw it" group drawings on a shared whiteboard, for a small group of about 10 people. The question pack is in [quiz-questions.md](quiz-questions.md).
+The deck includes spaced retrieval checkpoints: 13 "Rewind" questions and 3 "Draw it" group drawings on a shared whiteboard, for a small group of about 10 people. The question pack is in [quiz-questions.md](quiz-questions.md).
 
 ## 1. Format at a glance
 
 | Format | Length | Deck | Attendee activity | Presenter activity |
 | --- | --- | --- | --- | --- |
-| Full workshop: hands-on, remote | 2 to 2.5 hours, plus three short breaks and buffer | `presentation/introduction-to-git-workshop.pptx` and `presentation/introduction-to-git-workshop.pdf` (59 slides) | Follow `docs/tutorial.md` on their own machine, answer the Rewind questions and draw on a shared whiteboard. | Demo briefly, then let attendees work. Run the checkpoints. |
+| Full workshop: hands-on, remote | About 2.5 hours including three short breaks, in a 3 hour booking | `presentation/introduction-to-git-workshop.pptx` and `presentation/introduction-to-git-workshop.pdf` (59 slides) | Follow `docs/tutorial.md` on their own machine, answer the Rewind questions and draw on a shared whiteboard. | Demo briefly, then let attendees work. Run the checkpoints. |
 
 Deck file paths are relative to the repository root. The deck ships as a PowerPoint file and a PDF.
 
@@ -26,17 +26,17 @@ Presenter setup:
 - [ ] Workshop repository link ready to share. See guide Section 7 (Links).
 - [ ] The tutorial Section 8 refactored code ready in a scratch file, so you can paste it if you show that step.
 - [ ] Run `git config --global --list` and note your real name and email first, so you can restore them after your demonstration.
-- [ ] To show the sign-in during your demonstration, delete the `git:https://github.com` entry in Windows Credential Manager beforehand. If you have signed in on this machine before, nothing appears.
+- [ ] To show the sign-in during your demonstration, delete the `git:https://github.com` entry in Windows Credential Manager beforehand. If you have never signed in on this machine, there is no entry to delete.
 
 Checkpoint setup:
 
-- [ ] **Mentimeter account.** Create a free account at mentimeter.com. The free plan allows 50 participants per month across all presentations, so check its current limits before the session.
-- [ ] **Check the quiz.** The 13 questions are in the Git Skills Self-Assessment Mentimeter, on slides 7 to 25 after the six survey slides, with text slides and leaderboards between the batches. Open it and check the answers against [quiz-questions.md](quiz-questions.md). One presentation gives one leaderboard for the whole day.
+- [ ] **Mentimeter account.** Create a free account at mentimeter.com. The free plan allows 50 participants per month across all presentations. Check your account's current limit before the session, because Mentimeter's free plan terms depend on when the account was created.
+- [ ] **Check the quiz.** In the Git Skills Self-Assessment Mentimeter, the self-assessment is slides 1 to 5, the warm-up question is slide 6, and the 13 Rewind questions are on slides 7 to 25, with text slides and leaderboards between the batches. Each question has Add leaderboard switched off, so a leaderboard shows only after each batch. Open it and check the answers against [quiz-questions.md](quiz-questions.md). One presentation gives one leaderboard for the whole day.
 - [ ] **Rehearse alone.** Run through the quiz yourself on one device. Every participant counts toward the monthly 50, so do not rehearse with colleagues.
 - [ ] **Join code.** The 13 Rewind slides show the join code 1509 1500. If you rebuild the Mentimeter presentation, its code changes, so update the slides with Find and Replace in PowerPoint.
-- [ ] **Share the right tab.** Attendees answer at menti.com while you share the Mentimeter browser tab in Teams. Keep it open in its own tab or window, Run the self-assessment (slides 1 to 6) first, then park on slide 7 until Part 2.
-- [ ] **Teams Polls backup.** In the Teams meeting, create the same 13 questions under Polls using the Multiple Choice Quiz type. This type has no scoring, so say the answer aloud.
-- [ ] **Whiteboard.** The drawings use the Microsoft Whiteboard that comes with the Teams enterprise licence. Start it in the meeting (Share, then Whiteboard) at the start of Part 2, and label three areas Part 1, Part 2 and Part 3 so each drawing has its own space. Test beforehand with a second person that attendees can edit the board, not just view it. If they cannot edit, ask them what to draw and draw it yourself.
+- [ ] **Share the right tab.** Attendees answer at menti.com while you share the Mentimeter browser tab in Teams. Keep it open in its own tab or window. Run the self-assessment (Mentimeter slides 1 to 5) and the warm-up question (slide 6), then park on slide 7 until Part 2. During each Rewind batch, keep the Mentimeter tab shared and read the answers from the speaker notes or [quiz-questions.md](quiz-questions.md). Show the deck's Rewind slides only if Mentimeter fails.
+- [ ] **Teams Polls backup.** Before the meeting, create the same 13 questions as Multiple Choice Quiz polls in the meeting's Polls tab, so they are ready if Mentimeter fails. This poll type marks correct answers but has no points or leaderboard, so say the answer aloud. If Mentimeter fails at the start, skip the self-assessment and ask the warm-up question aloud.
+- [ ] **Whiteboard.** The drawings use Microsoft Whiteboard in the Teams meeting. Check that your Teams licence includes it. Start it in the meeting (Share, then Whiteboard) at the start of Part 2, and label three areas Part 1, Part 2 and Part 3 so each drawing has its own space. Test beforehand with a second person that attendees can edit the board, not just view it. If they cannot edit, ask them what to draw and draw it yourself.
 
 Ask attendees beforehand:
 
@@ -49,31 +49,33 @@ Ask attendees beforehand:
 
 ## 3. Timing and structure
 
-The workshop is built for 2 to 2.5 hours, and the rest of the time is buffer. The time boxes below are a guide, not a strict schedule: extend a work block when most people are still going. Aim for about 31 minutes of presenting, including the close, which is mostly questions, 70 minutes of hands-on work, 31 minutes of checkpoints, 7 minutes for the self-assessment and 15 minutes of breaks.
+The workshop is paced for about 2.5 hours, including three short breaks, and the rest of the 3 hour booking is buffer. The time boxes below are a guide, not a strict schedule: extend a work block when most people are still going.
 
-Each part follows the same pattern: a short demo, then a work block where attendees work through the tutorial sections on their own while you watch the Teams chat. The quick-fire questions and the drawing run at the start of the next part and cover the part before it.
+The plan has about 31 minutes of presenting (including the close, which is mostly questions), 70 minutes of hands-on work, 33 minutes of checkpoints, 7 minutes for the self-assessment and 15 minutes of breaks.
+
+Each part follows the same pattern: a short demo, then a work block where attendees work through the tutorial sections on their own while you watch the Teams chat. The Rewind questions and the drawing run at the start of the next part and cover the part before it.
 
 | Block | Starts at | Time box | Slides | What happens |
 | --- | --- | --- | --- | --- |
 | Opening | 0:00 | 5 min | 1 to 5 | Cover, session plan, before you start, the workshop repository and how to use the materials. |
-| Self-assessment and warm-up | 0:05 | 7 min | 6 to 7 | Slide 6 shows the Mentimeter join code and QR code. Run the self-assessment (Mentimeter slides 1 to 6), then slide 7, the warm-up question, which is the same as Mentimeter slide 4. |
+| Self-assessment and warm-up | 0:05 | 7 min | 6 to 7 | Slide 6 shows the Mentimeter join code and QR code. Run the self-assessment (Mentimeter slides 1 to 5), then the warm-up question on Mentimeter slide 6 with deck slide 7 on screen. |
 | Part 1 demo | 0:12 | 8 min | 8 to 15 | What Git does, the three areas, then a one-minute demo of Sections 1 to 4 and Conventional Commits. |
 | Part 1 work | 0:20 | 15 min | 16 | Attendees do Sections 1 to 4. |
 | Break | 0:35 | 5 min | 17 | Optional. Extend it, shorten it or skip it depending on the time. |
-| Part 2 checkpoints | 0:40 | 11 min | 18 to 25 | Rewinds 1 to 5 (about 5 min) and Draw it: Part 1 (about 6 min). |
+| Part 2 checkpoints | 0:40 | 11 min | 18 to 25 | Rewinds 1 to 5 (about 5 min) and Draw it: Part 1 (about 6 min: 3 to draw, 2 for two or three people to explain, 1 for the model answer). |
 | Part 2 demo | 0:51 | 5 min | 26 to 28 | Section 5, signing in and Section 6. |
 | Part 2 work | 0:56 | 20 min | 29 | Attendees do Sections 5 and 6. |
 | Break | 1:16 | 5 min | 30 | Optional. Extend it to 10 minutes if the group is tired, or skip it if you are running late. |
-| Part 3 checkpoints | 1:21 | 8 min | 31 to 35 | Rewinds 6 and 7 (about 2 min) and Draw it: Part 2 (about 6 min). |
-| Part 3 demo | 1:29 | 8 min | 36 to 43 | Branches and merging, the pull request flow and a short demo of Sections 7 to 12. |
-| Part 3 work | 1:37 | 35 min | 44 | Attendees do Sections 7 to 12. |
-| Break | 2:12 | 5 min | 45 | Optional. The last break. Skip it if you are past about 2 hours 30 minutes. |
-| Wrap-up checkpoints | 2:17 | 12 min | 46 to 54 | Rewinds 8 to 13 (about 6 min) and Draw it: Part 3 (about 6 min). |
-| Close | 2:29 | 5 min | 55, 58, 59 | Troubleshooting, recap and questions. Undo commands and the fork route (slides 56 and 57) are optional. |
+| Part 3 checkpoints | 1:21 | 9 min | 31 to 35 | Rewinds 6 and 7 (about 2 min) and Draw it: Part 2 (about 7 min). |
+| Part 3 demo | 1:30 | 8 min | 36 to 43 | Branches and merging, the pull request flow and a short demo of Sections 7 to 12. |
+| Part 3 work | 1:38 | 35 min | 44 | Attendees do Sections 7 to 12. |
+| Break | 2:13 | 5 min | 45 | Optional. The last break. Skip it if you are past about 2 hours 30 minutes. |
+| Wrap-up checkpoints | 2:18 | 13 min | 46 to 54 | Rewinds 8 to 13 (about 6 min) and Draw it: Part 3 (about 7 min). |
+| Close | 2:31 | 5 min | 55, 58, 59 | Troubleshooting, recap and questions. Undo commands and the fork route (slides 56 and 57) are optional. |
 
-The plan ends at about 2:34. Start times assume every block uses its full time box.
+The plan ends at about 2:36. Start times assume every block uses its full time box.
 
-The blocks add up to about 2 hours 35 minutes, including three 5-minute breaks, which leaves about 25 minutes of the 3 hour booking as buffer. Without the breaks the plan is about 2 hours 20 minutes. The work blocks are 15, 20 and 35 minutes: Part 1 is a few short local commands, Part 2 depends mostly on signing in, and Part 3 has the most steps. The tutorial itself is estimated at 2 to 3 hours of hands-on time, and the work blocks give 70 minutes, so expect people to need more time, especially for signing in and Section 8. Use the buffer to extend a work block rather than cutting a checkpoint, and skip a break first if time is short. Anything unfinished can be completed afterwards with `docs/tutorial.md`.
+The blocks add up to about 2 hours 36 minutes, including three 5-minute breaks, which leaves about 24 minutes of the 3 hour booking as buffer. Without the breaks the plan is about 2 hours 21 minutes. The work blocks are 15, 20 and 35 minutes: Part 1 is a few short local commands, Part 2 depends mostly on signing in, and Part 3 has the most steps. The tutorial itself is estimated at 2 to 3 hours of hands-on time, and the work blocks give 70 minutes, so expect people to need more time, especially for signing in and Section 8. Use the buffer to extend a work block rather than cutting a checkpoint, and skip a break first if time is short. Anything unfinished can be completed afterwards with `docs/tutorial.md`.
 
 If you run long, skip the breaks, starting with the last one, and the optional slides 56 and 57, keep all three drawings, and trim the Rewinds to the ones that target the strongest misconceptions (3, 5, 8 and 12).
 
@@ -114,21 +116,21 @@ The full deck runs to 59 slides in this order:
 | 25 | Model answer: Part 1 | 55 | Troubleshooting |
 | 26 | Section 5: An empty GitHub repository | 56 | Optional: Undo commands |
 | 27 | Signing in to GitHub | 57 | Optional: contributing through a fork |
-| 28 | Section 6: Linking and pushing | 58 | Recap and check-in |
+| 28 | Section 6: Linking and pushing | 58 | Recap and next steps |
 | 29 | Your turn: Part 2 | 59 | Questions |
 | 30 | Break |  |  |
 
 Checkpoint facilitation:
 
-- **Warm-up.** After the overview slides, show slide 6 so everyone can join the Mentimeter with the code or QR code, then run the self-assessment (Mentimeter slides 1 to 6). Slide 7 of the deck shows the same question as Mentimeter slide 4, so show it while that question is open, just before Part 1. It is not one of the 13 Rewinds.
-- **Rewind.** Rewinds run in batches at the start of the next part, so each question covers an earlier part than the one you are about to teach. Run Rewinds 1 to 5 at the start of Part 2, 6 and 7 at the start of Part 3, and 8 to 13 in the wrap-up. This is delayed retrieval practice and never a check on what you just taught. Open the matching Mentimeter question, allow 45 to 60 seconds, show the result and say the answer in one sentence. The answer and the misconception it targets are in the speaker notes and in [quiz-questions.md](quiz-questions.md). The slide shows no answer.
-- **Draw it.** Share the Teams whiteboard and give everyone the time box on the slide to add to one drawing. Suggest each person takes one piece, such as one area or one step. Then ask each person to explain their piece, fix anything wrong together, and show the model answer on the next slide. If the group prefers, each person can draw their own version in a separate part of the board and explain it instead. Rewind 13 comes just before the Part 3 drawing and asks why `git branch -d` warns after a squash merge, so use the drawing to show it.
-- **Leaderboard.** The Mentimeter has a leaderboard slide after each batch and a final one at the end. Park on the "Back to the workshop" text slide between batches so the next questions are not shown early.
+- **Warm-up.** After the overview slides, show slide 6 so everyone can join the Mentimeter with the code or QR code. Run the self-assessment (Mentimeter slides 1 to 5), then the warm-up question on Mentimeter slide 6 while deck slide 7 is on screen. Then park Mentimeter on slide 7 until Part 2. The warm-up is not one of the 13 Rewinds.
+- **Rewind.** Rewinds run in batches at the start of the next part, so each question covers an earlier part than the one you are about to teach. Run Rewinds 1 to 5 at the start of Part 2, 6 and 7 at the start of Part 3, and 8 to 13 in the wrap-up. This is delayed retrieval practice and never a check on what you just taught. Keep the Mentimeter tab shared for the whole batch and open each question in turn. Allow 45 to 60 seconds, show the result and say the answer in one sentence. The answer and the misconception it targets are in the speaker notes and in [quiz-questions.md](quiz-questions.md). The deck's Rewind slides are the backup if Mentimeter fails, and they show no answer.
+- **Draw it.** Share the Teams whiteboard and give everyone the time box on the slide to add to one drawing. Suggest each person takes one piece, such as one area or one step. Then ask two or three people to explain their piece, fix anything wrong together, and show the model answer on the next slide. If the group prefers, each person can draw their own version in a separate part of the board and explain it instead. Rewind 13 comes just before the Part 3 drawing and asks why `git branch -d` warns after a squash merge, so use the drawing to show it.
+- **Leaderboard.** The Mentimeter has a leaderboard slide after each batch and a final one at the end. Each question has Add leaderboard switched off, so leaderboards appear only there. Park on the "Back to the workshop" text slide between batches so the next questions are not shown early.
 
 Facilitation tips:
 
-- Slides 4 and 5, "The workshop repository" and "How to use the materials", take about three minutes together at the start of Part 1. Say that the workshop repository holds the learning materials, and that attendees read them on GitHub or download them. Ask everyone to open the tutorial in the browser now, next to their terminal, and to confirm that they will work in a new folder of their own called `git-workshop-demo`, created in Section 2, plus an empty GitHub repository of their own, created in Section 5. Say clearly that the main-route exercises do not run inside a clone of the workshop repository. The only time attendees clone the workshop repository is for the optional fork appendix, which uses `main.py` and `examples/main_updated.py`.
-- Conventional Commits. Slide 15 shows the pattern `type(scope): description`, where the type says what kind of change it is, the optional scope says which part of the code it touches and the description says what the change does. The scope is optional, so `feat: add basic calculator` is a complete and valid message. The description is required. Say that the tutorial has a full table of types and that teams can agree on their own set. Add the length guideline: aim for 50 characters or fewer in the first line, and never more than 72, because GitHub cuts off longer first lines. The examples panel on that slide shows real messages from this repository, such as `docs(workshop): support PowerShell as well as Git Bash`, and attendees can see the whole history with `git log --oneline` after cloning the workshop repository.
+- Slides 4 and 5, "The workshop repository" and "How to use the materials", take about three minutes together during the opening. Say that the workshop repository holds the learning materials, and that attendees read them on GitHub or download them. Ask everyone to open the tutorial in the browser now, next to their terminal, and to confirm that they will work in a new folder of their own called `git-workshop-demo`, created in Section 2, plus an empty GitHub repository of their own, created in Section 5. Say clearly that the main-route exercises do not run inside a clone of the workshop repository. The only time attendees clone the workshop repository is for the optional fork appendix, which uses `main.py` and `examples/main_updated.py`.
+- Conventional Commits. Slide 15 shows the pattern `type(scope): description`, where the type says what kind of change it is, the optional scope says which part of the code it touches and the description says what the change does. The scope is optional, so `feat: add basic calculator` is a complete and valid message. The description is required. Say that the tutorial has a full table of types and that teams can agree on their own set. Add the length guideline: aim for 50 characters or fewer in the first line, and never more than 72, because GitHub cuts off longer first lines. The examples panel on that slide shows real messages from this repository, such as `docs(workshop): support PowerShell as well as Git Bash`, and attendees can browse the whole history in the repository's commits on GitHub.
 - Signing in is the slow part. Walk the room during Part 2. Watch for browsers showing a password prompt. GitHub stopped accepting account passwords for Git operations on 13 August 2021.
 - `master` versus `main`. Some attendees see `master` because Git is older than 2.28 or `init.defaultBranch` is not set. The fix is `git branch -M main`.
 - PowerShell versus Git Bash. `ls -la` fails in PowerShell because `ls` is an alias for `Get-ChildItem`. Use `Get-ChildItem -Force`, or run the command in Git Bash. The tutorial shows a **Git Bash, macOS or Linux** block and a **Windows PowerShell** block wherever the commands differ, and everything else works in either shell.
