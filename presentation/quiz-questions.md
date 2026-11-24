@@ -2,7 +2,7 @@
 
 Thirteen "Rewind" questions for the workshop deck. Each one covers an earlier part than the one being taught, never the current one, so it doubles as spaced practice. Questions are conceptual and do not depend on command syntax.
 
-The quiz is built in the Git Skills Self-Assessment Mentimeter, on slides 7 to 25, after the five self-assessment slides and the warm-up question, in the launch order below, so a single leaderboard builds up across the whole session. See the setup checklist in [presenter-guide.md](presenter-guide.md).
+The quiz is built in the Introduction to Git Workshop Mentimeter, on slides 10 to 26, after the self-assessment and the warm-up question, in the launch order below, so a single leaderboard builds up across the whole session. See the setup checklist in [presenter-guide.md](presenter-guide.md).
 
 ## When to run them
 
@@ -12,28 +12,28 @@ Run the questions in three batches, each about the part just finished:
 - Questions 6 and 7 at the start of Part 3, about Part 2.
 - Questions 8 to 13 in the wrap-up, about Part 3.
 
-In the Git Skills Self-Assessment Mentimeter, the self-assessment is on slides 1 to 5 and the warm-up question on slide 6. Run them, then park on slide 7 until Part 2.
+In the Introduction to Git Workshop Mentimeter, slide 1 is the title, the self-assessment is on slides 2 to 6, and the warm-up question is on slide 7, followed by a leaderboard on slide 8. Run them, then park on slide 9 until Part 2.
 
-- Slide 7: "Back to the workshop" text slide. Park here until Part 2.
-- Slides 8 to 12: questions 1 to 5, then slide 13, a leaderboard.
-- Slide 14: text slide. Park here until Part 3.
-- Slides 15 and 16: questions 6 and 7, then slide 17, a leaderboard.
-- Slide 18: text slide. Park here until the wrap-up.
-- Slides 19 to 24: questions 8 to 13, then slide 25, the final leaderboard.
+- Slide 9: "Back to the workshop" text slide. Park here until Part 2.
+- Slides 10 to 14: questions 1 to 5, then slide 15, a leaderboard.
+- Slide 16: text slide. Park here until Part 3.
+- Slides 17 and 18: questions 6 and 7, then slide 19, a leaderboard.
+- Slide 20: text slide. Park here until the wrap-up.
+- Slides 21 to 26: questions 8 to 13, then slide 27, the final leaderboard.
 
-The text slides give you a safe place to stop between batches, so the next questions are not shown early. Each question has Add leaderboard switched off, so a leaderboard shows only on the leaderboard slides after each batch. Leave it off: a leaderboard after every question adds several minutes.
+The text slides give you a safe place to stop between batches, so the next questions are not shown early. In Mentimeter, a question's Add leaderboard switch creates the leaderboard slide straight after it. It is on for the warm-up and questions 5, 7 and 13, and off for every other question. Leave the switches as they are: turning one off deletes its leaderboard slide, and turning on the others adds a leaderboard after every question, which costs several minutes.
 
 ## Warm-up question
 
-The self-assessment includes a teaser, "What best describes a Git commit?" (Mentimeter slide 6, straight after the self-assessment). Deck slide 7 shows the same question with four options, A to D. The correct answer is A, a snapshot of the project at a point in time. Keep the Mentimeter version to the same four options.
+The self-assessment includes a teaser, "What best describes a Git commit?" (Mentimeter slide 7, straight after the self-assessment). Deck slide 7 shows the same question with four options, A to D. The correct answer is A, a snapshot of the project at a point in time. Keep the Mentimeter version to the same four options.
 
 ## Rebuilding the Mentimeter quiz
 
-The quiz is already built in the Git Skills Self-Assessment presentation. To rebuild it:
+The quiz is already built in the Introduction to Git Workshop presentation. To rebuild it:
 
 1. Create one presentation in a free Mentimeter account and add 13 **Select Answer** slides from the **Quiz Competition** section (the scored multiple choice type), in the order below.
-2. Paste the question and the four options exactly as written. Mark the correct option, set the timer to 45 seconds and leave Add leaderboard off.
-3. Keep scoring on. Add a "Back to the workshop" text slide before each batch and a Leaderboard slide after it.
+2. Paste the question and the four options exactly as written. Mark the correct option and set the timer to 45 seconds. Switch Add leaderboard on only for the last question of each batch (questions 5, 7 and 13), which adds a leaderboard slide straight after it.
+3. Keep scoring on. Add a "Back to the workshop" text slide before each batch.
 4. The 13 Rewind slides show the join code 1509 1500. If you rebuild the presentation, copy its new join code into the slides with Find and Replace in PowerPoint.
 5. Rehearse alone, on one device. Every participant counts toward the free plan's monthly limit of 50, so avoid rehearsing with colleagues. Check Mentimeter's current free plan limits before the session.
 
