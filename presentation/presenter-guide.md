@@ -33,7 +33,7 @@ Checkpoint setup:
 - [ ] **Mentimeter account.** Create a free account at mentimeter.com. The free plan allows 50 participants per month across all presentations, so check its current limits before the session.
 - [ ] **Build the quiz.** Create one Mentimeter presentation with 13 Quiz competition questions, in launch order, from [quiz-questions.md](quiz-questions.md). One presentation gives one leaderboard for the whole day.
 - [ ] **Rehearse alone.** Run through the quiz yourself on one device. Every participant counts toward the monthly 50, so do not rehearse with colleagues.
-- [ ] **Join code.** In PowerPoint, replace `[join code]` on the 13 Rewind slides with the real code (Find and Replace). The PDF keeps the placeholder.
+- [ ] **Join code.** The 13 Rewind slides show the join code 1509 1500. If you rebuild the Mentimeter presentation, its code changes, so update the slides with Find and Replace in PowerPoint.
 - [ ] **Share the right tab.** Attendees answer at menti.com while you share the Mentimeter browser tab in Teams. Keep it open in its own tab or window.
 - [ ] **Teams Polls backup.** In the Teams meeting, create the same 13 questions under Polls using the Multiple Choice Quiz type. This type has no scoring, so say the answer aloud.
 - [ ] **Whiteboard.** The drawings use the Microsoft Whiteboard that comes with the Teams enterprise licence. Start it in the meeting (Share, then Whiteboard) at the start of Part 2, and label three areas Part 1, Part 2 and Part 3 so each drawing has its own space. Test beforehand with a second person that attendees can edit the board, not just view it. If they cannot edit, ask them what to draw and draw it yourself.
