@@ -6,7 +6,7 @@ A hands-on introduction to Git and GitHub for beginners. You build a small repos
 
 | Format | Length | Slides | Materials |
 | --- | --- | --- | --- |
-| Full workshop: hands-on | 2 to 3 hours | 54 | [Tutorial](docs/tutorial.md), [deck (PPTX)](presentation/introduction-to-git-workshop.pptx) and [deck (PDF)](presentation/introduction-to-git-workshop.pdf) |
+| Full workshop: hands-on | 2 to 3 hours | 55 | [Tutorial](docs/tutorial.md), [deck (PPTX)](presentation/introduction-to-git-workshop.pptx) and [deck (PDF)](presentation/introduction-to-git-workshop.pdf) |
 
 ## How to use these materials
 
