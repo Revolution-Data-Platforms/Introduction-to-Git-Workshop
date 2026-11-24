@@ -25,7 +25,7 @@ The text slides give you a safe place to stop between batches, so the next quest
 
 ## Warm-up question
 
-The self-assessment includes a teaser, "What best describes a Git commit?" (Mentimeter slide 4). Deck slide 2 shows the same question with four options, A to D. The correct answer is A, a snapshot of the project at a point in time. Keep the Mentimeter version to the same four options.
+The self-assessment includes a teaser, "What best describes a Git commit?" (Mentimeter slide 4). Deck slide 7 shows the same question with four options, A to D. The correct answer is A, a snapshot of the project at a point in time. Keep the Mentimeter version to the same four options.
 
 ## Rebuilding the Mentimeter quiz
 
@@ -43,23 +43,23 @@ If Mentimeter fails, create each question in advance under **Polls** in the Team
 
 | Launch order | Slide | Covers | Correct |
 | --- | --- | --- | --- |
-| 1 | 17 | Section 1 | B |
-| 2 | 18 | Section 2 | C |
-| 3 | 19 | Section 3 | A |
-| 4 | 20 | Section 4 | D |
-| 5 | 21 | Conventional Commits | B |
-| 6 | 29 | Section 5 | D |
-| 7 | 30 | Section 6 | C |
-| 8 | 42 | Section 7 | A |
-| 9 | 43 | Section 8 | A |
-| 10 | 44 | Section 9 | C |
-| 11 | 45 | Section 10 | D |
-| 12 | 46 | Section 11 | B |
-| 13 | 47 | Section 12 | A |
+| 1 | 18 | Section 1 | B |
+| 2 | 19 | Section 2 | C |
+| 3 | 20 | Section 3 | A |
+| 4 | 21 | Section 4 | D |
+| 5 | 22 | Conventional Commits | B |
+| 6 | 30 | Section 5 | D |
+| 7 | 31 | Section 6 | C |
+| 8 | 43 | Section 7 | A |
+| 9 | 44 | Section 8 | A |
+| 10 | 45 | Section 9 | C |
+| 11 | 46 | Section 10 | D |
+| 12 | 47 | Section 11 | B |
+| 13 | 48 | Section 12 | A |
 
 ### Question 1: Section 1
 
-Deck slide 21. Run at the start of Part 2.
+Deck slide 18. Run at the start of Part 2.
 
 **Why does Git need your name and email?**
 
@@ -72,7 +72,7 @@ Why: Misconception (A): the name and email are not your GitHub login. Git writes
 
 ### Question 2: Section 2
 
-Deck slide 21. Run at the start of Part 2.
+Deck slide 19. Run at the start of Part 2.
 
 **You delete the hidden `.git` folder. What happens?**
 
@@ -85,7 +85,7 @@ Why: Git keeps the whole history inside .git, and your files live beside it. Opt
 
 ### Question 3: Section 3
 
-Deck slide 21. Run at the start of Part 2.
+Deck slide 20. Run at the start of Part 2.
 
 **You edit `main.py` after `git add main.py`. Is the new edit staged?**
 
@@ -111,7 +111,7 @@ Why: A commit takes only what is staged. The other file's changes stay in the wo
 
 ### Question 5: Conventional Commits
 
-Deck slide 21. Run at the start of Part 2.
+Deck slide 22. Run at the start of Part 2.
 
 **Which Conventional Commits type fits a typo fix in the README?**
 
@@ -137,7 +137,7 @@ Why: Option A is the common worry. Nothing is overwritten. The push is rejected 
 
 ### Question 7: Section 6
 
-Deck slide 30. Run at the start of Part 3.
+Deck slide 31. Run at the start of Part 3.
 
 **After `git push`, what is on GitHub?**
 
@@ -150,7 +150,7 @@ Why: Misconception (A): working files do not sync. Only committed work is pushed
 
 ### Question 8: Section 7
 
-Deck slide 47. Run at the wrap-up.
+Deck slide 43. Run at the wrap-up.
 
 **What is a branch?**
 
@@ -163,7 +163,7 @@ Why: Misconception (B): a branch is not a copy of the files. It is a movable lab
 
 ### Question 9: Section 8
 
-Deck slide 47. Run at the wrap-up.
+Deck slide 44. Run at the wrap-up.
 
 **You commit on the feature branch. What happens to `main`?**
 
@@ -176,7 +176,7 @@ Why: Only the branch you are on moves. Option B is the common mistake.
 
 ### Question 10: Section 9
 
-Deck slide 47. Run at the wrap-up.
+Deck slide 45. Run at the wrap-up.
 
 **You pushed your branch. Has `main` on GitHub changed?**
 
@@ -189,7 +189,7 @@ Why: main on GitHub changes only when someone merges the pull request. GitHub ne
 
 ### Question 11: Section 10
 
-Deck slide 47. Run at the wrap-up.
+Deck slide 46. Run at the wrap-up.
 
 **What does opening a pull request do?**
 
@@ -215,7 +215,7 @@ Why: Misconception (A): a merge does not always create a merge commit. When main
 
 ### Question 13: Section 12
 
-Deck slide 47. Run at the wrap-up.
+Deck slide 48. Run at the wrap-up.
 
 **Why does `git branch -d` warn after a squash merge?**
 
