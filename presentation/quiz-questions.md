@@ -43,23 +43,23 @@ If Mentimeter fails, create each question in advance under **Polls** in the Team
 
 | Launch order | Slide | Covers | Correct |
 | --- | --- | --- | --- |
-| 1 | 18 | Section 1 | B |
-| 2 | 19 | Section 2 | C |
-| 3 | 20 | Section 3 | A |
-| 4 | 21 | Section 4 | D |
-| 5 | 22 | Conventional Commits | B |
-| 6 | 30 | Section 5 | D |
-| 7 | 31 | Section 6 | C |
-| 8 | 43 | Section 7 | A |
-| 9 | 44 | Section 8 | A |
-| 10 | 45 | Section 9 | C |
-| 11 | 46 | Section 10 | D |
-| 12 | 47 | Section 11 | B |
-| 13 | 48 | Section 12 | A |
+| 1 | 19 | Section 1 | B |
+| 2 | 20 | Section 2 | C |
+| 3 | 21 | Section 3 | A |
+| 4 | 22 | Section 4 | D |
+| 5 | 23 | Conventional Commits | B |
+| 6 | 32 | Section 5 | D |
+| 7 | 33 | Section 6 | C |
+| 8 | 45 | Section 7 | A |
+| 9 | 46 | Section 8 | A |
+| 10 | 47 | Section 9 | C |
+| 11 | 48 | Section 10 | D |
+| 12 | 49 | Section 11 | B |
+| 13 | 50 | Section 12 | A |
 
 ### Question 1: Section 1
 
-Deck slide 18. Run at the start of Part 2.
+Deck slide 19. Run at the start of Part 2.
 
 **Why does Git need your name and email?**
 
@@ -72,7 +72,7 @@ Why: Misconception (A): the name and email are not your GitHub login. Git writes
 
 ### Question 2: Section 2
 
-Deck slide 19. Run at the start of Part 2.
+Deck slide 20. Run at the start of Part 2.
 
 **You delete the hidden `.git` folder. What happens?**
 
@@ -85,7 +85,7 @@ Why: Git keeps the whole history inside .git, and your files live beside it. Opt
 
 ### Question 3: Section 3
 
-Deck slide 20. Run at the start of Part 2.
+Deck slide 21. Run at the start of Part 2.
 
 **You edit `main.py` after `git add main.py`. Is the new edit staged?**
 
@@ -98,7 +98,7 @@ Why: Misconception (B): staging does not track a file, it stores a snapshot of t
 
 ### Question 4: Section 4
 
-Deck slide 21. Run at the start of Part 2.
+Deck slide 22. Run at the start of Part 2.
 
 **You changed two files but staged only one. What goes in the commit?**
 
@@ -111,7 +111,7 @@ Why: A commit takes only what is staged. The other file's changes stay in the wo
 
 ### Question 5: Conventional Commits
 
-Deck slide 22. Run at the start of Part 2.
+Deck slide 23. Run at the start of Part 2.
 
 **Which Conventional Commits type fits a typo fix in the README?**
 
@@ -124,7 +124,7 @@ Why: Misconception (A): fix means a bug in the code, not any kind of mistake. A 
 
 ### Question 6: Section 5
 
-Deck slide 30. Run at the start of Part 3.
+Deck slide 32. Run at the start of Part 3.
 
 **Why create the GitHub repository empty?**
 
@@ -137,7 +137,7 @@ Why: Option A is the common worry. Nothing is overwritten. The push is rejected 
 
 ### Question 7: Section 6
 
-Deck slide 31. Run at the start of Part 3.
+Deck slide 33. Run at the start of Part 3.
 
 **After `git push`, what is on GitHub?**
 
@@ -150,7 +150,7 @@ Why: Misconception (A): working files do not sync. Only committed work is pushed
 
 ### Question 8: Section 7
 
-Deck slide 43. Run at the wrap-up.
+Deck slide 45. Run at the wrap-up.
 
 **What is a branch?**
 
@@ -163,7 +163,7 @@ Why: Misconception (B): a branch is not a copy of the files. It is a movable lab
 
 ### Question 9: Section 8
 
-Deck slide 44. Run at the wrap-up.
+Deck slide 46. Run at the wrap-up.
 
 **You commit on the feature branch. What happens to `main`?**
 
@@ -176,7 +176,7 @@ Why: Only the branch you are on moves. Option B is the common mistake.
 
 ### Question 10: Section 9
 
-Deck slide 45. Run at the wrap-up.
+Deck slide 47. Run at the wrap-up.
 
 **You pushed your branch. Has `main` on GitHub changed?**
 
@@ -189,7 +189,7 @@ Why: main on GitHub changes only when someone merges the pull request. GitHub ne
 
 ### Question 11: Section 10
 
-Deck slide 46. Run at the wrap-up.
+Deck slide 48. Run at the wrap-up.
 
 **What does opening a pull request do?**
 
@@ -202,7 +202,7 @@ Why: The push already uploaded the commits (B). A pull request asks for the merg
 
 ### Question 12: Section 11
 
-Deck slide 47. Run at the wrap-up.
+Deck slide 49. Run at the wrap-up.
 
 **`main` has not moved since you branched, and you merge. What happens?**
 
@@ -215,7 +215,7 @@ Why: Misconception (A): a merge does not always create a merge commit. When main
 
 ### Question 13: Section 12
 
-Deck slide 48. Run at the wrap-up.
+Deck slide 50. Run at the wrap-up.
 
 **Why does `git branch -d` warn after a squash merge?**
 

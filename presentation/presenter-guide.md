@@ -8,7 +8,7 @@ The deck includes spaced retrieval checkpoints: 13 quick-fire "Rewind" questions
 
 | Format | Length | Deck | Attendee activity | Presenter activity |
 | --- | --- | --- | --- | --- |
-| Full workshop: hands-on, remote | 2 to 2.5 hours, plus buffer | `presentation/introduction-to-git-workshop.pptx` and `presentation/introduction-to-git-workshop.pdf` (56 slides) | Follow `docs/tutorial.md` on their own machine, answer the Rewind questions and draw on a shared whiteboard. | Demo briefly, then let attendees work. Run the checkpoints. |
+| Full workshop: hands-on, remote | 2 to 2.5 hours, plus buffer | `presentation/introduction-to-git-workshop.pptx` and `presentation/introduction-to-git-workshop.pdf` (58 slides) | Follow `docs/tutorial.md` on their own machine, answer the Rewind questions and draw on a shared whiteboard. | Demo briefly, then let attendees work. Run the checkpoints. |
 
 Deck file paths are relative to the repository root. The deck ships as a PowerPoint file and a PDF.
 
@@ -59,18 +59,20 @@ Each part follows the same pattern: a short demo, then a work block where attend
 | Self-assessment and warm-up | 7 min | 6 to 7 | Slide 6 shows the Mentimeter join code and QR code. Run the self-assessment (Mentimeter slides 1 to 6), then slide 7, the warm-up question, which is the same as Mentimeter slide 4. |
 | Part 1 demo | 10 min | 8 to 15 | What Git does, the three areas, then a one-minute demo of Sections 1 to 4 and Conventional Commits. |
 | Part 1 work | 25 min | 16 | Attendees do Sections 1 to 4. |
-| Part 2 checkpoints | 11 min | 17 to 24 | Rewinds 1 to 5 (about 5 min) and Draw it: Part 1 (about 6 min). |
-| Part 2 demo | 5 min | 25 to 27 | Section 5, signing in and Section 6. |
-| Part 2 work | 25 min | 28 | Attendees do Sections 5 and 6. |
-| Part 3 checkpoints | 8 min | 29 to 33 | Rewinds 6 and 7 (about 2 min) and Draw it: Part 2 (about 6 min). |
-| Part 3 demo | 8 min | 34 to 41 | Branches and merging, the pull request flow and a short demo of Sections 7 to 12. |
-| Part 3 work | 35 min | 42 | Attendees do Sections 7 to 12. |
-| Wrap-up checkpoints | 12 min | 43 to 51 | Rewinds 8 to 13 (about 6 min) and Draw it: Part 3 (about 6 min). |
-| Close | 5 min | 52, 55, 56 | Troubleshooting, recap and questions. Undo commands and the fork route (slides 53 and 54) are optional. |
+| Break | 5 min | 17 | Optional. Extend it, shorten it or skip it depending on the time. |
+| Part 2 checkpoints | 11 min | 18 to 25 | Rewinds 1 to 5 (about 5 min) and Draw it: Part 1 (about 6 min). |
+| Part 2 demo | 5 min | 26 to 28 | Section 5, signing in and Section 6. |
+| Part 2 work | 25 min | 29 | Attendees do Sections 5 and 6. |
+| Break | 5 min | 30 | Optional. Extend it to 10 minutes if the group is tired, or skip it if you are running late. |
+| Part 3 checkpoints | 8 min | 31 to 35 | Rewinds 6 and 7 (about 2 min) and Draw it: Part 2 (about 6 min). |
+| Part 3 demo | 8 min | 36 to 43 | Branches and merging, the pull request flow and a short demo of Sections 7 to 12. |
+| Part 3 work | 35 min | 44 | Attendees do Sections 7 to 12. |
+| Wrap-up checkpoints | 12 min | 45 to 53 | Rewinds 8 to 13 (about 6 min) and Draw it: Part 3 (about 6 min). |
+| Close | 5 min | 54, 57, 58 | Troubleshooting, recap and questions. Undo commands and the fork route (slides 55 and 56) are optional. |
 
-The blocks add up to about 2 hours 35 minutes. The tutorial itself is estimated at 2 to 3 hours of hands-on time, and the work blocks give 85 minutes, so expect people to need more time, especially for signing in and Section 8. Use the buffer to extend a work block rather than cutting a checkpoint. Anything unfinished can be completed afterwards with `docs/tutorial.md`.
+The blocks add up to about 2 hours 45 minutes, including two 5-minute breaks. The breaks use the buffer in the 3 hour booking, and each sits between a work block and the next part's quiz questions. The tutorial itself is estimated at 2 to 3 hours of hands-on time, and the work blocks give 85 minutes, so expect people to need more time, especially for signing in and Section 8. Use the buffer to extend a work block rather than cutting a checkpoint. Anything unfinished can be completed afterwards with `docs/tutorial.md`.
 
-If you run long, skip the optional slides 53 and 54, keep all three drawings, and trim the Rewinds to the ones that target the strongest misconceptions (3, 5, 8 and 12).
+If you run long, skip the breaks and the optional slides 55 and 56, keep all three drawings, and trim the Rewinds to the ones that target the strongest misconceptions (3, 5, 8 and 12).
 
 Running a part:
 
@@ -78,38 +80,39 @@ Running a part:
 2. Show the "Your turn" slide, start a timer and tell attendees to work through the tutorial. Ask them to type each command themselves and copy only fiddly items such as URLs, email addresses and the Section 8 code. Walk the Teams chat and answer questions.
 3. At the start of the next part, run the Rewind questions about the part before, then the drawing, then the next demo.
 
-The full deck runs to 56 slides in this order:
+The full deck runs to 58 slides in this order:
 
 | Slide | Title | Slide | Title |
 | --- | --- | --- | --- |
-| 1 | Cover | 29 | Part 3 divider |
-| 2 | Session plan | 30 | Rewind 6 (Section 5) |
-| 3 | Before you start | 31 | Rewind 7 (Section 6) |
-| 4 | The workshop repository | 32 | Draw it: Part 2 |
-| 5 | How to use the materials | 33 | Model answer: Part 2 |
-| 6 | Self-assessment | 34 | Branches and merging |
-| 7 | Warm-up question | 35 | Section 7: Creating a branch |
-| 8 | Part 1 divider | 36 | Section 8: Changing and committing |
-| 9 | What Git does | 37 | Section 9: Pushing the branch |
-| 10 | The three areas | 38 | The pull request flow |
-| 11 | Section 1: Your Git identity | 39 | Section 10: Opening a pull request |
-| 12 | Section 2: Creating a repository | 40 | Section 11: Reviewing and merging |
-| 13 | Section 3: Staging files | 41 | Section 12: Cleaning up |
-| 14 | Section 4: Your first commit | 42 | Your turn: Part 3 |
-| 15 | Conventional Commits | 43 | Rewind 8 (Section 7) |
-| 16 | Your turn: Part 1 | 44 | Rewind 9 (Section 8) |
-| 17 | Part 2 divider | 45 | Rewind 10 (Section 9) |
-| 18 | Rewind 1 (Section 1) | 46 | Rewind 11 (Section 10) |
-| 19 | Rewind 2 (Section 2) | 47 | Rewind 12 (Section 11) |
-| 20 | Rewind 3 (Section 3) | 48 | Rewind 13 (Section 12) |
-| 21 | Rewind 4 (Section 4) | 49 | Draw it: Part 3 |
-| 22 | Rewind 5 (Conventional Commits) | 50 | Model answer: fast-forward and merge commit |
-| 23 | Draw it: Part 1 | 51 | Model answer: squash merge |
-| 24 | Model answer: Part 1 | 52 | Troubleshooting |
-| 25 | Section 5: An empty GitHub repository | 53 | Optional: Undo commands |
-| 26 | Signing in to GitHub | 54 | Optional: contributing through a fork |
-| 27 | Section 6: Linking and pushing | 55 | Recap and check-in |
-| 28 | Your turn: Part 2 | 56 | Questions |
+| 1 | Cover | 30 | Break |
+| 2 | Session plan | 31 | Part 3 divider |
+| 3 | Before you start | 32 | Rewind 6 (Section 5) |
+| 4 | The workshop repository | 33 | Rewind 7 (Section 6) |
+| 5 | How to use the materials | 34 | Draw it: Part 2 |
+| 6 | Self-assessment | 35 | Model answer: Part 2 |
+| 7 | Warm-up question | 36 | Branches and merging |
+| 8 | Part 1 divider | 37 | Section 7: Creating a branch |
+| 9 | What Git does | 38 | Section 8: Changing and committing |
+| 10 | The three areas | 39 | Section 9: Pushing the branch |
+| 11 | Section 1: Your Git identity | 40 | The pull request flow |
+| 12 | Section 2: Creating a repository | 41 | Section 10: Opening a pull request |
+| 13 | Section 3: Staging files | 42 | Section 11: Reviewing and merging |
+| 14 | Section 4: Your first commit | 43 | Section 12: Cleaning up |
+| 15 | Conventional Commits | 44 | Your turn: Part 3 |
+| 16 | Your turn: Part 1 | 45 | Rewind 8 (Section 7) |
+| 17 | Break | 46 | Rewind 9 (Section 8) |
+| 18 | Part 2 divider | 47 | Rewind 10 (Section 9) |
+| 19 | Rewind 1 (Section 1) | 48 | Rewind 11 (Section 10) |
+| 20 | Rewind 2 (Section 2) | 49 | Rewind 12 (Section 11) |
+| 21 | Rewind 3 (Section 3) | 50 | Rewind 13 (Section 12) |
+| 22 | Rewind 4 (Section 4) | 51 | Draw it: Part 3 |
+| 23 | Rewind 5 (Conventional Commits) | 52 | Model answer: fast-forward and merge commit |
+| 24 | Draw it: Part 1 | 53 | Model answer: squash merge |
+| 25 | Model answer: Part 1 | 54 | Troubleshooting |
+| 26 | Section 5: An empty GitHub repository | 55 | Optional: Undo commands |
+| 27 | Signing in to GitHub | 56 | Optional: contributing through a fork |
+| 28 | Section 6: Linking and pushing | 57 | Recap and check-in |
+| 29 | Your turn: Part 2 | 58 | Questions |
 
 Checkpoint facilitation:
 
@@ -121,7 +124,7 @@ Checkpoint facilitation:
 Facilitation tips:
 
 - Slides 4 and 5, "The workshop repository" and "How to use the materials", take about three minutes together at the start of Part 1. Say that the workshop repository holds the learning materials, and that attendees read them on GitHub or download them. Ask everyone to open the tutorial in the browser now, next to their terminal, and to confirm that they will work in a new folder of their own called `git-workshop-demo`, created in Section 2, plus an empty GitHub repository of their own, created in Section 5. Say clearly that the main-route exercises do not run inside a clone of the workshop repository. The only time attendees clone the workshop repository is for the optional fork appendix, which uses `main.py` and `examples/main_updated.py`.
-- Conventional Commits. Slide 19 shows the pattern `type(scope): description`, where the type says what kind of change it is, the optional scope says which part of the code it touches and the description says what the change does. The scope is optional, so `feat: add basic calculator` is a complete and valid message. The description is required. Say that the tutorial has a full table of types and that teams can agree on their own set. Add the length guideline: aim for 50 characters or fewer in the first line, and never more than 72, because GitHub cuts off longer first lines. The examples panel on that slide shows real messages from this repository, such as `docs(workshop): support PowerShell as well as Git Bash`, and attendees can see the whole history with `git log --oneline` after cloning the workshop repository.
+- Conventional Commits. Slide 15 shows the pattern `type(scope): description`, where the type says what kind of change it is, the optional scope says which part of the code it touches and the description says what the change does. The scope is optional, so `feat: add basic calculator` is a complete and valid message. The description is required. Say that the tutorial has a full table of types and that teams can agree on their own set. Add the length guideline: aim for 50 characters or fewer in the first line, and never more than 72, because GitHub cuts off longer first lines. The examples panel on that slide shows real messages from this repository, such as `docs(workshop): support PowerShell as well as Git Bash`, and attendees can see the whole history with `git log --oneline` after cloning the workshop repository.
 - Signing in is the slow part. Walk the room during Part 2. Watch for browsers showing a password prompt. GitHub stopped accepting account passwords for Git operations on 13 August 2021.
 - `master` versus `main`. Some attendees see `master` because Git is older than 2.28 or `init.defaultBranch` is not set. The fix is `git branch -M main`.
 - PowerShell versus Git Bash. `ls -la` fails in PowerShell because `ls` is an alias for `Get-ChildItem`. Use `Get-ChildItem -Force`, or run the command in Git Bash. The tutorial shows a **Git Bash, macOS or Linux** block and a **Windows PowerShell** block wherever the commands differ, and everything else works in either shell.
