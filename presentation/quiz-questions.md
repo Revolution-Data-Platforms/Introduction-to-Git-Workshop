@@ -34,7 +34,7 @@ The quiz is already built in the Introduction to Git Workshop presentation. To r
 1. Create one presentation in a free Mentimeter account and add 13 **Select Answer** slides from the **Quiz Competition** section (the scored multiple choice type), in the order below.
 2. Paste the question and the four options exactly as written. Mark the correct option and set the timer to 15 seconds. Switch Add leaderboard on only for the last question of each batch (questions 5, 7 and 13), which adds a leaderboard slide straight after it.
 3. Keep scoring on. Add a "Back to the workshop" text slide before each batch.
-4. The 13 Rewind slides show the join code 1509 1500. If you rebuild the presentation, copy its new join code into the slides with Find and Replace in PowerPoint.
+4. The self-assessment, warm-up and 13 Rewind slides show the join code 1509 1500. If the code changes, or you rebuild the presentation, copy the new code into the slides with Find and Replace in PowerPoint. If you rebuild, also replace the QR code, because it links to the old presentation.
 5. Rehearse alone, on one device. Every participant counts toward the free plan's monthly limit of 50, so avoid rehearsing with colleagues. Check Mentimeter's current free plan limits before the session.
 
 ## Backup: Teams meeting Polls
