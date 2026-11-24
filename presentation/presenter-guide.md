@@ -8,7 +8,7 @@ The deck includes spaced retrieval checkpoints: 13 quick-fire "Rewind" questions
 
 | Format | Length | Deck | Attendee activity | Presenter activity |
 | --- | --- | --- | --- | --- |
-| Full workshop: hands-on, remote | 2 to 2.5 hours, plus buffer | `presentation/introduction-to-git-workshop.pptx` and `presentation/introduction-to-git-workshop.pdf` (58 slides) | Follow `docs/tutorial.md` on their own machine, answer the Rewind questions and draw on a shared whiteboard. | Demo briefly, then let attendees work. Run the checkpoints. |
+| Full workshop: hands-on, remote | 2 to 2.5 hours, plus three short breaks and buffer | `presentation/introduction-to-git-workshop.pptx` and `presentation/introduction-to-git-workshop.pdf` (59 slides) | Follow `docs/tutorial.md` on their own machine, answer the Rewind questions and draw on a shared whiteboard. | Demo briefly, then let attendees work. Run the checkpoints. |
 
 Deck file paths are relative to the repository root. The deck ships as a PowerPoint file and a PDF.
 
@@ -49,30 +49,33 @@ Ask attendees beforehand:
 
 ## 3. Timing and structure
 
-The workshop is built for 2 to 2.5 hours, and the rest of the time is buffer. The time boxes below are a guide, not a strict schedule: extend a work block when most people are still going. Aim for about 30 minutes of presenting, about 85 minutes of hands-on work and about 30 minutes of checkpoints.
+The workshop is built for 2 to 2.5 hours, and the rest of the time is buffer. The time boxes below are a guide, not a strict schedule: extend a work block when most people are still going. Aim for about 33 minutes of presenting, 85 minutes of hands-on work, 31 minutes of checkpoints, 7 minutes for the self-assessment and 15 minutes of breaks.
 
 Each part follows the same pattern: a short demo, then a work block where attendees work through the tutorial sections on their own while you watch the Teams chat. The quick-fire questions and the drawing run at the start of the next part and cover the part before it.
 
-| Block | Time box | Slides | What happens |
-| --- | --- | --- | --- |
-| Opening | 5 min | 1 to 5 | Cover, session plan, before you start, the workshop repository and how to use the materials. |
-| Self-assessment and warm-up | 7 min | 6 to 7 | Slide 6 shows the Mentimeter join code and QR code. Run the self-assessment (Mentimeter slides 1 to 6), then slide 7, the warm-up question, which is the same as Mentimeter slide 4. |
-| Part 1 demo | 10 min | 8 to 15 | What Git does, the three areas, then a one-minute demo of Sections 1 to 4 and Conventional Commits. |
-| Part 1 work | 25 min | 16 | Attendees do Sections 1 to 4. |
-| Break | 5 min | 17 | Optional. Extend it, shorten it or skip it depending on the time. |
-| Part 2 checkpoints | 11 min | 18 to 25 | Rewinds 1 to 5 (about 5 min) and Draw it: Part 1 (about 6 min). |
-| Part 2 demo | 5 min | 26 to 28 | Section 5, signing in and Section 6. |
-| Part 2 work | 25 min | 29 | Attendees do Sections 5 and 6. |
-| Break | 5 min | 30 | Optional. Extend it to 10 minutes if the group is tired, or skip it if you are running late. |
-| Part 3 checkpoints | 8 min | 31 to 35 | Rewinds 6 and 7 (about 2 min) and Draw it: Part 2 (about 6 min). |
-| Part 3 demo | 8 min | 36 to 43 | Branches and merging, the pull request flow and a short demo of Sections 7 to 12. |
-| Part 3 work | 35 min | 44 | Attendees do Sections 7 to 12. |
-| Wrap-up checkpoints | 12 min | 45 to 53 | Rewinds 8 to 13 (about 6 min) and Draw it: Part 3 (about 6 min). |
-| Close | 5 min | 54, 57, 58 | Troubleshooting, recap and questions. Undo commands and the fork route (slides 55 and 56) are optional. |
+| Block | Starts at | Time box | Slides | What happens |
+| --- | --- | --- | --- | --- |
+| Opening | 0:00 | 5 min | 1 to 5 | Cover, session plan, before you start, the workshop repository and how to use the materials. |
+| Self-assessment and warm-up | 0:05 | 7 min | 6 to 7 | Slide 6 shows the Mentimeter join code and QR code. Run the self-assessment (Mentimeter slides 1 to 6), then slide 7, the warm-up question, which is the same as Mentimeter slide 4. |
+| Part 1 demo | 0:12 | 10 min | 8 to 15 | What Git does, the three areas, then a one-minute demo of Sections 1 to 4 and Conventional Commits. |
+| Part 1 work | 0:22 | 25 min | 16 | Attendees do Sections 1 to 4. |
+| Break | 0:47 | 5 min | 17 | Optional. Extend it, shorten it or skip it depending on the time. |
+| Part 2 checkpoints | 0:52 | 11 min | 18 to 25 | Rewinds 1 to 5 (about 5 min) and Draw it: Part 1 (about 6 min). |
+| Part 2 demo | 1:03 | 5 min | 26 to 28 | Section 5, signing in and Section 6. |
+| Part 2 work | 1:08 | 25 min | 29 | Attendees do Sections 5 and 6. |
+| Break | 1:33 | 5 min | 30 | Optional. Extend it to 10 minutes if the group is tired, or skip it if you are running late. |
+| Part 3 checkpoints | 1:38 | 8 min | 31 to 35 | Rewinds 6 and 7 (about 2 min) and Draw it: Part 2 (about 6 min). |
+| Part 3 demo | 1:46 | 8 min | 36 to 43 | Branches and merging, the pull request flow and a short demo of Sections 7 to 12. |
+| Part 3 work | 1:54 | 35 min | 44 | Attendees do Sections 7 to 12. |
+| Break | 2:29 | 5 min | 45 | Optional. The last break. Skip it if you are past about 2 hours 30 minutes. |
+| Wrap-up checkpoints | 2:34 | 12 min | 46 to 54 | Rewinds 8 to 13 (about 6 min) and Draw it: Part 3 (about 6 min). |
+| Close | 2:46 | 5 min | 55, 58, 59 | Troubleshooting, recap and questions. Undo commands and the fork route (slides 56 and 57) are optional. |
 
-The blocks add up to about 2 hours 45 minutes, including two 5-minute breaks. The breaks use the buffer in the 3 hour booking, and each sits between a work block and the next part's quiz questions. The tutorial itself is estimated at 2 to 3 hours of hands-on time, and the work blocks give 85 minutes, so expect people to need more time, especially for signing in and Section 8. Use the buffer to extend a work block rather than cutting a checkpoint. Anything unfinished can be completed afterwards with `docs/tutorial.md`.
+The plan ends at about 2:51. Start times assume every block uses its full time box.
 
-If you run long, skip the breaks and the optional slides 55 and 56, keep all three drawings, and trim the Rewinds to the ones that target the strongest misconceptions (3, 5, 8 and 12).
+The blocks add up to about 2 hours 50 minutes, including three 5-minute breaks, which leaves about 10 minutes of the 3 hour booking as buffer. Without the breaks the plan is about 2 hours 35 minutes. The tutorial itself is estimated at 2 to 3 hours of hands-on time, and the work blocks give 85 minutes, so expect people to need more time, especially for signing in and Section 8. Use the buffer to extend a work block rather than cutting a checkpoint, and skip a break first if time is short. Anything unfinished can be completed afterwards with `docs/tutorial.md`.
+
+If you run long, skip the breaks, starting with the last one, and the optional slides 56 and 57, keep all three drawings, and trim the Rewinds to the ones that target the strongest misconceptions (3, 5, 8 and 12).
 
 Running a part:
 
@@ -80,39 +83,40 @@ Running a part:
 2. Show the "Your turn" slide, start a timer and tell attendees to work through the tutorial. Ask them to type each command themselves and copy only fiddly items such as URLs, email addresses and the Section 8 code. Walk the Teams chat and answer questions.
 3. At the start of the next part, run the Rewind questions about the part before, then the drawing, then the next demo.
 
-The full deck runs to 58 slides in this order:
+The full deck runs to 59 slides in this order:
 
 | Slide | Title | Slide | Title |
 | --- | --- | --- | --- |
-| 1 | Cover | 30 | Break |
-| 2 | Session plan | 31 | Part 3 divider |
-| 3 | Before you start | 32 | Rewind 6 (Section 5) |
-| 4 | The workshop repository | 33 | Rewind 7 (Section 6) |
-| 5 | How to use the materials | 34 | Draw it: Part 2 |
-| 6 | Self-assessment | 35 | Model answer: Part 2 |
-| 7 | Warm-up question | 36 | Branches and merging |
-| 8 | Part 1 divider | 37 | Section 7: Creating a branch |
-| 9 | What Git does | 38 | Section 8: Changing and committing |
-| 10 | The three areas | 39 | Section 9: Pushing the branch |
-| 11 | Section 1: Your Git identity | 40 | The pull request flow |
-| 12 | Section 2: Creating a repository | 41 | Section 10: Opening a pull request |
-| 13 | Section 3: Staging files | 42 | Section 11: Reviewing and merging |
-| 14 | Section 4: Your first commit | 43 | Section 12: Cleaning up |
-| 15 | Conventional Commits | 44 | Your turn: Part 3 |
-| 16 | Your turn: Part 1 | 45 | Rewind 8 (Section 7) |
-| 17 | Break | 46 | Rewind 9 (Section 8) |
-| 18 | Part 2 divider | 47 | Rewind 10 (Section 9) |
-| 19 | Rewind 1 (Section 1) | 48 | Rewind 11 (Section 10) |
-| 20 | Rewind 2 (Section 2) | 49 | Rewind 12 (Section 11) |
-| 21 | Rewind 3 (Section 3) | 50 | Rewind 13 (Section 12) |
-| 22 | Rewind 4 (Section 4) | 51 | Draw it: Part 3 |
-| 23 | Rewind 5 (Conventional Commits) | 52 | Model answer: fast-forward and merge commit |
-| 24 | Draw it: Part 1 | 53 | Model answer: squash merge |
-| 25 | Model answer: Part 1 | 54 | Troubleshooting |
-| 26 | Section 5: An empty GitHub repository | 55 | Optional: Undo commands |
-| 27 | Signing in to GitHub | 56 | Optional: contributing through a fork |
-| 28 | Section 6: Linking and pushing | 57 | Recap and check-in |
-| 29 | Your turn: Part 2 | 58 | Questions |
+| 1 | Cover | 31 | Part 3 divider |
+| 2 | Session plan | 32 | Rewind 6 (Section 5) |
+| 3 | Before you start | 33 | Rewind 7 (Section 6) |
+| 4 | The workshop repository | 34 | Draw it: Part 2 |
+| 5 | How to use the materials | 35 | Model answer: Part 2 |
+| 6 | Self-assessment | 36 | Branches and merging |
+| 7 | Warm-up question | 37 | Section 7: Creating a branch |
+| 8 | Part 1 divider | 38 | Section 8: Changing and committing |
+| 9 | What Git does | 39 | Section 9: Pushing the branch |
+| 10 | The three areas | 40 | The pull request flow |
+| 11 | Section 1: Your Git identity | 41 | Section 10: Opening a pull request |
+| 12 | Section 2: Creating a repository | 42 | Section 11: Reviewing and merging |
+| 13 | Section 3: Staging files | 43 | Section 12: Cleaning up |
+| 14 | Section 4: Your first commit | 44 | Your turn: Part 3 |
+| 15 | Conventional Commits | 45 | Break |
+| 16 | Your turn: Part 1 | 46 | Rewind 8 (Section 7) |
+| 17 | Break | 47 | Rewind 9 (Section 8) |
+| 18 | Part 2 divider | 48 | Rewind 10 (Section 9) |
+| 19 | Rewind 1 (Section 1) | 49 | Rewind 11 (Section 10) |
+| 20 | Rewind 2 (Section 2) | 50 | Rewind 12 (Section 11) |
+| 21 | Rewind 3 (Section 3) | 51 | Rewind 13 (Section 12) |
+| 22 | Rewind 4 (Section 4) | 52 | Draw it: Part 3 |
+| 23 | Rewind 5 (Conventional Commits) | 53 | Model answer: fast-forward and merge commit |
+| 24 | Draw it: Part 1 | 54 | Model answer: squash merge |
+| 25 | Model answer: Part 1 | 55 | Troubleshooting |
+| 26 | Section 5: An empty GitHub repository | 56 | Optional: Undo commands |
+| 27 | Signing in to GitHub | 57 | Optional: contributing through a fork |
+| 28 | Section 6: Linking and pushing | 58 | Recap and check-in |
+| 29 | Your turn: Part 2 | 59 | Questions |
+| 30 | Break |  |  |
 
 Checkpoint facilitation:
 
