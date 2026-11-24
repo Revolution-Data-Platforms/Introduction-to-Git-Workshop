@@ -2,7 +2,7 @@
 
 Thirteen quick-fire "Rewind" questions for the workshop deck. Each one covers an earlier part than the one being taught, never the current one, so it doubles as spaced practice. Questions are conceptual and do not depend on command syntax.
 
-Build them as one Mentimeter quiz in the launch order below, so a single leaderboard builds up across the whole session. See the setup checklist in [presenter-guide.md](presenter-guide.md).
+The quiz is built in the Git Skills Self-Assessment Mentimeter, on slides 7 to 25 after the six survey slides, in the launch order below, so a single leaderboard builds up across the whole session. See the setup checklist in [presenter-guide.md](presenter-guide.md).
 
 ## When to run them
 
@@ -12,13 +12,22 @@ Run the questions in three batches, each about the part just finished:
 - Questions 6 and 7 at the start of Part 3, about Part 2.
 - Questions 8 to 13 in the wrap-up, about Part 3.
 
-Show the leaderboard after each batch and at the end.
+In the Git Skills Self-Assessment Mentimeter, the quiz follows the six survey slides. Start presenting from slide 7.
 
-## How to build the Mentimeter quiz
+- Slide 7: "Back to the workshop" text slide. Park here until Part 2.
+- Slides 8 to 12: questions 1 to 5, then slide 13, a leaderboard.
+- Slide 14: text slide. Park here until Part 3.
+- Slides 15 and 16: questions 6 and 7, then slide 17, a leaderboard.
+- Slide 18: text slide. Park here until the wrap-up.
+- Slides 19 to 24: questions 8 to 13, then slide 25, the final leaderboard.
 
-1. Create one presentation in a free Mentimeter account and add 13 **Quiz competition** (multiple choice) questions, in the order below.
-2. Paste the question and the four options exactly as written. Mark the correct option and set the timer to 45 to 60 seconds.
-3. Keep scoring on, and show the leaderboard at the break and at the end.
+The text slides give you a safe place to stop between batches, so the next questions are not shown early. Each question also has Add leaderboard switched on, so a leaderboard may show after every question. Switch it off per slide under Edit, then Quiz settings, if it slows the pace.
+
+## Rebuilding the Mentimeter quiz
+
+The quiz is already built in the Git Skills Self-Assessment presentation. To rebuild it, create one presentation in a free Mentimeter account and add 13 **Quiz competition** (multiple choice) questions, in the order below.
+2. Paste the question and the four options exactly as written. Mark the correct option and set the timer to 45 seconds.
+3. Keep scoring on. Add a text slide before each batch and a leaderboard slide after it.
 4. The 13 Rewind slides show the join code 1509 1500. If you rebuild the presentation, copy its new join code into the slides with Find and Replace in PowerPoint.
 5. Rehearse alone, on one device. Every participant counts toward the free plan's monthly limit of 50, so avoid rehearsing with colleagues. Check Mentimeter's current free plan limits before the session.
 

@@ -31,10 +31,10 @@ Presenter setup:
 Checkpoint setup:
 
 - [ ] **Mentimeter account.** Create a free account at mentimeter.com. The free plan allows 50 participants per month across all presentations, so check its current limits before the session.
-- [ ] **Build the quiz.** Create one Mentimeter presentation with 13 Quiz competition questions, in launch order, from [quiz-questions.md](quiz-questions.md). One presentation gives one leaderboard for the whole day.
+- [ ] **Check the quiz.** The 13 questions are in the Git Skills Self-Assessment Mentimeter, on slides 7 to 25 after the six survey slides, with text slides and leaderboards between the batches. Open it and check the answers against [quiz-questions.md](quiz-questions.md). One presentation gives one leaderboard for the whole day.
 - [ ] **Rehearse alone.** Run through the quiz yourself on one device. Every participant counts toward the monthly 50, so do not rehearse with colleagues.
 - [ ] **Join code.** The 13 Rewind slides show the join code 1509 1500. If you rebuild the Mentimeter presentation, its code changes, so update the slides with Find and Replace in PowerPoint.
-- [ ] **Share the right tab.** Attendees answer at menti.com while you share the Mentimeter browser tab in Teams. Keep it open in its own tab or window.
+- [ ] **Share the right tab.** Attendees answer at menti.com while you share the Mentimeter browser tab in Teams. Keep it open in its own tab or window, and start presenting from slide 7 to skip the survey.
 - [ ] **Teams Polls backup.** In the Teams meeting, create the same 13 questions under Polls using the Multiple Choice Quiz type. This type has no scoring, so say the answer aloud.
 - [ ] **Whiteboard.** The drawings use the Microsoft Whiteboard that comes with the Teams enterprise licence. Start it in the meeting (Share, then Whiteboard) at the start of Part 2, and label three areas Part 1, Part 2 and Part 3 so each drawing has its own space. Test beforehand with a second person that attendees can edit the board, not just view it. If they cannot edit, ask them what to draw and draw it yourself.
 
@@ -113,7 +113,7 @@ Checkpoint facilitation:
 
 - **Rewind.** Rewinds run in batches at the start of the next part, so each question covers an earlier part than the one you are about to teach. Run Rewinds 1 to 5 at the start of Part 2, 6 and 7 at the start of Part 3, and 8 to 13 in the wrap-up. This is delayed retrieval practice and never a check on what you just taught. Open the matching Mentimeter question, allow 45 to 60 seconds, show the result and say the answer in one sentence. The answer and the misconception it targets are in the speaker notes and in [quiz-questions.md](quiz-questions.md). The slide shows no answer.
 - **Draw it.** Share the Teams whiteboard and give everyone the time box on the slide to add to one drawing. Suggest each person takes one piece, such as one area or one step. Then ask each person to explain their piece, fix anything wrong together, and show the model answer on the next slide. If the group prefers, each person can draw their own version in a separate part of the board and explain it instead. Rewind 13 comes just before the Part 3 drawing and asks why `git branch -d` warns after a squash merge, so use the drawing to show it.
-- **Leaderboard.** Show the Mentimeter leaderboard after each batch and at the end.
+- **Leaderboard.** The Mentimeter has a leaderboard slide after each batch and a final one at the end. Park on the "Back to the workshop" text slide between batches so the next questions are not shown early.
 
 Facilitation tips:
 
